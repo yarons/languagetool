@@ -1335,6 +1335,24 @@ Copyright (C) 2011 Juan Martorell
             </pattern>
             <disambig action="filter" postag="RG.*"/>
         </rule>
+        <rule>
+            <pattern>
+                <marker>
+                    <token postag="RG|LOC_ADV" postag_regexp="yes"/>
+                    <token postag="A.*" postag_regexp="yes">claro</token>
+                </marker>
+            </pattern>
+            <disambig action="filterall"/>
+        </rule>
+        <rule>
+            <pattern>
+                <token regexp="yes">cada|esta|esa|aquella</token>
+                <marker>
+                    <token postag="N.*" postag_regexp="yes">mañana</token>
+                </marker>
+            </pattern>
+            <disambig action="filter" postag="N.*"/>
+        </rule>
     </rulegroup>
 
     <rulegroup id="no" name="no">
@@ -1442,7 +1460,7 @@ Copyright (C) 2011 Juan Martorell
                 <marker>
                     <token inflected="yes">deber</token>
                 </marker>
-                <token postag="RG|LOC_ADV|_PUNCT_CONT|P.*" postag_regexp="yes" max="4"/>
+                <token postag="RG|LOC_ADV|_PUNCT_CONT|P.*" postag_regexp="yes" max="4" min="0"/>
                 <token postag="V.N.*" postag_regexp="yes"/>
             </pattern>
             <disambig action="filter" postag="V.*"/>
@@ -1452,7 +1470,7 @@ Copyright (C) 2011 Juan Martorell
                 <marker>
                     <token inflected="yes">deber</token>
                 </marker>
-                <token postag="RG|LOC_ADV|_PUNCT_CONT|P.*" postag_regexp="yes" max="4"/>
+                <token postag="RG|LOC_ADV|_PUNCT_CONT|P.*" postag_regexp="yes" max="4" min="0"/>
                 <token>de</token>
                 <token postag="V.N.*" postag_regexp="yes"/>
             </pattern>
@@ -2863,7 +2881,7 @@ Copyright (C) 2011 Juan Martorell
                 <token regexp="yes">a|al|de|del</token>
             </pattern>
             <disambig action="replace">
-                <wd pos="LOC_PREP" lemma="respecto a"></wd>
+                <wd pos="LOC_PREP" lemma="respecto a"/>
             </disambig>
         </rule>
         <rule>

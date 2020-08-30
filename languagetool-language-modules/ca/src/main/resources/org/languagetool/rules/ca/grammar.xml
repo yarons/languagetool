@@ -2275,6 +2275,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
                 <example>Jo sóc molt dormilega.</example>
                 <example>Tant ETA com el PNB rebutjaren la Constitució espanyola.</example>
                 <example>M'agrada molt Txecoslovàquia.</example>
+                <example>Totes vora les costes gregues.</example>
                 <!-- <example>influí molt Assíria</example> -->
                 <!-- <example>ser admesos com a tals Alemanya, el Japó,</example> -->
             </rule>
@@ -18273,7 +18274,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
             <pattern>
                 <token regexp="yes">ceros?</token>
             </pattern>
-            <message>¿Volíeu dir <suggestion><match no="1" regexp_match="cero(s?)" regexp_replace="zero$1"/></suggestion> (nombre) en lloc de "<match no="1"/>" (variant de "cérvol")?</message>
+            <message>¿Volíeu dir <suggestion><match no="1" regexp_match="(?iu)cero(s?)" regexp_replace="zero$1"/></suggestion> (nombre) en lloc de "<match no="1"/>" (variant de "cérvol")?</message>
             <short>Possible confusió</short>
             <example correction="zero">Té un valor de <marker>cero</marker>.</example>
             <example>Té un valor de zero.</example>
@@ -22513,8 +22514,8 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
             </pattern>
             <message>Error ortogràfic.</message>
             <suggestion>Pearl Harbor</suggestion>
-            <example correction="Pearl Harbor">El ataque a <marker>Perl Harbor</marker>.</example>
-            <example correction="Pearl Harbor">El ataque a <marker>pearl harbor</marker>.</example>
+            <example correction="Pearl Harbor">L'atac a <marker>Perl Harbor</marker>.</example>
+            <example correction="Pearl Harbor">L'atac a <marker>pearl harbor</marker>.</example>
             <example>Pearl Harbor</example>
         </rule>
         <rule id="DEJA_VU" name="déjà-vu">
@@ -22868,7 +22869,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
                     <token min="0">-</token>
                     <token regexp="yes">\p{Ll}.+</token>
                 </pattern>
-                <message>S'escriu sense guionet.</message>
+                <message suppress_misspelled="yes">S'escriu sense guionet.</message>
                 <suggestion suppress_misspelled="yes"><match no="3" regexp_match="(?iu)(.+)" regexp_replace="co$1" case_conversion="preserve"/></suggestion>
                 <suggestion suppress_misspelled="yes"><match no="3" regexp_match="(?iu)(.+)" regexp_replace="cor$1" case_conversion="preserve"/></suggestion>
                 <url>http://www.iec.cat/llengua/documents/ortografia_catalana_versio_digital.pdf#page=128</url>
@@ -33127,7 +33128,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
                     <token regexp="yes">e?strict[ou]|lat[ou]</token>
                     <token regexp="yes">sens[ou]</token>
                 </pattern>
-                <message>Expressió mal escrita. Recordeu que és recomanable escriure les expressions llatines en lletra cursiva.</message>
+                <message>Expressió mal escrita.</message>
                 <suggestion><match no="1" regexp_match="(?iu)e?(strict|lat)[ou]" regexp_replace="$1"/>o sensu</suggestion>
                 <example correction="stricto sensu"><marker>strictu senso</marker></example>
                 <example correction="lato sensu"><marker>latu sensu</marker></example>
@@ -33145,7 +33146,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
                     <token regexp="yes">sens[ou]</token>
                     <token regexp="yes">e?strict[ou]|lat[ou]</token>
                 </pattern>
-                <message>Expressió mal escrita. Recordeu que és recomanable escriure les expressions llatines en lletra cursiva.</message>
+                <message>Expressió mal escrita.</message>
                 <suggestion>sensu <match no="2" regexp_match="(?iu)e?(strict|lat)[ou]" regexp_replace="$1"/>o</suggestion>
                 <example correction="sensu stricto"><marker>senso stricto</marker></example>
                 <example correction="sensu lato"><marker>sensu latu</marker></example>
@@ -37831,7 +37832,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
                 <token>grosso</token>
                 <token>modo</token>
             </pattern>
-            <message>¿Volíeu dir <suggestion>grosso modo</suggestion>? Recordeu que les expressions llatines s'han d'escriure preferiblement amb lletra cursiva.</message>
+            <message>Cal dir <suggestion>grosso modo</suggestion>.</message>
             <example correction="grosso modo"><marker>a grosso modo</marker></example>
             <example>grosso modo</example>
         </rule>
@@ -38780,7 +38781,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
                 <token regexp="yes">status|estatu|estatus|statu</token>
                 <token regexp="yes">quo|cuo</token>
             </pattern>
-            <message>Ortografia incorrecta. Recordeu que les expressions llatines s'han d'escriure preferiblement amb lletra cursiva.</message>
+            <message>Expressió mal escrita.</message>
             <suggestion>statu quo</suggestion>
             <example correction="statu quo">Volien canviar l'<marker>status quo</marker>.</example>
             <example>Canviem l'statu quo.</example>
@@ -39605,7 +39606,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
     <category id="INCORRECT_WORDS_IN_CONTEXT" name="Paraules incorrectes segons el context" type="grammar">
         <!-- #nomenar/anomenar
             (?i)nomen.+ (?i)anomen.+    nom anom    (?i)càrrecs?|senadors?|.*presidents?|diputa.*|.*conseller.*|.*ministre.*|.*director.*|capit.+|.*general.*|vicari.*|rector.*|.*bisbe.*|alcalde.*|batl?le.*|tribunals?|consell|comit[éè]s?|entrenador.*|encarrega[td].*   ddXd,6dDd3d designar per a un càrrec    donar nom -->
-        <rulegroup id="MESA_TAULA" name="mesa/taula" default="temp_off">
+        <rulegroup id="MESA_TAULA" name="mesa/taula">
             <rule>
                 <pattern>
                     <marker>
@@ -41353,7 +41354,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
                     <marker>
                         <token inflected="yes">escoltar</token>
                     </marker>
-                    <token min="0" max="8" postag="[ANDSRU].*" postag_regexp="yes"><exception regexp="yes">atentament|atenció</exception></token>
+                    <token min="0" max="8" postag="[ANDSRU].*|PX.*" postag_regexp="yes"><exception regexp="yes">atentament|atenció</exception></token>
                     <token postag="V.N.*" postag_regexp="yes"><exception scope="previous" inflected="yes" regexp="yes">anar|sense|per|a|en|el|no</exception></token>
                     <!--<exception postag="C.*|_PUNCT.*" postag_regexp="yes"/> -->
                 </pattern>
@@ -42756,7 +42757,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
                     <token min="0" inflected="yes">de</token>
                     <token inflected="yes" regexp="yes">seqüència|mediàtic|.*econòmic|.*social|.*polític|abstracte|personal|professional|vertical|horitzontal|perpendicular|oblic|teòric|pràctic|igualtat|superior|inferior|simbòlic</token>
                 </pattern>
-                <message>¿Volíeu dir <suggestion><match no="1" postag="(NC.*)" postag_regexp="yes" postag_replace="$1">pla</match></suggestion>? Exemples d'ús correcte: un plànol de Xàtiva, un plànol del castell.</message>
+                <message>¿Volíeu dir <suggestion><match no="1" postag="(NC.*)" postag_regexp="yes" postag_replace="$1">pla</match></suggestion>? Exemples d'ús correcte de "plànol": un plànol de Xàtiva, un plànol del castell.</message>
                 <short>Possible confusió</short>
                 <example correction="pla">en el <marker>plànol</marker> personal</example>
                 <example correction="pla">en <marker>plànol</marker> d'igualtat</example>
@@ -42770,7 +42771,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
                         <token>plànol</token>
                     </marker>
                 </pattern>
-                <message>¿Volíeu dir <suggestion>pla</suggestion>? Exemples d'ús correcte: un plànol de Xàtiva, un plànol del castell.</message>
+                <message>¿Volíeu dir <suggestion>pla</suggestion>? Exemples d'ús correcte de "plànol": un plànol de Xàtiva, un plànol del castell.</message>
                 <short>Possible confusió</short>
                 <example correction="pla">En primer <marker>plànol</marker>, hi ha la casa.</example>
                 <example>El primer plànol de la Torre Eiffel.</example>
@@ -48961,43 +48962,39 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
                 <pattern>
                     <token>guai</token>
                 </pattern>
-                <message>Llenguatge col·loquial.</message>
-                <suggestion>fantàstic</suggestion>
-                <suggestion>sensacional</suggestion>
-                <suggestion>divertit</suggestion>
+                <message>Llenguatge col·loquial. Podeu fer servir una alternativa.</message>
+                <suggestion>súper</suggestion>
+                <suggestion>benparit</suggestion>
+                <suggestion>mel</suggestion>
+                <suggestion>mel de romer</suggestion>
+                <suggestion>collonut</suggestion>
                 <suggestion>fabulós</suggestion>
                 <suggestion>magnífic</suggestion>
-                <suggestion>genial</suggestion>
-                <suggestion>fenomenal</suggestion>
-                <suggestion>formidable</suggestion>
-                <suggestion>excel·lent</suggestion>
-                <suggestion>extraordinari</suggestion>
-                <suggestion>increïble</suggestion>
-                <suggestion>meravellós</suggestion>
+                <suggestion>bufó</suggestion>
+                <suggestion>fantàstic</suggestion>
+                <suggestion>divertit</suggestion>
                 <!--<url>http://esadir.cat/entrades/fitxa/node/guai</url>-->
                 <url>https://aplicacions.llengua.gencat.cat/llc/AppJava/index.html?action=Principal&amp;method=detall&amp;input_cercar=guai&amp;numPagina=1&amp;database=FITXES_PUB&amp;idFont=11712&amp;idHit=11712&amp;tipusFont=Fitxes+de+l%27Optimot&amp;numeroResultat=1&amp;databases_avansada=&amp;categories_avansada=&amp;clickLink=detall&amp;titol=%C9s+correcte+%27guai%27+en+catal%E0%3F&amp;tematica=&amp;tipusCerca=cerca.fitxes</url>
-                <example correction="fantàstic|sensacional|divertit|fabulós|magnífic|genial|fenomenal|formidable|excel·lent|extraordinari|increïble|meravellós">Era molt <marker>guai</marker>!</example>
+                <example correction="súper|benparit|mel|mel de romer|collonut|fabulós|magnífic|bufó|fantàstic|divertit">Era molt <marker>guai</marker>!</example>
             </rule>
             <rule>
                 <pattern>
                     <token>guais</token>
                 </pattern>
-                <message>Llenguatge col·loquial.</message>
-                <suggestion>fantàstics</suggestion>
-                <suggestion>sensacionals</suggestion>
-                <suggestion>divertits</suggestion>
+                <message>Llenguatge col·loquial. Podeu fer servir una alternativa.</message>
+                <suggestion>súpers</suggestion>
+                <suggestion>benparits</suggestion>
+                <suggestion>mel</suggestion>
+                <suggestion>mel de romer</suggestion>
+                <suggestion>collonuts</suggestion>
                 <suggestion>fabulosos</suggestion>
                 <suggestion>magnífics</suggestion>
-                <suggestion>genials</suggestion>
-                <suggestion>fenomenals</suggestion>
-                <suggestion>formidables</suggestion>
-                <suggestion>excel·lents</suggestion>
-                <suggestion>extraordinaris</suggestion>
-                <suggestion>increïbles</suggestion>
-                <suggestion>meravellosos</suggestion>
+                <suggestion>bufons</suggestion>
+                <suggestion>fantàstics</suggestion>
+                <suggestion>divertits</suggestion>
                 <!--<url>http://esadir.cat/entrades/fitxa/node/guai</url>-->
                 <url>https://aplicacions.llengua.gencat.cat/llc/AppJava/index.html?action=Principal&amp;method=detall&amp;input_cercar=guai&amp;numPagina=1&amp;database=FITXES_PUB&amp;idFont=11712&amp;idHit=11712&amp;tipusFont=Fitxes+de+l%27Optimot&amp;numeroResultat=1&amp;databases_avansada=&amp;categories_avansada=&amp;clickLink=detall&amp;titol=%C9s+correcte+%27guai%27+en+catal%E0%3F&amp;tematica=&amp;tipusCerca=cerca.fitxes</url>
-                <example correction="fantàstics|sensacionals|divertits|fabulosos|magnífics|genials|fenomenals|formidables|excel·lents|extraordinaris|increïbles|meravellosos">Era molt <marker>guais</marker>!</example>
+                <example correction="súpers|benparits|mel|mel de romer|collonuts|fabulosos|magnífics|bufons|fantàstics|divertits">Eren molt <marker>guais</marker>!</example>
             </rule>
         </rulegroup>
         <rule id="XULERIA" name="xuleria">
@@ -52402,6 +52399,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
                 <example>l'home al qual vaig trobar</example>
                 <example>provocar el contrari del que voldria</example>
                 <example>la realitat, fent-nos càrrec del que és</example>
+                <example>Queda pendent del que resolguin els jutjats.</example>
             </rule>
             <rule>
                 <pattern>
