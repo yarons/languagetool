@@ -75,6 +75,7 @@
                     <prop oor:name="Title" oor:type="xs:string">
                     <value xml:lang="en-US">Next spelling or grammar mistake</value>
                     <value xml:lang="de">Nächster Rechtschreib- oder Grammatikfehler</value>
+                    <value xml:lang="he">טעות האיות או הדקדוק הבאה</value>
                     <value xml:lang="ru">Следующая грамматическая или орфографическая ошибка</value>
 					<value xml:lang="pt">Próximo erro ortográfico ou gramatical</value>
                     </prop>
@@ -115,6 +116,7 @@
                     <value xml:lang="ca">Revisa el text</value>
                     <value xml:lang="ta">உரையைச் சரிபார்</value>
                     <value xml:lang="sr">Провера правописа</value>
+                    <value xml:lang="he">בדיקת הטקסט</value>
                     </prop>
                 </node>
                 <node oor:name="T3" oor:op="replace">
@@ -151,6 +153,7 @@
                     <value xml:lang="ca">Revisa el text de nou</value>
                     <value xml:lang="ta">ஆவணத்தை மீண்டும் சரிபார்</value>
                     <value xml:lang="sr">Поново проверити документ</value>
+                    <value xml:lang="he">בדיקת המסמך מחדש</value>
                     </prop>
                 </node>
                 <node oor:name="T4" oor:op="replace">
@@ -189,6 +192,7 @@
                     <value xml:lang="ca">Configuració...</value>
                     <value xml:lang="ta">தேர்வுகள்...</value>
                     <value xml:lang="sr">Подешавања ...</value>
+                    <value xml:lang="he">אפשרויות...</value>
                     </prop>
                 </node>
             </node>
@@ -240,6 +244,7 @@
                     <value/>
                     <value xml:lang="en-US">Next spelling or grammar mistake</value>
                     <value xml:lang="de">Nächster Rechtschreib- oder Grammatikfehler</value>
+                    <value xml:lang="he">טעות האיות או הדקדוק הבאה</value>
                     <value xml:lang="ru">Следующая ошибка</value>
                   </prop>
                   <prop oor:name="Target" oor:type="xs:string">
@@ -281,6 +286,7 @@
                     <value xml:lang="ca">Revisa el text</value>
                     <value xml:lang="ta">உரையைச் சரிபார்</value>
                     <value xml:lang="sr">Провера правописа</value>
+                    <value xml:lang="he">בדיקת הטקסט</value>
                   </prop>
                   <prop oor:name="Target" oor:type="xs:string">
                     <value>_self</value>
@@ -319,6 +325,7 @@
                     <value xml:lang="ca">Revisa el text de nou</value>
                     <value xml:lang="ta">ஆவணத்தை மீண்டும் சரிபார்</value>
                     <value xml:lang="sr">Поново проверити документ</value>
+                    <value xml:lang="he">בדיקת המסמך מחדש</value>
                   </prop>
                   <prop oor:name="Target" oor:type="xs:string">
                     <value>_self</value>
@@ -343,6 +350,7 @@
 		    <value xml:lang="be">Выключыць/ўключыць</value>
 		    <value xml:lang="ru">Выключить/включить</value>
 		    <value xml:lang="uk">Вимкнути/включити</value>
+                    <value xml:lang="he">כיבוי‫/‬הפעלה</value>
                   </prop>
                   <prop oor:name="Target" oor:type="xs:string">
                     <value>_self</value>
@@ -382,6 +390,7 @@
                     <value xml:lang="ca">Configuració...</value>
                     <value xml:lang="ta">தேர்வுகள்...</value>
                     <value xml:lang="sr">Подешавања ...</value>
+                    <value xml:lang="he">אפשרויות...</value>
                   </prop>
                   <prop oor:name="Target" oor:type="xs:string">
                     <value>_self</value>
@@ -419,6 +428,7 @@
                     <value xml:lang="ca">Sobre...</value>
                     <value xml:lang="ta">எங்களைப் பற்றி...</value>
                     <value xml:lang="sr">О програму LanguageTool ...</value>
+                    <value xml:lang="he">על אודות...</value>
                   </prop>
                   <prop oor:name="Target" oor:type="xs:string">
                     <value>_self</value>

@@ -19,6 +19,7 @@
 		<src xlink:href="description/desc_es.txt" lang="es" />
 		<src xlink:href="description/desc_fr.txt" lang="fr" />
 		<src xlink:href="description/desc_gl.txt" lang="gl" />
+		<src xlink:href="description/desc_he.txt" lang="he" />
 		<src xlink:href="description/desc_is.txt" lang="is" />
 		<src xlink:href="description/desc_pl.txt" lang="pl" />
 		<src xlink:href="description/desc_pt.txt" lang="pt" />
@@ -47,6 +48,7 @@
 		<name xlink:href="https://www.languagetool.org/es" lang="es">LanguageTool</name>
 		<name xlink:href="https://www.languagetool.org/fr" lang="fr">LanguageTool</name>
 		<name xlink:href="https://www.languagetool.org/gl" lang="gl">LanguageTool</name>
+		<name xlink:href="https://www.languagetool.org/he" lang="gl">LanguageTool</name>
 		<name xlink:href="https://www.languagetool.org/pl" lang="pl">LanguageTool</name>
 		<name xlink:href="https://www.languagetool.org/pt" lang="pt">LanguageTool</name>
 		<name xlink:href="https://www.languagetool.org/ru" lang="ru">LanguageTool</name>

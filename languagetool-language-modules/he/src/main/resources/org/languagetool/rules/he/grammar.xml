@@ -1,0 +1,10 @@
+<!-- Hebrew rule, 2020-08-28 -->
+<rule id="USE_THE_CORRECT_SINCE_FORM" name="Use the correct "since" form">
+ <pattern>
+  <token>ו</token>
+  <token>מאחר</token>
+ </pattern>
+ <message><match no="1"/> אינה צורה תקנית בעברית, נא להשתמש בצורה <match no="2"/>.</message>
+ <example correction=''>מאחר ו</example>
+ <example>מאחר ש</example>
+</rule>
