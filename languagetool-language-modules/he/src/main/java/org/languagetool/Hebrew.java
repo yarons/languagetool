@@ -65,7 +65,7 @@ public class English extends Language implements AutoCloseable {
           return rules;
         }
       });
-  private static final Language AMERICAN_ENGLISH = new AmericanEnglish();
+  private static final Language MODERN_HEBREW = new ModernHebrew();
 
   private LanguageModel languageModel;
 
@@ -74,12 +74,12 @@ public class English extends Language implements AutoCloseable {
    *  they have rules for spell checking, this class doesn't (deprecated since 3.2)
    */
   @Deprecated
-  public English() {
+  public Hebrew() {
   }
 
   @Override
   public Language getDefaultLanguageVariant() {
-    return AMERICAN_ENGLISH;
+    return MODERN_HEBREW;
   }
 
   @Override
