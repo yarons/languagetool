@@ -18,6 +18,7 @@
  */
 package org.languagetool.openoffice;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,92 +27,123 @@ import org.languagetool.openoffice.FlatParagraphTools.ParagraphContainer;
 import com.sun.star.lang.Locale;
 
 /**
- * Class to store the Text of a LO document 
+ * Class to store the Text of a LO document (document cache)
  * @since 5.0
  * @author Fred Kruse
  */
-public class DocumentCache {
+public class DocumentCache implements Serializable {
   
-  private static boolean debugMode;         //  should be false except for testing
+  private static final long serialVersionUID = 2L;
 
-  private List<String> paragraphs = null;            //  stores the flat paragraphs of document
-  private List<Integer> headings = null;             //  stores the paragraphs formated as headings; is used to subdivide the document in chapters
-  private List<Locale> locales = null;               //  stores the language of the paragraphs;
-  private List<int[]> footnotes = null;              //  stores the footnotes of the paragraphs;
-  private List<Integer> toTextMapping = new ArrayList<>();  //Mapping from FlatParagraph to DocumentCursor
-  private List<Integer> toParaMapping = new ArrayList<>();  //Mapping from DocumentCursor to FlatParagraph
+  private static boolean debugMode;                         //  should be false except for testing
+
+  private List<String> paragraphs = null;                   //  stores the flat paragraphs of document
+  private List<Integer> chapterBegins = null;               //  stores the paragraphs formated as headings; is used to subdivide the document in chapters
+  private List<SerialLocale> locales = null;                //  stores the language of the paragraphs;
+  private List<int[]> footnotes = null;                     //  stores the footnotes of the paragraphs;
+  private List<Integer> toTextMapping = new ArrayList<>();  //  Mapping from FlatParagraph to DocumentCursor
+  private List<Integer> toParaMapping = new ArrayList<>();  //  Mapping from DocumentCursor to FlatParagraph
   private int defaultParaCheck;
+  private boolean isReset = false;
 
-  DocumentCache(DocumentCursorTools docCursor, FlatParagraphTools flatPara, int defaultParaCheck) {
+  DocumentCache(DocumentCursorTools docCursor, FlatParagraphTools flatPara, int defaultParaCheck, Locale docLocale) {
     debugMode = OfficeTools.DEBUG_MODE_DC;
     this.defaultParaCheck = defaultParaCheck;
-    reset(docCursor, flatPara);
+    reset(docCursor, flatPara, docLocale);
   }
   
-  public void reset(DocumentCursorTools docCursor, FlatParagraphTools flatPara) {
-    List<String> textParas = docCursor.getAllTextParagraphs();
-    ParagraphContainer paragraphContainer = null;
-    if (textParas != null) {
-      headings = docCursor.getParagraphHeadings();
-      paragraphContainer = flatPara.getAllFlatParagraphs();
-      if (paragraphContainer == null) {
-        MessageHandler.printToLogFile("paragraphContainer == null - ParagraphCache not initialised");
+  /**
+   * reset the document cache
+   * load the actual state of the document into the cache
+   */
+  public void reset(DocumentCursorTools docCursor, FlatParagraphTools flatPara, Locale docLocale) {
+    try {
+      isReset = true;
+      List<String> textParas = docCursor.getAllTextParagraphs();
+      ParagraphContainer paragraphContainer = null;
+      if (textParas != null) {
+        chapterBegins = docCursor.getParagraphHeadings();
+        paragraphContainer = flatPara.getAllFlatParagraphs(docLocale);
+        if (paragraphContainer == null) {
+          MessageHandler.printToLogFile("paragraphContainer == null - ParagraphCache not initialised");
+          paragraphs = null;
+          isReset = false;
+          return;
+        }
+        paragraphs = paragraphContainer.paragraphs;
+        locales = new ArrayList<SerialLocale>();
+        for (Locale locale :  paragraphContainer.locales) {
+          locales.add(new SerialLocale(locale)) ;
+        }
+        footnotes = paragraphContainer.footnotePositions;
+      }
+      if (paragraphs == null) {
+        MessageHandler.printToLogFile("paragraphs == null - ParagraphCache not initialised");
+        isReset = false;
         return;
       }
-      paragraphs = paragraphContainer.paragraphs;
-    }
-    if (paragraphs == null) {
-      MessageHandler.printToLogFile("paragraphs == null - ParagraphCache not initialised");
-      return;
-    }
-    locales = paragraphContainer.locales;
-    footnotes = paragraphContainer.footnotePositions;
-    
-    if (debugMode) {
-      MessageHandler.printToLogFile("\n\nNot mapped paragraphs:");
-    }
-    if (textParas != null && !textParas.isEmpty()) {
-      int n = 0; 
-      for (int i = 0; i < paragraphs.size(); i++) {
-        if ((footnotes != null && i < footnotes.size() && footnotes.get(i).length > 0)
-            || (n < textParas.size() && (paragraphs.get(i).equals(textParas.get(n)) 
-                || removeZeroWidthSpace(paragraphs.get(i)).equals(textParas.get(n))))) {
-          toTextMapping.add(n);
-          toParaMapping.add(i);
-          n++;
-        } else {
-          toTextMapping.add(-1);
-          if (debugMode) {
-            MessageHandler.printToLogFile("\nFlat("  + i + "): '" + paragraphs.get(i));
-            if (n < textParas.size()) {
-              MessageHandler.printToLogFile("Doc("  + n + "): '" + textParas.get(n));
-            }
-          }  
-        }
-      }
       if (debugMode) {
-        MessageHandler.printToLogFile("\n\ntoParaMapping:");
-        for (int i = 0; i < toParaMapping.size(); i++) {
-          MessageHandler.printToLogFile("Doc: " + i + " Flat: " + toParaMapping.get(i)
-          + OfficeTools.LOG_LINE_BREAK + getTextParagraph(i));
+        MessageHandler.printToLogFile("\n\nNot mapped paragraphs:");
+      }
+      if (textParas != null && !textParas.isEmpty()) {
+        int n = 0; 
+        for (int i = 0; i < paragraphs.size(); i++) {
+          if ((footnotes != null && i < footnotes.size() && footnotes.get(i).length > 0)
+              || (n < textParas.size() && (paragraphs.get(i).equals(textParas.get(n)) 
+                  || removeZeroWidthSpace(paragraphs.get(i)).equals(textParas.get(n))))) {
+            toTextMapping.add(n);
+            toParaMapping.add(i);
+            n++;
+          } else {
+            toTextMapping.add(-1);
+            if (debugMode) {
+              MessageHandler.printToLogFile("\nFlat("  + i + "): '" + paragraphs.get(i));
+              if (n < textParas.size()) {
+                MessageHandler.printToLogFile("Doc("  + n + "): '" + textParas.get(n));
+              }
+            }  
+          }
         }
-        MessageHandler.printToLogFile("\n\ntoTextMapping:");
-        for (int i = 0; i < toTextMapping.size(); i++) {
-          MessageHandler.printToLogFile("Flat: " + i + " Doc: " + toTextMapping.get(i));
-//        if (toTextMapping.get(i) == -1) {
-//          MessageHandler.printToLogFile("'" + paragraphs.get(i) + "'");
-//        }
+        prepareChapterBegins();
+        isReset = false;
+        if (debugMode) {
+          MessageHandler.printToLogFile("\n\ntoParaMapping:");
+          for (int i = 0; i < toParaMapping.size(); i++) {
+            MessageHandler.printToLogFile("Doc: " + i + " Flat: " + toParaMapping.get(i)
+            + OfficeTools.LOG_LINE_BREAK + getTextParagraph(i));
+          }
+          MessageHandler.printToLogFile("\n\ntoTextMapping:");
+          for (int i = 0; i < toTextMapping.size(); i++) {
+            MessageHandler.printToLogFile("Flat: " + i + " Doc: " + toTextMapping.get(i) + " locale: " + locales.get(i).Language + "-" + locales.get(i).Country);
+          }
+          MessageHandler.printToLogFile("\n\nheadings:");
+          for (int i = 0; i < chapterBegins.size(); i++) {
+            MessageHandler.printToLogFile("Num: " + i + " Heading: " + chapterBegins.get(i));
+          }
+          MessageHandler.printToLogFile("\nNumber of Flat Paragraphs: " + paragraphs.size());
+          MessageHandler.printToLogFile("Number of Text Paragraphs: " + toParaMapping.size());
+          MessageHandler.printToLogFile("Number of footnotes: " + footnotes.size());
+          MessageHandler.printToLogFile("Number of locales: " + locales.size());
         }
-        MessageHandler.printToLogFile("\n\nheadings:");
-        for (int i = 0; i < headings.size(); i++) {
-          MessageHandler.printToLogFile("Num: " + i + " Heading: " + headings.get(i));
-        }
-        MessageHandler.printToLogFile("\nNumber of Flat Paragraphs: " + paragraphs.size());
-        MessageHandler.printToLogFile("Number of Text Paragraphs: " + toParaMapping.size());
-        MessageHandler.printToLogFile("Number of footnotes: " + footnotes.size());
-        MessageHandler.printToLogFile("Number of locales: " + locales.size());
+      }
+    } finally {
+      isReset = false;
+    }
+  }
+  
+  /**
+   * wait till reset is finished
+   */
+  public boolean isFinished() {
+    while (isReset) {
+      try {
+        Thread.sleep(5);
+      } catch (InterruptedException e) {
+        MessageHandler.showError(e);
+        return false;
       }
     }
+    return paragraphs == null ? false: true;
   }
   
   /**
@@ -126,6 +158,14 @@ public class DocumentCache {
    */
   public void setFlatParagraph(int n, String sPara) {
     paragraphs.set(n, sPara);
+  }
+    
+  /**
+   * set Flat Paragraph and Locale at Index
+   */
+  public void setFlatParagraph(int n, String sPara, Locale locale) {
+    paragraphs.set(n, sPara);
+    locales.set(n, new SerialLocale(locale));
   }
     
   /**
@@ -146,21 +186,21 @@ public class DocumentCache {
    * get Locale of Flat Paragraph by Index
    */
   public Locale getFlatParagraphLocale(int n) {
-    return locales.get(n);
+    return locales.get(n).toLocale();
   }
   
   /**
    * set Locale of Flat Paragraph by Index
    */
   public void setFlatParagraphLocale(int n, Locale locale) {
-    locales.set(n, locale);
+    locales.set(n, new SerialLocale(locale));
   }
   
   /**
    * get Locale of Text Paragraph by Index
    */
   public Locale getTextParagraphLocale(int n) {
-    return locales.get(toParaMapping.get(n));
+    return locales.get(toParaMapping.get(n)).toLocale();
   }
   
   /**
@@ -206,6 +246,14 @@ public class DocumentCache {
   }
   
   /**
+   * size of text cache (without headers, footnotes, etc.)
+   */
+  public boolean isEqual(int n, String text, Locale locale) {
+    return ((n < 0 || n >= locales.size() || locales.get(n) == null) ? false :
+        (locales.get(n).equalsLocale(locale) && text.equals(paragraphs.get(n))));
+  }
+  
+  /**
    * Gives back the start paragraph for text level check
    */
   public int getStartOfParaCheck(int numCurPara, int parasToCheck, boolean textIsChanged) {
@@ -218,18 +266,14 @@ public class DocumentCache {
     if (parasToCheck == 0) {
       return numCurPara;
     }
-    int headingBefore = -1;
-    for (int heading : headings) {
+    int headingBefore = 0;
+    for (int heading : chapterBegins) {
       if (heading > numCurPara) {
         break;
       } 
       headingBefore = heading;
     }
-    if (headingBefore == numCurPara) {
-      return headingBefore;
-    }
-    headingBefore++;
-    if (parasToCheck < 0) {
+    if (headingBefore == numCurPara || parasToCheck < 0) {
       return headingBefore;
     }
     int startPos = numCurPara - parasToCheck;
@@ -249,23 +293,20 @@ public class DocumentCache {
     if (numCurPara < 0 || toParaMapping.size() <= numCurPara) {
       return -1;
     }
-    int headingAfter = -1;
     if (parasToCheck < -1) {
       return toParaMapping.size();
     }
+    int headingAfter = -1;
     if (parasToCheck == 0) {
       return numCurPara + 1;
     }
-    for (int heading : headings) {
+    for (int heading : chapterBegins) {
       headingAfter = heading;
-      if (heading >= numCurPara) {
+      if (heading > numCurPara) {
         break;
       }
     }
-    if (headingAfter == numCurPara) {
-      return headingAfter + 1;
-    }
-    if (headingAfter < numCurPara || headingAfter > toParaMapping.size()) {
+    if (headingAfter <= numCurPara || headingAfter > toParaMapping.size()) {
       headingAfter = toParaMapping.size();
     }
     if (parasToCheck < 0) {
@@ -330,6 +371,76 @@ public class DocumentCache {
     }
     return pos;
   }
+  
+  /**
+   *  Add the next chapter begin after Heading 
+   *  and changes of language to the chapter begins
+   */
+  private void prepareChapterBegins() {
+    List<Integer> prepChBegins = new ArrayList<Integer>(chapterBegins);
+    for (int begin : chapterBegins) {
+      if (!prepChBegins.contains(begin + 1)) {
+        prepChBegins.add(begin + 1);
+      }
+    }
+    if (locales.size() > 0) {
+      SerialLocale lastLocale = locales.get(0);
+      for (int i = 1; i < locales.size(); i++) {
+        if (locales != null && !locales.get(i).equalsLocale(lastLocale)) {
+          int nText = getNumberOfTextParagraph(i);
+          if (nText >= 0) {
+            if (!prepChBegins.contains(nText)) {
+              prepChBegins.add(nText);
+            }
+            lastLocale = locales.get(i);
+            if (debugMode) {
+              MessageHandler.printToLogFile("Paragraph("  + i + "): Locale changed to: " + lastLocale.Language + (lastLocale.Country == null ? "" : ("-" + lastLocale.Country)));
+            }
+          }
+        }
+      }
+    }
+    prepChBegins.sort(null);
+    chapterBegins = prepChBegins;
+  }
 
+  /**
+   * Class of serializable locale
+   * needed to save cache
+   */
+  class SerialLocale implements Serializable {
+     
+    private static final long serialVersionUID = 1L;
+    String Country;
+    String Language;
+    String Variant;
+   
+    SerialLocale(Locale locale) {
+      this.Country = locale.Country;
+      this.Language = locale.Language;
+      this.Variant = locale.Variant;
+    }
+    
+    /**
+     * return the language as Locale
+     */
+    Locale toLocale() {
+      return new Locale(Language, Country, Variant); 
+    }
+
+    /**
+     * True if the Language is the same as Locale
+     */
+    boolean equalsLocale(Locale locale) {
+      return ((locale == null || Language == null || Country == null || Variant == null)? false : 
+          Language.equals(locale.Language) && Country.equals(locale.Country) && Variant.equals(locale.Variant));
+    }
+
+    boolean equalsLocale(SerialLocale locale) {
+      return ((locale == null || Language == null || Country == null || Variant == null)? false : 
+          Language.equals(locale.Language) && Country.equals(locale.Country) && Variant.equals(locale.Variant));
+    }
+
+  }
 
 }

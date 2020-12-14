@@ -107,11 +107,14 @@ public final class CommandLineTools {
     long startTime = System.currentTimeMillis();
     List<RuleMatch> ruleMatches = lt.check(new AnnotatedTextBuilder().addText(contents).build(), true, JLanguageTool.ParagraphHandling.NORMAL,
       null, JLanguageTool.Mode.ALL, level);
-    // adjust line numbers
-    for (RuleMatch r : ruleMatches) {
+    ruleMatches.parallelStream().forEach(r -> {
+      // adjust line numbers
       r.setLine(r.getLine() + lineOffset);
       r.setEndLine(r.getEndLine() + lineOffset);
-    }
+
+      // calculate lazy suggestions in parallel and cache them
+      r.getSuggestedReplacementObjects();
+    });
     if (isXmlFormat) {
       if (listUnknownWords && apiMode == StringTools.ApiPrintMode.NORMAL_API) {
         unknownWords = lt.getUnknownWords();
@@ -199,11 +202,9 @@ public final class CommandLineTools {
       } else if (rule.getUrl() != null) {
         System.out.println("More info: " + rule.getUrl());
       }
-      if (rule instanceof AbstractPatternRule) {
-        List<Tag> tags = rule.getTags();
-        if (!tags.isEmpty()) {
-          System.out.println("Tags: " + tags);
-        }
+      List<Tag> tags = rule.getTags();
+      if (!tags.isEmpty()) {
+        System.out.println("Tags: " + tags);
       }
       if (i < ruleMatches.size()) {
         System.out.println();

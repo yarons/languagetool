@@ -58,6 +58,7 @@ import org.languagetool.AnalyzedTokenReadings;
 import org.languagetool.JLanguageTool;
 import org.languagetool.Language;
 import org.languagetool.Languages;
+import org.languagetool.gui.Configuration;
 import org.languagetool.gui.Tools;
 
 import com.sun.star.beans.PropertyState;
@@ -98,6 +99,7 @@ public class SpellAndGrammarCheckDialog extends Thread {
   private Locale locale;
   private int checkType = 0;
   private DocumentCache docCache;
+  private boolean doInit = true;
   
   SpellAndGrammarCheckDialog(XComponentContext xContext, MultiDocumentsHandler documents, Language language) {
     debugMode = OfficeTools.DEBUG_MODE_CD;
@@ -113,8 +115,14 @@ public class SpellAndGrammarCheckDialog extends Thread {
    * Initialize LanguageTool to run in LT check dialog and next error function
    */
   private void setLangTool(MultiDocumentsHandler documents, Language language) {
-    langTool = documents.initLanguageTool(language);
+    langTool = documents.initLanguageTool(language, false);
     documents.initCheck(langTool, LinguisticServices.getLocale(language));
+    if (debugMode) {
+      for (String id : langTool.getDisabledRules()) {
+        MessageHandler.printToLogFile("After init disabled rule: " + id);
+      }
+    }
+    doInit = false;
   }
 
   /**
@@ -135,6 +143,24 @@ public class SpellAndGrammarCheckDialog extends Thread {
   }
 
   /**
+   * Update the cache of the current document 
+   */
+  private DocumentCache updateDocumentCache(XComponent xComponent, DocumentCursorTools docCursor, SingleDocument document) {
+    DocumentCache docCache = document.getUpdatedDocumentCache();
+    if (docCache == null) {
+      FlatParagraphTools flatPara = document.getFlatParagraphTools();
+      if (flatPara == null) {
+        flatPara = new FlatParagraphTools(xComponent);
+      } else {
+        flatPara.init();
+      }
+      Configuration config = documents.getConfiguration();
+      docCache = new DocumentCache(docCursor, flatPara, -1, config == null ? null : LinguisticServices.getLocale(config.getDefaultLanguage()));
+    }
+    return docCache;
+  }
+
+  /**
    * Find the next error relative to the position of cursor and set the view cursor to the position
    */
   public void nextError() {
@@ -149,13 +175,7 @@ public class SpellAndGrammarCheckDialog extends Thread {
     }
     XComponent xComponent = document.getXComponent();
     DocumentCursorTools docCursor = new DocumentCursorTools(xComponent);
-    FlatParagraphTools flatPara = document.getFlatParagraphTools();
-    if (flatPara == null) {
-      flatPara = new FlatParagraphTools(xComponent);
-    } else {
-      flatPara.init();
-    }
-    docCache = new DocumentCache(docCursor, flatPara, -1);
+    docCache = updateDocumentCache(xComponent, docCursor, document);
     if (docCache.size() <= 0) {
       return;
     }
@@ -281,17 +301,16 @@ public class SpellAndGrammarCheckDialog extends Thread {
       DocumentCursorTools docTools, Map<Integer, Set<Integer>> ignoredSpellMatches) {
     String text = docCache.getFlatParagraph(nFPara);
     locale = docCache.getFlatParagraphLocale(nFPara);
+    if (locale.Language.equals("zxx")) { // unknown Language 
+      locale = documents.getLocale();
+    }
+//    MessageHandler.printToLogFile("getNextErrorInParagraph: locale = " + locale.Language + "-" + locale.Country + "-" + locale.Variant);
     int[] footnotePosition = docCache.getFlatParagraphFootnotes(nFPara);
 
     CheckError sError = null;
     SingleProofreadingError gError = null;
     if (checkType != 2) {
-      int y = docCache.getNumberOfTextParagraph(nFPara);
-      if (y < 0) {
-        sError = getNextSpellErrorInParagraph (x, nFPara, text, locale, ignoredSpellMatches);
-      } else {
-        sError = getNextSpellErrorInParagraph (x, y, locale, docTools, ignoredSpellMatches);
-      }
+      sError = getNextSpellErrorInParagraph (x, nFPara, text, locale, ignoredSpellMatches);
     }
     if (checkType != 1) {
       gError = getNextGrammatikErrorInParagraph(x, nFPara, text, footnotePosition, locale, document);
@@ -306,25 +325,6 @@ public class SpellAndGrammarCheckDialog extends Thread {
     } else {
       return null;
     }
-  }
-  
-  /**
-   * Get the first spelling error in the text paragraph y at or after character position x
-   */
-  private CheckError getNextSpellErrorInParagraph (int x, int y, Locale locale,
-      DocumentCursorTools cursorTools, Map<Integer, Set<Integer>> ignoredSpellMatches) {
-    List<CheckError>  spellErrors = spellChecker.getSpellErrors(y, locale, cursorTools, ignoredSpellMatches);
-    if (spellErrors != null) {
-      for (CheckError spellError : spellErrors) {
-        if (spellError.error != null && spellError.error.nErrorStart >= x) {
-          if (debugMode) {
-            MessageHandler.printToLogFile("Next Error: ErrorStart == " + spellError.error.nErrorStart + ", x: " + x);
-          }
-          return spellError;
-        }
-      }
-    }
-    return null;
   }
   
   /**
@@ -349,8 +349,8 @@ public class SpellAndGrammarCheckDialog extends Thread {
   /**
    * Get the first grammatical error in the flat paragraph y at or after character position x
    */
-  SingleProofreadingError getNextGrammatikErrorInParagraph(int x, int y, String text, int[] footnotePosition, Locale locale, SingleDocument document) {
-    if (text == null || text.isEmpty() || x >= text.length()) {
+  SingleProofreadingError getNextGrammatikErrorInParagraph(int x, int nFPara, String text, int[] footnotePosition, Locale locale, SingleDocument document) {
+    if (text == null || text.isEmpty() || x >= text.length() || !documents.hasLocale(locale)) {
       return null;
     }
     PropertyValue[] propertyValues = { new PropertyValue("FootnotePositions", -1, footnotePosition, PropertyState.DIRECT_VALUE) };
@@ -365,17 +365,29 @@ public class SpellAndGrammarCheckDialog extends Thread {
     paRes.aProperties = propertyValues;
     paRes.aErrors = null;
     Language langForShortName = documents.getLanguage(locale);
-    if (!langForShortName.equals(lastLanguage)) {
+    if (doInit || !langForShortName.equals(lastLanguage)) {
       lastLanguage = langForShortName;
       setLangTool(documents, lastLanguage);
+      document.removeResultCache(nFPara);
     }
     while (paRes.nStartOfNextSentencePosition < text.length()) {
       paRes.nStartOfSentencePosition = paRes.nStartOfNextSentencePosition;
       paRes.nStartOfNextSentencePosition = text.length();
       paRes.nBehindEndOfSentencePosition = paRes.nStartOfNextSentencePosition;
-      paRes = document.getCheckResults(text, paRes, propertyValues, false, langTool, y);
+      if (debugMode) {
+        for (String id : langTool.getDisabledRules()) {
+          MessageHandler.printToLogFile("Dialog disabled rule: " + id);
+        }
+      }
+      paRes = document.getCheckResults(text, locale, paRes, propertyValues, false, langTool, nFPara);
       if (paRes.aErrors != null) {
+        if (debugMode) {
+          MessageHandler.printToLogFile("Number of Errors = " + paRes.aErrors.length);
+        }
         for (SingleProofreadingError error : paRes.aErrors) {
+          if (debugMode) {
+            MessageHandler.printToLogFile("Start: " + error.nErrorStart + ", ID: " + error.aRuleIdentifier);
+          }
           if (error.nErrorStart >= x) {
             return error;
           }        
@@ -410,8 +422,8 @@ public class SpellAndGrammarCheckDialog extends Thread {
         for (int i = 0; i < tokens.length; i++) {
           AnalyzedTokenReadings token = tokens[i];
           String sToken = token.getToken();
-          if(!token.isNonWord() && sToken.length() > 1) {
-            if (i < tokens.length - 1 && tokens[i + 1].getToken() == ".") {
+          if (!token.isNonWord() && sToken.length() > 1) {
+            if (i < tokens.length - 1 && tokens[i + 1].getToken().equals(".")) {
               sToken += ".";
             }
             if (xFlatPara != null) {
@@ -420,7 +432,7 @@ public class SpellAndGrammarCheckDialog extends Thread {
             if (locale == null) {
               locale = lang;
             }
-            if(!linguServices.isCorrectSpell(sToken, locale)) {
+            if (!linguServices.isCorrectSpell(sToken, locale)) {
               SingleProofreadingError aError = new SingleProofreadingError();
               if (debugMode) {
                 MessageHandler.printToLogFile("Error: Word: " + sToken 
@@ -825,7 +837,7 @@ public class SpellAndGrammarCheckDialog extends Thread {
     private String[] userDictionaries;
     private String informationUrl;
     private String docId;
-    private String lastLang;
+    private String lastLang = new String();
     private int x;
     private int y;
     private int endOfRange = -1;
@@ -841,10 +853,10 @@ public class SpellAndGrammarCheckDialog extends Thread {
      */
     public LtCheckDialog(XComponentContext xContext) {
       int begFirstCol = 10;
-      int widFirstCol = 450;
+      int widFirstCol = 440;
       int disFirstCol = 10;
       int buttonHigh = 30;
-      int begSecondCol = 470;
+      int begSecondCol = 460;
       int buttonWidthCol = 160;
       int buttonDistCol = 10;
       int buttonWidthRow = 120;
@@ -1137,6 +1149,9 @@ public class SpellAndGrammarCheckDialog extends Thread {
             }
             currentDocument = documents.getCurrentDocument();
             String newDocId = currentDocument.getDocID();
+            if (debugMode) {
+              MessageHandler.printToLogFile("Check Dialog: Window Focus gained: new docID = " + newDocId + ", old = " + docId);
+            }
             if (!docId.equals(newDocId)) {
               docId = newDocId;
               undoList = new ArrayList<UndoContainer>();
@@ -1193,6 +1208,8 @@ public class SpellAndGrammarCheckDialog extends Thread {
       int nEnd = tCursor.getString().length();
       if (nBegin < nEnd) {
         endOfRange = nEnd;
+      } else {
+        endOfRange = -1;
       }
       lastFlatPara = -1;
     }
@@ -1298,6 +1315,9 @@ public class SpellAndGrammarCheckDialog extends Thread {
         }
         
         Language lang = locale == null ? langTool.getLanguage() : documents.getLanguage(locale);
+        if (debugMode && langTool.getLanguage() == null) {
+          MessageHandler.printToLogFile("LT language == null");
+        }
         lastLang = lang.getTranslatedName(messages);
         language.setSelectedItem(lang.getTranslatedName(messages));
         changeLanguage.setEnabled(false);
@@ -1325,6 +1345,14 @@ public class SpellAndGrammarCheckDialog extends Thread {
         deactivateRule.setVisible(true);
         more.setVisible(false);
         focusLost = false;
+        suggestions.setListData(new String[0]);
+        errorDescription.setText("");
+        if (docCache.size() > 0) {
+          sentenceIncludeError.setText(docCache.getFlatParagraph(docCache.size() - 1));
+          locale = docCache.getFlatParagraphLocale(docCache.size() - 1);
+        }
+        Language lang = locale == null || !documents.hasLocale(locale)? langTool.getLanguage() : documents.getLanguage(locale);
+        language.setSelectedItem(lang.getTranslatedName(messages));
       }
     }
 
@@ -1384,7 +1412,7 @@ public class SpellAndGrammarCheckDialog extends Thread {
         color = Color.RED;
       } else {
         PropertyValue[] properties = error.aProperties;
-        for(PropertyValue property : properties) {
+        for (PropertyValue property : properties) {
           if ("LineColor".equals(property.Name)) {
             color = new Color((int) property.Value);
             break;
@@ -1405,7 +1433,7 @@ public class SpellAndGrammarCheckDialog extends Thread {
     private String getUrl(SingleProofreadingError error) {
       if (!isSpellError) {
         PropertyValue[] properties = error.aProperties;
-        for(PropertyValue property : properties) {
+        for (PropertyValue property : properties) {
           if ("FullCommentURL".equals(property.Name)) {
             String url = new String((String) property.Value);
             return url;
@@ -1414,29 +1442,25 @@ public class SpellAndGrammarCheckDialog extends Thread {
       }
       return null;
     }
-
+    
     /**
      * returns the next match
      * starting at the current cursor position
      */
     private CheckError getNextError(boolean startAtBegin) {
-      currentDocument = documents.getCurrentDocument();
-      if (currentDocument == null) {
-        return null;
-      }
       XComponent xComponent = currentDocument.getXComponent();
       DocumentCursorTools docCursor = new DocumentCursorTools(xComponent);
-      FlatParagraphTools flatPara = currentDocument.getFlatParagraphTools();
-      if (flatPara == null) {
-        flatPara = new FlatParagraphTools(xComponent);
-      } else {
-        flatPara.init();
-      }
-      docCache = new DocumentCache(docCursor, flatPara, -1);
+      docCache = updateDocumentCache(xComponent, docCursor, currentDocument);
       if (docCache.size() <= 0) {
+        MessageHandler.printToLogFile("getNextError: docCache size == 0: Return null");
         return null;
       }
       y = viewCursor.getViewCursorParagraph();
+      if (y >= docCache.textSize()) {
+        MessageHandler.printToLogFile("getNextError: y (= " + y + ") >= text size (= " + docCache.textSize() + "): Return null");
+        MessageHandler.showMessage(messages.getString("guiCheckComplete"), false);
+        return null;
+      }
       x = viewCursor.getViewCursorCharacter();
       if (startAtBegin) {
         x = 0;
@@ -1591,7 +1615,7 @@ public class SpellAndGrammarCheckDialog extends Thread {
         }
         removeSpellingMark(y);
       } else {
-        currentDocument.setIgnoredMatch(x, y);
+        currentDocument.setIgnoredMatch(x, y, error.aRuleIdentifier);
       }
       addUndo(x, y, "ignoreOnce", error.aRuleIdentifier);
       gotoNextError(true);
@@ -1612,8 +1636,9 @@ public class SpellAndGrammarCheckDialog extends Thread {
         documents.getLtDictionary().addIgnoredWord(wrongWord);
       } else {
         documents.ignoreRule(error.aRuleIdentifier, locale);
-        currentDocument.removeResultCache(nFlat);
+        documents.initDocuments();
         documents.resetDocument();
+        doInit = true;
       }
       addUndo(nFlat, "ignoreAll", error.aRuleIdentifier);
       gotoNextError(true);
@@ -1625,10 +1650,12 @@ public class SpellAndGrammarCheckDialog extends Thread {
     private void deactivateRule() {
       if (!isSpellError) {
         documents.deactivateRule(error.aRuleIdentifier, false);
+        documents.addDisabledRule(error.aRuleIdentifier);
+        documents.initDocuments();
         documents.resetDocument();
         int nFlat = lastFlatPara < 0 ? docCache.getFlatParagraphNumber(y) : lastFlatPara;
-        currentDocument.removeResultCache(nFlat);
         addUndo(nFlat, "deactivateRule", error.aRuleIdentifier);
+        doInit = true;
       }
       gotoNextError(true);
     }
@@ -1746,7 +1773,7 @@ public class SpellAndGrammarCheckDialog extends Thread {
         Map<Integer, List<Integer>> orgParas = spellChecker.replaceAllWordsInText(word, replace, docCursor, flatPara);
         if (orgParas != null) {
           addChangeUndo(lastFlatPara < 0 ? docCache.getFlatParagraphNumber(y) : lastFlatPara, word, replace, orgParas);
-          for(int nFlat : orgParas.keySet()) {
+          for (int nFlat : orgParas.keySet()) {
             currentDocument.removeResultCache(nFlat);
           }
         }
@@ -1826,6 +1853,7 @@ public class SpellAndGrammarCheckDialog extends Thread {
         int yUndo = lastUndo.y;
         XComponent xComponent = currentDocument.getXComponent();
         DocumentCursorTools docCursor = new DocumentCursorTools(xComponent);
+        docCache = updateDocumentCache(xComponent, docCursor, currentDocument);
         if (debugMode) {
           MessageHandler.printToLogFile("Undo: Action: " + action);
         }
@@ -1843,7 +1871,7 @@ public class SpellAndGrammarCheckDialog extends Thread {
               }
             }
           } else {
-            currentDocument.removeIgnoredMatch(xUndo, yUndo);
+            currentDocument.removeIgnoredMatch(xUndo, yUndo, lastUndo.ruleId);
           }
         } else if (action.equals("ignoreAll")) {
           if (lastUndo.ruleId.equals(spellRuleId)) {
@@ -1853,13 +1881,17 @@ public class SpellAndGrammarCheckDialog extends Thread {
             documents.getLtDictionary().removeIgnoredWord(wrongWord);
           } else {
             documents.removeDisabledRule(lastUndo.ruleId);
-            documents.setRecheck();
+            documents.initDocuments();
             documents.resetDocument();
+            doInit = true;
           }
         } else if (action.equals("deactivateRule")) {
           currentDocument.removeResultCache(yUndo);
           documents.deactivateRule(lastUndo.ruleId, true);
+          documents.removeDisabledRule(lastUndo.ruleId);
+          documents.initDocuments();
           documents.resetDocument();
+          doInit = true;
         } else if (action.equals("addToDictionary")) {
           documents.getLtDictionary().removeWordFromDictionary(lastUndo.ruleId, lastUndo.word, xContext);
         } else if (action.equals("changeLanguage")) {
@@ -1883,7 +1915,7 @@ public class SpellAndGrammarCheckDialog extends Thread {
           FlatParagraphTools flatPara = currentDocument.getFlatParagraphTools();
           Map<Integer, List<Integer>> paras = lastUndo.orgParas;
           short length = (short) lastUndo.ruleId.length();
-          for(int nFlat : paras.keySet()) {
+          for (int nFlat : paras.keySet()) {
             int n = docCache.getNumberOfTextParagraph(nFlat);
             List<Integer> xStarts = paras.get(nFlat);
             if (debugMode) {
@@ -1891,10 +1923,10 @@ public class SpellAndGrammarCheckDialog extends Thread {
             }
             if (n >= 0) {
               pCursor.gotoStart(false);
-              for(int i = 0; i < n; i++) {
+              for (int i = 0; i < n; i++) {
                 pCursor.gotoNextParagraph(false);
               }
-              for(int i = xStarts.size() - 1; i >= 0; i --) {
+              for (int i = xStarts.size() - 1; i >= 0; i --) {
                 int xStart = xStarts.get(i);
                 pCursor.gotoStartOfParagraph(false);
                 pCursor.goRight((short)xStart, false);
@@ -1903,7 +1935,7 @@ public class SpellAndGrammarCheckDialog extends Thread {
               }
             } else {
               String para = docCache.getFlatParagraph(nFlat);
-              for(int i = xStarts.size() - 1; i >= 0; i --) {
+              for (int i = xStarts.size() - 1; i >= 0; i --) {
                 int xStart = xStarts.get(i);
                 para = para.substring(0, xStart) + lastUndo.word + para.substring(xStart + length);
                 flatPara.changeTextOfParagraph(nFlat, xStart, length, lastUndo.word);

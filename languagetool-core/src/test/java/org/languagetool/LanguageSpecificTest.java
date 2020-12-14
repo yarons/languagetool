@@ -47,6 +47,7 @@ public class LanguageSpecificTest {
 
   protected void runTests(Language lang, String onlyRunCode, String additionalValidationChars) throws IOException {
     new WordListValidatorTest(additionalValidationChars).testWordListValidity(lang);
+    testNoLineBreaksEtcInMessage(lang);
     testNoQuotesAroundSuggestion(lang);
     testJavaRules(onlyRunCode);
     //testExampleAvailable(onlyRunCode);
@@ -57,6 +58,37 @@ public class LanguageSpecificTest {
       new DisambiguationRuleTest().testDisambiguationRulesFromXML();
     } catch (Exception e) {
       throw new RuntimeException(e);
+    }
+  }
+
+  private void testNoLineBreaksEtcInMessage(Language lang) {
+    if (lang.getMaintainedState() == LanguageMaintainedState.LookingForNewMaintainer) {
+      // avoid printing too many warnings that nobody takes care of
+      System.err.println("Skipping message tests for unmaintained language " + lang);
+      return;
+    }
+    JLanguageTool lt = new JLanguageTool(lang);
+    for (Rule rule : lt.getAllRules()) {
+      if (lang.getShortCode().equals("en") && rule.getId().startsWith("EUPUB_")) {  // ignore, turned off anyway
+        continue;
+      }
+      if (rule instanceof AbstractPatternRule) {
+        AbstractPatternRule pRule = (AbstractPatternRule) rule;
+        String message = pRule.getMessage();
+        String prefix = "*** WARNING: " + lang.getShortCode() + ": " + rule.getFullId() + " from " + pRule.getSourceFile();
+        if (message.contains("\n") || message.contains("\r")) {
+          System.err.println(prefix + " contains line break (\\n or \\r): " + message.replace("\n", "\\n").replace("\r", "\\r"));
+        }
+        if (message.contains("\t")) {
+          System.err.println(prefix + " contains tab (\\t): " + message.replace("\t", "\\t"));
+        }
+        if (message.contains("  ")) {
+          System.err.println(prefix + " contains two consecutive spaces in message: " + message);
+        }
+        if (rule.getDescription().contains("  ")) {
+          System.err.println(prefix + " contains two consecutive spaces in description: " + rule.getDescription());
+        }
+      }
     }
   }
 
@@ -97,6 +129,8 @@ public class LanguageSpecificTest {
   private final static Map<String, Integer> idToExpectedMatches = new HashMap<>();
   static {
     idToExpectedMatches.put("STYLE_REPEATED_WORD_RULE_DE", 2);
+    idToExpectedMatches.put("STYLE_REPEATED_SHORT_SENTENCES", 3);
+    idToExpectedMatches.put("STYLE_REPEATED_SENTENCE_BEGINNING", 3);
   }
   private void testJavaRules(String onlyRunCode) throws IOException {
     Map<String,String> idsToClassName = new HashMap<>();
@@ -226,7 +260,7 @@ public class LanguageSpecificTest {
   private void testCorrectExamples(Rule rule, JLanguageTool lt) throws IOException {
     List<CorrectExample> correctExamples = rule.getCorrectExamples();
     for (CorrectExample correctExample : correctExamples) {
-      String input = cleanMarkers(correctExample.getExample());
+      String input = ExampleSentence.cleanMarkersInExample(correctExample.getExample());
       enableOnlyOneRule(lt, rule);
       List<RuleMatch> ruleMatches = lt.check(input);
       assertEquals("Got unexpected rule match for correct example sentence:\n"
@@ -239,7 +273,7 @@ public class LanguageSpecificTest {
   private void testIncorrectExamples(Rule rule, JLanguageTool lt) throws IOException {
     List<IncorrectExample> incorrectExamples = rule.getIncorrectExamples();
     for (IncorrectExample incorrectExample : incorrectExamples) {
-      String input = cleanMarkers(incorrectExample.getExample());
+      String input = ExampleSentence.cleanMarkersInExample(incorrectExample.getExample());
       enableOnlyOneRule(lt, rule);
       List<RuleMatch> ruleMatches = lt.check(input);
       assertEquals("Did not get the expected rule match for the incorrect example sentence:\n"
@@ -254,10 +288,6 @@ public class LanguageSpecificTest {
       lt.disableRule(rule.getId());
     }
     lt.enableRule(ruleToActivate.getId());
-  }
-
-  private String cleanMarkers(String example) {
-    return example.replace("<marker>", "").replace("</marker>", "");
   }
 
   private void countTempOffRules(Language lang) {

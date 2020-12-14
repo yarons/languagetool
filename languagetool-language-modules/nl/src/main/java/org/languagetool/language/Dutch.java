@@ -39,7 +39,14 @@ import java.util.*;
 
 public class Dutch extends Language {
 
+  private static final Language NETHERLANDS_DUTCH = new Dutch();
+
   private LanguageModel languageModel;
+
+  @Override
+  public Language getDefaultLanguageVariant() {
+    return NETHERLANDS_DUTCH;
+  }
 
   @Override
   public String getName() {
@@ -175,6 +182,7 @@ public class Dutch extends Language {
       case "KORT_2": return -5;  //so that spelling errors are recognized first
       case "EINDE_ZIN_ONVERWACHT": return -5;  //so that spelling errors are recognized first
       case "TOO_LONG_PARAGRAPH": return -15;
+      case "DE_ONVERWACHT": return -20;  // below spell checker and simple replace rule
     }
     return super.getPriorityForId(id);
   }
@@ -183,6 +191,7 @@ public class Dutch extends Language {
   public List<String> getRuleFileNames() {
     List<String> ruleFileNames = super.getRuleFileNames();
     String dirBase = JLanguageTool.getDataBroker().getRulesDir() + "/" + getShortCode() + "/";
+    ruleFileNames.add(dirBase + "nl-NL/grammar.xml");
     ruleFileNames.add(dirBase + "grammar-test-1.xml");
     return ruleFileNames;
   }

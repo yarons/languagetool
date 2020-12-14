@@ -4,12 +4,12 @@ title="Pretty print" ?>
 <?xml-stylesheet type="text/css" href="../rules.css"
 title="Easy editing stylesheet" ?>
 
-    <!--
+ <!--
  Portuguese (Portugal - prereform + postreform) - Grammar and Typo Rules for LanguageTool.
  Copyright © 2012-2020 Marco A.G.Pinto (www.marcoagpinto.com)
  Copyright © 2016-2020 Tiago F. Santos (tiagofsantos81@sapo.pt)
 
- Thanks to Juan Martorell, Daniel Naber and Yakov Reztsov who mentored the project.
+ Thanks to Juan Martorell, Daniel Naber, Jaume Ortolà and Yakov Reztsov who mentored the project.
 
  This library is free software; you can redistribute it and/or
  modify it under the terms of the GNU Lesser General Public
@@ -26,6 +26,7 @@ title="Easy editing stylesheet" ?>
  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
 
 -->
+
   <!DOCTYPE rules [
     <!ENTITY meses_ano_abrev "(?:[Jj](?:an|u[nl])|[Ff]ev|ma[ir]|[Aa](?:br|go)|[Ss]et|[Oo]ut|[Nn]ov|[Dd]ez)">
     <!ENTITY meses_ano "(?:[Jj](?:aneiro|u[ln]ho)|[Ff]evereiro|[Mm]a(?:io|rço)|[Aa](?:bril|gosto)|[Ss]etembro|[Oo]utubro|[Nn]ovembro|[Dd]ezembro)">
@@ -99,7 +100,7 @@ title="Easy editing stylesheet" ?>
     <!ENTITY adj_nomes_paronimos_eh_2 "incêndio">
     <!ENTITY adj_nomes_paronimos_i "(?:(?:c(?:a(?:l(?:í(?:graf|cul)o|orífic[ao])|pítul[ao]|rícia)|o(?:n(?:ventícul|cíli)o|mpartícipe)|í(?:(?:rc(?:ul|i)|ngul)o|tola)|(?:entrífug|línic)[ao]|i(?:entífic[ao]|lício)|r(?:ític[ao]|atícula))|p(?:r(?:(?:o(?:lífic|píci)|ístin)[ao]|e(?:s(?:tíg|íd)io|cípite)|incípio)|a(?:r(?:alític[ao]|tícipe)|cífic[ao]|negírico)|e(?:(?:stífer|trífic)[ao]|rícia)|olí(?:tic[ao]|cia)|lanímetro|ílula)|s(?:í(?:(?:(?:mbo|bi)l|ti)o|n(?:cop[ae]|dico)|lab[ao]|stole)|(?:(?:o(?:fís|mí)|ilogís)t|a(?:ngu|cr)íf)ic[ao]|u(?:bs(?:tantífic[ao]|ídio)|dorífic[ao]|plício)|e(?:mítono|vícia))|m(?:a(?:l(?:efício|ícia)|gnífic[ao]|trícula)|í(?:(?:mic|ser)[ao]|n(?:gua|io)|lite)|e(?:(?:tafís|líf)ic|retríci)[ao]|i(?:lí(?:metro|cia)|rífic[ao])|unício)|e(?:s(?:t(?:í(?:mulo|pula)|rídul[ao])|p(?:í(?:cul|rit)|ecífic)[ao])|pí(?:t(?:eto|ome)|grafe|stola|logo)|x(?:í(?:lio|mia)|plícit[ao])|dícula|lícito|fígie)|a(?:(?:(?:dmin|pend)ícul|rt(?:ifíci|ícul)|bsínti)o|u(?:(?:spíc|xíl)io|rífic[ao]|tocrítica)|l(?:tísson[ao]|ívio)|cídul[ao]|ntífona)|v(?:e(?:r(?:mí(?:fug[ao]|culo)|sífic[ao])|(?:nefíci|ícul)o)|í(?:(?:rgul|spor|tim)a|(?:ncul|ci)o)|i(?:talíci|vífic)[ao])|i(?:n(?:sí(?:(?:gn|d)ia|pid[ao])|d(?:ivídu[ao]|ício)|vídia|ício)|gn(?:ífug[ao]|omínia)|legítim[ao]|cterícia|rídio)|d(?:e(?:(?:sprestígi|ntícul)o|ífic[ao]|lícia)|í(?:(?:sson|zim)[ao]|gito)|(?:omicíl|issíd)io|(?:ulc|an)ífic[ao])|l(?:(?:í(?:[rt]ic|cit|dim|gul|vid)|e(?:gí(?:fer|tim)|tífic)|apidífic)[ao]|i(?:tígio|xívia))|f(?:a(?:lsífic[ao]|stígio)|r(?:igorífic[ao]|ígia)|í(?:mbri|stul)a|lagício)|í(?:n(?:(?:t(?:egr|im)|cub)[ao]|dic[ao]|sula)|mp(?:rob[ao]|eto))|h(?:o(?:(?:no|r)rífic[ao]|m(?:icídio|ília))|í(?:br|sp)id[ao])|r(?:e(?:(?:iníc|míg)io|cíproc[ao])|uí(?:do|na)|odízio)|t(?:í(?:[ps]ic[ao]|tulo)|errífic[ao]|ríbulo)|(?:(?:jornalíst|gratíf)ic|quadrícul)[ao]|be(?:atífic[ao]|nefício)|(?:utensíl|ofíc)io|(?:notíc|zín)ia))s?">
     <!ENTITY adj_nomes_paronimos_i_2 "(?:dívida|lídere)s?">
-    <!ENTITY verb_detecao_paronimos_i "(?:acidul[ao]|altisson[ao]|antifona|apendiculo|articulo|caliculo|caligrafo|capitul[ao]|centrifug[ao]|cingulo|circulo|citola|conventiculo|craticula|denticulo|disson[ao]|edicula|epigrafe|epilogo|epistola|epiteto|epitome|espicul[ao]|estimulo|estipula|estridul[ao]|fistula|impeto|improb[ao]|incub[ao]|insula|integr[ao]|legifer[ao]|lidere|ligul[ao]|matricula|mingua|miser[ao]|pestifer[ao]|pilula|planimetro|quadricul[ao]|reciproc[ao]|ruido|ruina|semitono|silab[ao]|simbolo|sincopa|sincope|sistole|titulo|tribulo|veiculo|vermiculo|vermifug[ao]|vinculo|virgula|vispora)s?">
+    <!ENTITY verb_detecao_paronimos_i "(?:acidul[ao]|altisson[ao]|antifona|apendiculo|articulo|caliculo|caligrafo|capitul[ao]|centrifug[ao]|cingulo|circulo|citola|conventiculo|craticula|denticulo|disson[ao]|edicula|epigrafe|epilogo|epistola|epiteto|epitome|espicul[ao]|estimulo|estipula|estridul[ao]|fistula|impeto|improb[ao]|incub[ao]|insula|integr[ao]|legifer[ao]|legitim[ao]|lidere|ligul[ao]|matricula|mingua|miser[ao]|pestifer[ao]|pilula|planimetro|quadricul[ao]|reciproc[ao]|ruido|ruina|semitono|silab[ao]|simbolo|sincopa|sincope|sistole|titulo|tribulo|veiculo|vermiculo|vermifug[ao]|vinculo|virgula|vispora)s?">
     <!--ENTITY verb_detecao_paronimos_especiais_i "(?:absintio|adminiculo|alivio|artificio|aurific[ao]|auspicio|autocritica|auxilio|beatific[ao]|beneficio|calorific[ao]|caricia|cientific[ao]|cilicio|circio|clinic[ao]|comparticipe|concilio|critic[ao]|danific[ao]|deific[ao]|delicia|desprestigio|digito|dissidio|dizim[ao]|domicilio|dulcific[ao]|efigie|elicito|especific[ao]|espirit[ao]|exilio|eximia|explicit[ao]|falsific[ao]|fastigio|fimbria|flagicio|frigia|frigorific[ao]|gratific[ao]|hibrid[ao]|hispid[ao]|homicidio|homilia|honorific[ao]|horrific[ao]|ictericia|ignifug[ao]|ignominia|ilegitim[ao]|indica|indicio|indico|individu[ao]|inicio|insidia|insignia|insipid[ao]|intim[ao]|invidia|iridio|jornalistic[ao]|lapidific[ao]|legitim[ao]|letific[ao]|licit[ao]|lidim[ao]|liric[ao]|litic[ao]|litigio|livid[ao]|lixivia|magnific[ao]|maleficio|malicia|melific[ao]|meretrici[ao]|metafisic[ao]|milicia|milimetro|milite|mimic[ao]|minio|mirific[ao]|municio|noticia|oficio|pacific[ao]|panegirico|paralitic[ao]|participe|pericia|petrific[ao]|policia|politic[ao]|precipite|presidio|prestigio|principio|pristin[ao]|prolific[ao]|propici[ao]|reinicio|remigio|rodizio|sacrific[ao]|sanguific[ao]|sevicia|sibilo|silogistic[ao]|sindico|sitio|sofistic[ao]|somitic[ao]|subsidio|substantific[ao]|sudorific[ao]|suplicio|terrific[ao]|tipic[ao]|tisic[ao]|utensilio|veneficio|versific[ao]|vicio|vitalici[ao]|vitima|vivific[ao]|zinia)?" -->
     <!ENTITY adj_nomes_paronimos_o "(?:(?:p(?:r(?:ó(?:(?:sper|dig)[ao]|logo)|o(?:g?nóstic[ao]|pósito)|epóster[ao])|a(?:l(?:eógraf[ao]|matória)|ró(?:qu|d)ia|ntógrafo)|sicó(?:log[ao]|grafo)|(?:ornógraf|eróxid)o|iró(?:grafo|lise)|lasmólise|óvoa)|a(?:pó(?:st(?:rof[eo]|ol[ao]|ata)|cope|zema)|ut(?:o(?:biógraf[ao]|cópia)|ógrafo)|n(?:imatógrafo|ódin[ao])|c(?:róstic[ao]|ólito)|r(?:teriógrafo|dósia)|bób(?:ad|or)a)|c(?:o(?:(?:(?:nsór?c|lóqu)i|piógraf)o|r(?:eógraf[ao]|ógrafo))|a(?:rtógraf[ao]|l?cógrafo)|(?:riptógraf|ustódi)[ao]|ó(?:p(?:ul|i)|ceg)a|inematógrafo)|e(?:s(?:t(?:e(?:nógraf[ao]|reótipo)|ória)|pó(?:r(?:tula|ulo)|lio)|có(?:lio|ria))|(?:pisó|xór)dio|ntrópic[ao]|lectrólise)|d(?:e(?:s(?:propósito|memória)|mógraf[ao]|pósito)|i(?:(?:agnóstic|vórci)o|strófic[ao])|a(?:ctilógraf[ao]|guerreótipo))|f(?:o(?:t(?:ó(?:graf[ao]|tipo)|ocópia)|nógrafo)|ó(?:rm(?:ic[ao]|ula)|(?:sfor|li)o)|a(?:lpórr|róf)ia|ilósof[ao]|lóculo)|m(?:onó(?:(?:log|tip)o|graf[ao]|dia)|i(?:cró(?:graf|bi)|meógraf)o|ó(?:d(?:ic[ao]|ulo)|bile)|e(?:canógraf[ao]|mória))|h(?:o(?:(?:lógraf|mólog)[ao]|róscopo)|i(?:drólise|stória)|(?:emólis|ósped)e)|r(?:e(?:t(?:rógrad|óric)[ao]|pertório)|ó(?:tul[ao]|cio)|adiodiagnóstico)|t(?:(?:(?:elefot|[io]p)ógraf|rópic)[ao]|ó(?:xic[ao]|rculo|pia))|b(?:i(?:ó(?:graf[ao]|psia)|bliógraf[ao]|nóculo)|azófi[ao])|l(?:i(?:tógraf[ao]|nótipo|pólise)|(?:exicógraf|ógic)[ao])|ó(?:(?:(?:v[au]|scu)l|xid)o|p(?:era|io)|bvi[ao]|rbita)|i(?:d(?:eógraf[ao]|ólatra)|mprópri[ao]|nvólucro)|n(?:e(?:crológ|góc)io|ódoa)|z(?:incógraf[ao]|oógrafo)|s(?:olilóquio|ólid[ao])|g(?:eógraf[ao]|lória)|(?:quir|xil)ógrafo|v(?:angl|it)ória|ort?ógraf[ao]))s?">
     <!ENTITY adj_nomes_paronimos_o_2 "(?:eutrófic[ao])s?">
@@ -110,14 +111,14 @@ title="Easy editing stylesheet" ?>
     <!ENTITY art_detecao_F "(?:(?:[mts](?:ua)|minha|[nv]ossa)|(?:d|n|pel)?(?:outr)?a|à)s?|(?:alg|d|n)?(?:umas?)">
     <!ENTITY art_detecao_M "(?:(?:[mts](?:eu)|[nv]osso)|(?:d|n|pel)?(?:outr)?o|ao)s?|(alg|d|n)?(?:um|uns)">
 
-    <!ENTITY arcaismos "(?:a(?:bominábil|borrimento|bsentar|bsumir|ceiro|chacar|coiteza|contista|có|dvogacia|guazil|H|lacrão|lantíase|lbora|lfaça|lgibebe|lguazil|lgur|lgures|lmeida|lmenara|lvazir|mictório|morar|mículo|nrique|ntigüidade|ntão|periente|quessa|quesse|questa|queste|questo|rcocentro|tá|utopse|çucre)|b(?:andir|anguê|enção|oa-venturança|odalha|ofé|ródio|uliço)|Brazil|c(?:afofo|alendairo|arpinteiragem|assar|ham|hara|oidar|omest[ao]|ommummente|omua|oncassor|onvescote|recimento|relgo|réligo|ã|ôvado)|d(?:esemparar|esnobre|evisar|iabro|iese|ino|iésis|olor|orosamente|oroso|íesis)|e(?:mpacar|ngrês|ntonce|ntrelocutor|sto|xprimentava)|f(?:acha|atexa|enestra|imatíase|imia|logose)|g(?:alactooligossacarídeo|alripo|asista|iolhos|odalho|odeme|ramasso|uanabarense|uanabarino)|heréu|i(?:migo|mpida|ngrês|nté)|j(?:au|avaril|ericocim|ugadar|órnea)|l(?:eixar|erpe|oar|oeste|ucivelo|ucivéu|umiar|üa)|Lixboa|m(?:armeluta|eadade|ecê|olher|oínho|uitieramá|uxica)|n(?:ace|am|aom|aqueste|osomania)|o(?:bfirmar|bseqüente|cisão|nte|urinol)|p(?:aje|ascigo|assal|harmácia|ortuguez|roditor)|querena|r(?:eferta|oldar|uidento)|s(?:ainho|alhar|alvanor|apanga|apaão|ene|ilvano|oer|upresso|uso|énio)|t(?:artamelar|aubateense|avolagem|eed.+|ábula|ávola)|unun-héxio|v(?:ascongadas|assuncê|iado|itando|osco|osmecê|ossancê))">
-    <!ENTITY barbarismos "(?:s(?:t(?:r(?:ip(?:tease[rs]?|per|s)?|ess.*|ogonoff|aight)|a(?:nd(?:ard|s)?|ccato|rtup|ff)|o(?:ryboard|kes|ck|p)|i(?:ck|lb)|e(?:nt|p))|p(?:r(?:int(?:er|s)?|ead|ay|ue)|in(?:naker|s)?|a[ms]?|ot)|u(?:b(?:-holding|woofer)|s(?:pense|hi)|perstar|doku|rf)|h(?:ar(?:eware|-pei)|o(?:[tw]|pping)|iatsu|ekel|unt)|a(?:(?:xhor|loo)n|mple[rs]?|shimi|vart)|c(?:herz(?:and)?o|rewball|o[np]e|at)|n(?:o(?:wboard|oker|b)|ack(?:-bar)?)|o(?:(?:cialit|ttovoc|ftwar)e|ul)|m(?:o(?:(?:kin)?g|rzando)|ash)|l(?:i(?:ck|de|p)|alom|ogan)|e(?:t(?:-point|ter)?|xy)|w(?:eat(?:shirt|er)|ing)|i(?:decar|evert|ngle|c)|fo(?:rzand|gat)o|k(?:ipper|ate)|quash)|c(?:a(?:n(?:ta(?:bile|ta)|yoning|iche)|r(?:diofitness|paccio|ré)|(?:che-sex|lzon)e|m(?:p(?:us)?|ber)|t(?:ering|gut)|sh-and-carry)|o(?:r(?:don-bleu|pus)|u(?:lomb|ntry)|(?:spla|wbo)y|(?:ck|v)er|loratura|ntinuum|okie)|h(?:a(?:r(?:leston|treuse)|ise-longue)|e(?:ong-sam|ck-in|ddar)|utney)|l(?:ear(?:ance|s)?|u(?:ster|b)|ipboard|oisonné|arke)|r(?:o(?:issan|que)t|evasse)|zar(?:s?ti|ina)|(?:élad|ân)on|u(?:mbia|p)|ódex|ent)|p(?:a(?:nach(?:és?|es?)|t(?:chouli|hos)|intball|parazzi|hoehoe|lmier|anga|rsec|ssim)|i(?:n(?:s(?:cher)?|ce-nez|g-pong|-?up)?|(?:anofort|ckl)e|ercing|dgin|xel|lé)|o(?:st(?:er(?:iori|s)|-it)|(?:odl|ch|is)e|ltergeist|t-?pourri|grom|p)|e(?:(?:tit-suiss|nc)e|restroika|corino)|r(?:i(?:ori|se)|omenade|essing|áxis)|lay(?:b(?:ack|oy)|station|maker)|hot(?:o(?:-finish|maton)|s)?|u(?:tter|zzle|nk|b))|t(?:a(?:(?:sk-forc|wni)e|l(?:k-show|iban)|ke(?:away|s)?|n(?:dem|k)|volatura|ekwondo|i-chi|blet)|u(?:t(?:(?:ilimúnd|t)i|u)|rbo-diesel|pperware|grik)|r(?:i(?:p(?:-hop|lex)|al)|a(?:velling|iler)|emolo)|i(?:me(?:-sharing|share)|e-break|ramisu|cket)|e(?:le(?:marketing|x)|(?:rylen)?e|chno|flon)|o(?:p(?:(?:les)?s)?|ner|fu|ri)|h(?:esaur(?:us|i)|ink)|(?:w(?:ee|is)|-shir)t|sunami|ópos)|b(?:a(?:by-(?:sitter|doll|grow)|(?:varois|din)e|ckup|ht|rn)|r(?:e(?:akdance|nt)|u(?:shing|nch)|ainstorming|ie)|e(?:ta-tester|nedictus|cquerel|agle|bop)|o(?:bsleigh|dyboard|nsai|xers|ate|rt)|i(?:t(?:map|s)?|odesign|g-bang|p)|u(?:ngee-jumping)|l(?:ister|ague|ues|og)|yte)|k(?:i(?:l(?:o(?:(?:vol|wat)t|b(?:yte|it))|im|t)|t(?:chenette|s(?:ch)?)?|ckbox(?:ing|er)|n[ag]|butz|p)|a(?:r(?:a(?:oke|té)|bovanet|ting)|lash(?:nikov|s)?|mikaze|sba)|r(?:(?:ípto|emli)n|aft|ill)|wa(?:(?:ch|nz)a|shiorkor)|e(?:f(?:fieh|ir)|tchup)|un(?:g-fu|a)|oala|yat)|r(?:o(?:c(?:k(?:er|s)?|aille)|(?:entge|ll-o)n|ttweiler|quefort|aming|okie|deo)|e(?:a(?:lpolitik|dy-made)|p(?:rise|s)|dneck|ggae|m)|i(?:n(?:forzando|ggit|k)|ckettsia|tardando|ff)|a(?:l(?:lentando|enti)|p(?:per|s)?|fting|ve)|é(?:veillon|gie|tro)|öntgen|ubato)|m(?:a(?:t(?:ch-point|rioska)|r(?:keting|chand)|(?:estos|mb)o|(?:st?e|yo)r|na(?:ger|t)|gnificat|jorette|xwell|quis)|i(?:l(?:curie|ady)|s(?:erere|ter)|ndfulness|crofarad)|o(?:d(?:e(?:rato|m)|us)|hair)|e(?:morandum|dley)|u(?:sic-hall|esli)|vdol)|f(?:o(?:[bg]|x(?:-terrier|trot)?|r(?:tran|int)|ndue|yer|lk)|a(?:i(?:t-divers|r-play)|rad(?:ay|s)?|nfreluche|twa|x)|l(?:a(?:sh(?:es)?|menco|t)|i(?:p-flop|nt)|ute)|u(?:n(?:board|ky?)|gato|ton)|r(?:anchising|eeware)|ermata|itness|öhn)|a(?:n(?:ti(?:-(?:establishment|apartheid|dumping)|trust)|gström)|p(?:felstrudel|paratchik|artheid|lomb)|l(?:legr(?:ett)?o|zheimer|ibi)|c(?:celerandos?|id-jazz)|uto(?:pullman|cross)|git(?:-?prop|ato)|yurveda|mabile|irbus)|d(?:o(?:p(?:ing|pler)|wnhill|car|jo|ng)|r(?:ive(?:[rs]|-in)?|ugstore)|e(?:sign(?:er)?|ficit|bye)|i(?:s(?:cman|eur)|rham)|u(?:mping|plex|ce)|a(?:nzón|tcha))|g(?:i(?:ga(?:byte|watt)|rlsband|lbert|nseng)|o(?:(?:odwil|spe)l|belet|uda)|l(?:a(?:snost|mour)|ide)|u(?:aracha|lag)|ru(?:yèr|ng)e|a[ly]|eyser)|h(?:a(?:b(?:it(?:at|us)|anera)|(?:m-ioc-chon|shta)g|rd-rock)|i(?:p(?:p(?:ie|y)|-hop)|drospeed)|o(?:rseball|lding|mo)|eavy-metal|usky|ype)|v(?:i(?:de(?:ocl(?:ip(?:es)?|ub)|s)?|(?:t(?:rin|a)|ntag|vac)e|brato)|e(?:r(?:nissage|sus)|lcro|gan)|o(?:lt(?:e-face|s)?|yeur)|audeville)|l(?:e(?:[dk]|a(?:sing|d)|itmotiv|gato)|o(?:c(?:kout|us)|oping|ess|gin)|a(?:rghetto|ser|mé|ts)|i(?:ngerie|fting))|o(?:ff(?:s(?:hore|et)|ice-boy|line)|s(?:tpolitik|sobuco)|u(?:tsider|guiya)|verbooking|n-?line|ersted|rigami|pus)|j(?:a(?:m(?:-session|boree)|c(?:kpot|uzzi)|zz)|o(?:int-ventur|ul)e|u(?:kebox|nkie)|et-(?:lag|set)|iu-jitsu)|w(?:a(?:(?:lkie-talki|ffl)e|rrant|sp|d)|e(?:b(?:er|s)?|stern)|i(?:ld-card|ndsurf)|o(?:rkshop|n)|hist)|i(?:n(?:ter(?:f(?:eron|ace)|net)|f(?:otainment|luenza)|-octavo|s)|(?:bid|t)em|mpedimenta|ppon|d)|n(?:e(?:(?:cessair|w-ag)e|(?:tspli)?t)|o(?:menklatura|ir)|apalm|uance|ylon)|e(?:n(?:s(?:alada|emble)|tente)|r(?:satz|g)|mmenthal|cstasy|vasé|dam)|qu(?:a(?:lifying|ntum|rk)|i(?:lohertz|che))|z(?:e(?:itgeist|kel|n)|apping)|y(?:u(?:ppie|an)|ang|eti|in)|u(?:ndergroun|ploa)d)">
+    <!ENTITY arcaismos "(?:a(?:bominábil|borrimento|bsentar|bsumir|ceiro|chacar|coiteza|contista|có|dvogacia|guazil|H|lacrão|lantíase|lbora|lfaça|lgibebe|lguazil|lgur|lmeida|lmenara|lvazir|mictório|morar|mículo|nrique|ntigüidade|ntão|periente|quessa|quesse|questa|queste|questo|rcocentro|tá|utopse|çucre)|b(?:andir|anguê|enção|oa-venturança|odalha|ofé|ródio|uliço)|Brazil|c(?:afofo|alendairo|arpinteiragem|assar|ham|hara|oidar|omest[ao]|ommummente|omua|oncassor|onvescote|recimento|relgo|réligo|ã|ôvado)|d(?:esemparar|esnobre|evisar|iabro|iese|ino|iésis|olor|orosamente|oroso|íesis)|e(?:mpacar|ngrês|ntonce|ntrelocutor|sto|xprimentava)|f(?:acha|atexa|enestra|imatíase|imia|logose)|g(?:alactooligossacarídeo|alripo|asista|iolhos|odalho|odeme|ramasso|uanabarense|uanabarino)|heréu|i(?:migo|mpida|ngrês|nté)|j(?:au|avaril|ericocim|ugadar|órnea)|l(?:eixar|erpe|oar|oeste|ucivelo|ucivéu|umiar|üa)|Lixboa|m(?:armeluta|eadade|ecê|olher|oínho|uitieramá|uxica)|n(?:ace|am|aom|aqueste|osomania)|o(?:bfirmar|bseqüente|cisão|nte|urinol)|p(?:aje|ascigo|assal|harmácia|ortuguez|roditor)|querena|r(?:eferta|oldar|uidento)|s(?:ainho|alhar|alvanor|apanga|apaão|ene|ilvano|oer|upresso|uso|énio)|t(?:artamelar|aubateense|avolagem|eed.+|ábula|ávola)|unun-héxio|v(?:ascongadas|assuncê|iado|itando|osco|osmecê|ossancê))">
+    <!ENTITY barbarismos "(?:s(?:t(?:r(?:ip(?:tease[rs]?|per|s)?|ess.*|ogonoff|aight)|a(?:nd(?:ard|s)?|ccato|rtup|ff)|o(?:ryboard|kes|ck|p)|i(?:ck|lb)|e(?:nt|p))|p(?:r(?:int(?:er|s)?|ead|ay|ue)|in(?:naker|s)?|a[ms]?|ot)|u(?:b(?:-holding|woofer)|s(?:pense|hi)|perstar|doku|rf)|h(?:ar(?:eware|-pei)|o(?:[tw]|pping)|iatsu|ekel|unt)|a(?:(?:xhor|loo)n|mple[rs]?|shimi|vart)|c(?:herz(?:and)?o|rewball|o[np]e|at)|n(?:o(?:wboard|oker|b)|ack(?:-bar)?)|o(?:(?:cialit|ttovoc|ftwar)e|ul)|m(?:o(?:(?:kin)?g|rzando)|ash)|l(?:i(?:ck|de|p)|alom|ogan)|e(?:t(?:-point|ter)?|xy)|w(?:eat(?:shirt|er)|ing)|i(?:decar|evert|ngle|c)|fo(?:rzand|gat)o|k(?:ipper|ate)|quash)|c(?:a(?:n(?:ta(?:bile|ta)|yoning|iche)|r(?:diofitness|paccio|ré)|(?:che-sex|lzon)e|m(?:p(?:us)?|ber)|t(?:ering|gut)|sh-and-carry)|o(?:r(?:don-bleu|pus)|u(?:lomb|ntry)|(?:spla|wbo)y|(?:ck|v)er|loratura|ntinuum|okie)|h(?:a(?:r(?:leston|treuse)|ise-longue)|e(?:ong-sam|ck-in|ddar)|utney)|l(?:ear(?:ance|s)?|u(?:ster|b)|ipboard|oisonné|arke)|r(?:o(?:issan|que)t|evasse)|zar(?:s?ti|ina)|(?:élad|ân)on|u(?:mbia|p)|ódex|ent)|p(?:a(?:nach(?:és?|es?)|t(?:chouli|hos)|intball|parazzi|hoehoe|lmier|anga|rsec|ssim)|i(?:n(?:s(?:cher)?|ce-nez|g-pong|-?up)?|(?:anofort|ckl)e|ercing|dgin|lé)|o(?:st(?:er(?:iori|s)|-it)|(?:odl|ch|is)e|ltergeist|t-?pourri|grom|p)|e(?:(?:tit-suiss|nc)e|restroika|corino)|r(?:i(?:ori|se)|omenade|essing|áxis)|lay(?:b(?:ack|oy)|station|maker)|hot(?:o(?:-finish|maton)|s)?|u(?:tter|zzle|nk|b))|t(?:a(?:(?:sk-forc|wni)e|l(?:k-show|iban)|ke(?:away|s)?|n(?:dem|k)|volatura|ekwondo|i-chi|blet)|u(?:t(?:(?:ilimúnd|t)i|u)|rbo-diesel|pperware|grik)|r(?:i(?:p(?:-hop|lex)|al)|a(?:velling|iler)|emolo)|i(?:me(?:-sharing|share)|e-break|ramisu|cket)|e(?:le(?:marketing|x)|(?:rylen)?e|chno|flon)|o(?:p(?:(?:les)?s)?|ner|fu|ri)|h(?:esaur(?:us|i)|ink)|(?:w(?:ee|is)|-shir)t|sunami|ópos)|b(?:a(?:by-(?:sitter|doll|grow)|(?:varois|din)e|ckup|ht|rn)|r(?:e(?:akdance|nt)|u(?:shing|nch)|ainstorming|ie)|e(?:ta-tester|nedictus|cquerel|agle|bop)|o(?:bsleigh|dyboard|nsai|xers|ate|rt)|i(?:t(?:map|s)?|odesign|g-bang|p)|u(?:ngee-jumping)|l(?:ister|ague|ues|og)|yte)|k(?:i(?:l(?:o(?:(?:vol|wat)t|b(?:yte|it))|im|t)|t(?:chenette|s(?:ch)?)?|ckbox(?:ing|er)|n[ag]|butz|p)|a(?:r(?:a(?:oke|té)|bovanet|ting)|lash(?:nikov|s)?|mikaze|sba)|r(?:(?:ípto|emli)n|aft|ill)|wa(?:(?:ch|nz)a|shiorkor)|e(?:f(?:fieh|ir)|tchup)|un(?:g-fu|a)|yat)|r(?:o(?:c(?:k(?:er|s)?|aille)|(?:entge|ll-o)n|ttweiler|quefort|aming|okie|deo)|e(?:a(?:lpolitik|dy-made)|p(?:rise|s)|dneck|ggae|m)|i(?:n(?:forzando|ggit|k)|ckettsia|tardando|ff)|a(?:l(?:lentando|enti)|p(?:per|s)?|fting|ve)|é(?:veillon|gie|tro)|öntgen|ubato)|m(?:a(?:t(?:ch-point|rioska)|r(?:keting|chand)|(?:estos|mb)o|(?:st?e|yo)r|na(?:ger|t)|gnificat|jorette|xwell|quis)|i(?:l(?:curie|ady)|s(?:erere|ter)|ndfulness|crofarad)|o(?:d(?:e(?:rato|m)|us)|hair)|e(?:morandum|dley)|u(?:sic-hall|esli)|vdol)|f(?:o(?:[bg]|x(?:-terrier|trot)?|r(?:tran|int)|ndue|yer|lk)|a(?:i(?:t-divers|r-play)|rad(?:ay|s)?|nfreluche|twa|x)|l(?:a(?:sh(?:es)?|menco|t)|i(?:p-flop|nt)|ute)|u(?:n(?:board|ky?)|gato|ton)|r(?:anchising|eeware)|ermata|itness|öhn)|a(?:n(?:ti(?:-(?:establishment|apartheid|dumping)|trust)|gström)|p(?:felstrudel|paratchik|artheid|lomb)|l(?:legr(?:ett)?o|zheimer|ibi)|c(?:celerandos?|id-jazz)|uto(?:pullman|cross)|git(?:-?prop|ato)|yurveda|mabile|irbus)|d(?:o(?:p(?:ing|pler)|wnhill|car|jo|ng)|r(?:ive(?:[rs]|-in)?|ugstore)|e(?:sign(?:er)?|ficit|bye)|i(?:s(?:cman|eur)|rham)|u(?:mping|plex|ce)|a(?:nzón|tcha))|g(?:i(?:ga(?:byte|watt)|rlsband|lbert|nseng)|o(?:(?:odwil|spe)l|belet|uda)|l(?:a(?:snost|mour)|ide)|u(?:aracha|lag)|ru(?:yèr|ng)e|a[ly]|eyser)|h(?:a(?:b(?:it(?:at|us)|anera)|(?:m-ioc-chon|shta)g|rd-rock)|i(?:p(?:p(?:ie|y)|-hop)|drospeed)|o(?:rseball|lding|mo)|eavy-metal|usky|ype)|v(?:i(?:de(?:ocl(?:ip(?:es)?|ub)|s)?|(?:t(?:rin|a)|ntag|vac)e|brato)|e(?:r(?:nissage|sus)|lcro|gan)|o(?:lt(?:e-face|s)?|yeur)|audeville)|l(?:e(?:[dk]|a(?:sing|d)|itmotiv|gato)|o(?:c(?:kout|us)|oping|ess|gin)|a(?:rghetto|ser|mé|ts)|i(?:ngerie|fting))|o(?:ff(?:s(?:hore|et)|ice-boy|line)|s(?:tpolitik|sobuco)|u(?:tsider|guiya)|verbooking|n-?line|ersted|rigami|pus)|j(?:a(?:m(?:-session|boree)|c(?:kpot|uzzi)|zz)|o(?:int-ventur|ul)e|u(?:kebox|nkie)|et-(?:lag|set)|iu-jitsu)|w(?:a(?:(?:lkie-talki|ffl)e|rrant|sp|d)|e(?:b(?:er|s)?|stern)|i(?:ld-card|ndsurf)|o(?:rkshop|n)|hist)|i(?:n(?:ter(?:f(?:eron|ace)|net)|f(?:otainment|luenza)|-octavo|s)|(?:bid|t)em|mpedimenta|ppon|d)|n(?:e(?:(?:cessair|w-ag)e|(?:tspli)?t)|o(?:menklatura|ir)|apalm|uance|ylon)|e(?:n(?:s(?:alada|emble)|tente)|r(?:satz|g)|mmenthal|cstasy|vasé|dam)|qu(?:a(?:lifying|ntum|rk)|i(?:lohertz|che))|z(?:e(?:itgeist|kel|n)|apping)|y(?:u(?:ppie|an)|ang|eti|in)|u(?:ndergroun|ploa)d)">
     <!ENTITY barbarismos2 "b(?:irdwatching|lockchains?|odyboarders?)|backdoors?|bots?|c(?:hipset|rowdfunding)s?|desktops?|DNA|dominatrix(?:es)?|draft|geocach(?:ing|ers?)|h(?:atchback|ijab|otspot|overboard)s?|icebergs?|jetpacks?|k(?:ernels?|evlar)|m(?:alware|illennial)s?|n(?:etworking|otch|uggets?)|overclock(?:ings?)|p(?:arkour|hishing|odcast|unchline)s?|RNA|s(?:martwatch(?:es)|ext(?:ing|ortion)|tormtroppers?|treaming)|trackpads?|w(?:ebsite|halewatching|oks?)">
-    <!ENTITY barbarismos3 "aliens?|applets?|backbones?|baconburgers?|bits?|bluetooth|bogie|bookmarks?|bullying|burnouts?|cameraman|carjacking|crackers?|cracking|cyberbullying|demand|e[-]bullying|e[-]commerce|e[-]learning|e[-]manuals?|e[-]newsletters?|e[-]readers?|exabits?|exabytes?|fair[-]play|feeders?|forward|führers?|gigabits?|gigabytes?|homebanking|homepages?|hosts?|idem|kilobits?|kilobytes?|know[-]how|KO|lob|loops?|marketeers?|maydays?|megabits?|megabytes?|milkshakes?|newsgroups?|nicknames?|offside|overflows?|petabits?|petabytes?|roadmaps?|royalty|royalties|screenshots?|smartphones?|sockets?|stalking|strings?|tablets?|tags?|takeovers?|terabits?|terabytes?|toolkits?|tracking|tweeters?|Unicode|Usenet|warm[-]up|webpages?|wireless|woofers?|yes[-]man|yottabits?|yottabytes?|zettabits?|zettabytes?">
+    <!ENTITY barbarismos3 "applets?|apps?|backbones?|baconburgers?|banners?|bitcoins?|bits?|bluetooth|bogie|bottom[-]up|brainstorms?|bullying|burnouts?|cameraman|carjacking|crackers?|cracking|cyberbullying|czar|czares|debugging|demand|drones?|e[-]bullying|e[-]commerce|e[-]learning|e[-]manuals?|e[-]newsletters?|e[-]readers?|exabits?|exabytes?|fair[-]play|faxes|feeders?|flats?|flyers?|forward|führers?|gaming|gigabits?|gigabytes?|gold|homebanking|homepages?|idem|jiu[-]jitsu|kilobits?|kilobytes?|know[-]how|KO|lob|loops?|lossless|marketeers?|maydays?|megabits?|megabytes?|milkshakes?|newsgroups?|off[-]label|offside|on[-]label|overflows?|papers?|patchs?|pens?|petabits?|petabytes?|roadmaps?|royalty|royalties|scams?|scammers?|screenshots?|shell|smartphones?|sockets?|stalking|strings?|tablets?|takeovers?|terabits?|terabytes?|toolkits?|tracking|tweeters?|Unicode|upgrades?|Usenet|warm[-]up|webinar|webinares|webmasters?|webpages?|wireless|woofers?|yes[-]man|yottabits?|yottabytes?|zettabits?|zettabytes?">
 
-    <!ENTITY infantil "(?:b[aá]bá|bichano|bilau|bobalhão|bumbum|caca|cachorrês|cocó|cocô|cuti|dodói|escapulir|flango|formiguês|lelé|mamã|maminha|miau|mimir|nananinanão|nana[rs]|oba|oiê|ohoh|olhinho|papá|Papai|pap(?:ar|ei|aste|ou)|peixa|pepeta|pipi|piu|pum|susu|titi[ao]|totó|totô|vovô|xixi)">
-    <!ENTITY informal "chaval[ao]s?|porreiros?|(?:a(?:bafar|dultescente|ham|nh.+)|b(?:abado|adalhoc[ao]|adalo|adamec[ao]|adana|agarai|agunça|aita|aixinh[ao]|alof[ao]|ate-papo|atelada|eiço|ejeca|elê|ichan[ao]|ichinh[ao]|iscate|itaite|js|lablablá|ófia|orrachão|otequeir[ao]|razuca|reaco|rega)|c(?:abaço|acilda|adê|adé|alhamaço|apar|arago|arango|asinha|asório|Dcê|ertinh[ao]|hantar|huninha|huto|obrão|ocó|ocô|oisar|opião|ornear|utucar)|d(?:anad[ao]|anar|aonde|esmiolad[ao]|ocinh[ao]|oíd[ao])|e(?:spertalh(?:ão|ona)|spigadote|strilho|strovenga)|f(?:ilar|ixe|loripa|of[ao]|uxicar|uxiqueir[ao])|g(?:agá|aj[ao]|alera|atunar|elô|oró|osma|ranel|uit[ao]|una|urizada)|herman[ao]|irad[ao]|j(?:avardice|ola)|l(?:aivo|aracha|elé|ogar|ulopetismo)|m(?:acarrone|agrel[ao]|amaã|anda-chuva|ânfi[ao]|an[ao]|atraca|eia-boca|itra|oçada|oina|orcão|otoqueir[oa]|uvuca)|n(?:intendinho|op|ovat[ao])|o(?:i|iê|lhômetro|lh[ôó]metro)|p(?:andeiro|apão|apo|atada|eixão|ejada|elar|epeta|erua|etiz|indaíba|ixulé|ixuleco|orn[oô]|orrad[ao]|orre|r[aáoó]|romo|rum|ruma|runs|uto)|q(?:uebra-galho|ueca)|r(?:acha|anho|apaziada|emexer|emexida|icardão|olê)|s(?:acana|ave|elinho|úper)|surripi.+|t(?:abefe|antã|ascar|ime|ótil|rampar|rampo|ransar|reta|rocentos|rouxa|rucid.+|uga.+)|v(?:acil.+|aquinha|egetar|elhot[ae]|ó|ô)|x(?:i|ixi)|z(?:en|i[il]h(ão|ões)))">
-    <!ENTITY obscenidades "(?:b(?:abaca|acanal|acorinha|acurinha|adalo|adamerda|aranga|ardamerda|edamerda|eita|enga|erdamerda|ichana|ilha|imba|imbada|oceta|oiola|olagato|roche|ruaca|uceta)|c(?:[uú]|abaço|abrão|abrões|acete|achorra|adela|agada|agalh(ão|ões)|agar|aralhada|aralho|atatau|atraia|havasca|huchu|huleta|hupeta|omua|ona|onaça|onanas|onsolo|oxanga|rica|roquete|unete|uzão)|f(?:iote|od.+|orunf.+|uampa|ufa|urico|urunf.+)|g(?:aita|relo|rutinha|ulosa)|j(?:eba|umento)|l(?:angonha|ola)|m(?:amado|angalho|armelar|einha|erda|erdeiro|essalina|inete|oca)|nhonhoca|p(?:andeiro|aneleiro|assaralho|atolar|eid.+|ene|entelho|iça|ind?oc.+|intudo|iroca|irrola|ito|iupiu|ixa|otranca|unheta|unheteiro|uta|utada|utaria|utedo|utice|uto)|q(?:ueca|uenga|uirica)|(qui|co)lh(ão|ões)|r(?:abeta|acha|apidinha|ata)|s(?:apatão|apatona|iririca|uruba|urubandê)|t(?:abaca|anajura|esão|esud[ao]|eta|oba|repada|roca-troca)|x(?:ana|arifa|arol[ao]|ereca|ibungo|imbica|iranha|iri|o(?:xo)ta))|peidas?|cagueiros?">
+    <!ENTITY infantil "(?:b[aá]bá|bichano|bilau|bobalhão|bumbum|caca|cachorrês|cocó|cocô|cuti|dodói|escapulir|flango|formiguês|lelé|mamã|maminha|miau|mimir|nananinanão|nana[rs]|oba|oiê|ohoh|olhinho|papá|Papai|pap(?:ar|ei|aste|ou)|peixa|pepeta|pipi|piu|pum|susu|titi[ao]|totó|totô|vovô|xixi)|memés?|pirilaus?">
+    <!ENTITY informal "chaval[ao]s?|porreiros?|(?:a(?:bafar|dultescente|ham|nh.+)|b(?:abado|adalhoc[ao]|adalo|adamec[ao]|adana|agarai|agunça|aita|aixinh[ao]|alof[ao]|ate-papo|atelada|eiço|ejeca|elê|ichan[ao]|ichinh[ao]|iscate|itaite|js|lablablá|ófia|orrachão|otequeir[ao]|razuca|reaco|rega)|c(?:abaço|acilda|adê|adé|alhamaço|apar|arago|arango|asinha|asório|Dcê|ertinh[ao]|hantar|huninha|huto|obrão|ocó|ocô|oisar|opião|ornear|utucar)|d(?:anad[ao]|anar|aonde|esmiolad[ao]|ocinh[ao]|oíd[ao])|e(?:spertalh(?:ão|ona)|spigadote|strilho|strovenga)|f(?:ilar|ixe|loripa|of[ao]|uxicar|uxiqueir[ao])|g(?:agá|aj[ao]|alera|atunar|elô|oró|osma|ranel|uit[ao]|una|urizada)|herman[ao]|irad[ao]|j(?:avardice|ola)|l(?:aivo|aracha|elé|ogar|ulopetismo)|m(?:acarrone|agrel[ao]|amaã|anda-chuva|ânfi[ao]|an[ao]|atraca|eia-boca|itra|oçada|oina|orcão|otoqueir[oa]|uvuca)|n(?:intendinho|op|ovat[ao])|o(?:i|iê|lhômetro|lh[ôó]metro)|p(?:andeiro|apão|apo|atada|eixão|ejada|elar|epeta|erua|etiz|indaíba|ixulé|ixuleco|orn[oô]|orrad[ao]|orre|r[áoó]|romo|rum|ruma|runs|uto)|q(?:uebra-galho|ueca)|r(?:acha|anho|apaziada|emexer|emexida|icardão|olê)|s(?:acana|ave|elinho|úper)|surripi.+|t(?:abefe|antã|ascar|ime|ótil|rampar|rampo|ransar|reta|rocentos|rouxa|rucid.+|uga.+)|v(?:acil.+|aquinha|egetar|elhot[ae]|ó|ô)|x(?:i|ixi)|z(?:en|i[il]h(ão|ões)))|bacanos?|baril|camandros?|caraças|caxamolas?|chilindrós?|chinocas?|contigo|esbardalhar|fartazanas?|festarolas?|fezadas?|gentinhas?|janados?|maralhas?|maricadas?|milhentas?|morcão|morcões|nhurro|piegas|pindéricos?|porreiraços?|poucochinhos?|sandochas?">
+    <!ENTITY obscenidades "(?:b(?:abaca|acanal|acorinha|acurinha|adalo|adamerda|aranga|ardamerda|edamerda|eita|enga|erdamerda|ichana|ilha|imba|imbada|oceta|oiola|olagato|roche|ruaca|uceta)|c(?:[uú]|abaço|abrão|abrões|acete|achorra|adela|agada|agalh(ão|ões)|agar|aralhada|aralho|atatau|atraia|havasca|huchu|huleta|hupeta|omua|ona|onaça|onanas|onsolo|oxanga|rica|roquete|unete|uzão)|f(?:iote|od.+|orunf.+|uampa|ufa|urico|urunf.+)|g(?:aita|relo|rutinha|ulosa)|j(?:eba|umento)|l(?:angonha|ola)|m(?:amado|angalho|armelar|einha|erda|erdeiro|essalina|inete|oca)|nhonhoca|p(?:andeiro|aneleiro|assaralho|atolar|eid.+|ene|entelho|iça|ind?oc.+|intudo|iroca|irrola|ito|iupiu|ixa|otranca|unheta|unheteiro|uta|utada|utaria|utedo|utice|uto)|q(?:ueca|uenga|uirica)|(qui|co)lh(ão|ões)|r(?:abeta|acha|apidinha|ata)|s(?:apatão|apatona|iririca|uruba|urubandê)|t(?:abaca|anajura|esão|esud[ao]|eta|oba|repada|roca-troca)|x(?:ana|arifa|arol[ao]|ereca|ibungo|imbica|iranha|iri|o(?:xo)ta))|cagalhão|cagalhões|caganças?|cagão|cagões|cagãozinho|cagueiros?|caguinchas|esporradelas?|esporras?|merdices?|merdilheiro|merdosas?|merdosos?|panascas?|peidas?|piças?|pichas?|putanheiros?|putéfias?">
 
     <!ENTITY saudacoes_formais "(?:Car|E(?:stimad|x(?:celentissm|m))|Prezad)[ao]s?">
 
@@ -548,6 +549,31 @@ title="Easy editing stylesheet" ?>
 		<token postag='VMP00PF|AQ0[CF]P0' postag_regexp='yes'/>
       </antipattern>	  	  
 <!-- MARCOAGPINTO 2020-08-26 (2-JUL-2020+) *END* -->
+<!-- MARCOAGPINTO 2020-09-14 (2-JUL-2020+) *START* -->
+<!-- "Não devia ser necessário petições para legalizar a profissão." -->
+      <antipattern>
+		  <token postag='V.+|NC[CM]S000|CS|I|RG|VMP00SM' postag_regexp='yes'/>
+	      <token postag='AQ0[CM]S0|NC[CF]S000' postag_regexp='yes'/>
+		  <token postag='NC[CF]P000' postag_regexp='yes'/>
+	  </antipattern>	  	  	  
+	  <!-- "Suspeita-se que tenham, em escalas de tempo, levado quantidades significativas de água." -->
+      <antipattern>	  
+		  <token regexp='yes'>[,]|de|e</token>
+	      <token postag='AQ0[CM]S0|NC[CF]S000' postag_regexp='yes'/>
+		  <token postag='NC[CF]P000' postag_regexp='yes'/>
+	  </antipattern>	  	  
+<!-- MARCOAGPINTO 2020-09-14 (2-JUL-2020+) *END* -->
+<!-- MARCOAGPINTO 2020-10-27 (21-OCT-2020+) *START* -->
+<!-- "Precisa agora de estar em quarentena 1 dia." -->
+<!-- "Precisa agora de estar em quarentena 14 dias." -->
+<!-- "Precisa agora de estar em quarentena 14 horas." -->
+<!-- "Precisa agora de estar em plantão 14 horas." -->
+      <antipattern>
+		  <token postag='NC[CFM]S000' postag_regexp='yes'/>
+		  <token postag='Z0CN0'></token>
+		  <token postag='AQ0[CFM][SP]0|NC[CFM][SP]000' postag_regexp='yes'/>
+      </antipattern>
+<!-- MARCOAGPINTO 2020-10-27 (21-OCT-2020+) *END* -->
       <pattern>
           <token negate='yes' regexp='yes'>&hifen;</token>
         <marker>
@@ -590,7 +616,13 @@ title="Easy editing stylesheet" ?>
 	  <example type='correct'>A entrar no <marker>Império tão grande quantidade</marker> de escravos africanos.</example>
 	  <example type='correct'>Apenas testemunhos sem <marker>fim recebidos</marker> de todo o mundo.</example>
 	  <example type='correct'>Apenas testemunhos sem <marker>conta recebidos</marker> de todo o mundo.</example>
-	  <example type='correct'>Apenas testemunhas sem <marker>fim recebidas</marker> de todo o mundo.</example>	  
+	  <example type='correct'>Apenas testemunhas sem <marker>fim recebidas</marker> de todo o mundo.</example> 
+	  <example type='correct'>Não devia ser <marker>necessário petições</marker> para legalizar a profissão.</example>
+	  <example type='correct'>Suspeita-se que tenham, em escalas de tempo<marker>, levado quantidades</marker> significativas de água.</example>
+	  <example type='correct'>Precisa agora de estar em <marker>quarentena 1 dia</marker>.</example>
+	  <example type='correct'>Precisa agora de estar em <marker>quarentena 14 dias</marker>.</example>
+	  <example type='correct'>Precisa agora de estar em <marker>quarentena 14 horas</marker>.</example>
+	  <example type='correct'>Precisa agora de estar em <marker>plantão 14 horas</marker>.</example>
     </rule>
     <rule>
       <pattern>
@@ -929,26 +961,6 @@ title="Easy editing stylesheet" ?>
 		  <token postag='VMN0000|VMN01S0|VMN03S0' postag_regexp='yes'/>
       </antipattern>
 	<!-- Added by Marco A.G.Pinto - 2020-05-20 ***END***-->  
-<!-- MARCOAGPINTO 2020-05-26 *START* -->
-<!-- "Cerca de 500 pessoas foram executadas em Paris, na maioria nobres." -->
-<!-- "Cerca de 500 pessoas foram executadas em Paris, na maioria senhores." -->
-<!-- "Cerca de 500 pessoas foram executadas em Paris, na maioria senhoras." -->
-      <antipattern>
-	    <token>na</token>
-		<token postag='NCFS000' postag_regexp='no'/>
-		<token postag='AQ0CP0|NC[FMC]P000' postag_regexp='yes'/>
-      </antipattern>  
-<!-- MARCOAGPINTO 2020-05-26 *END* -->
-<!-- MARCOAGPINTO 2020-06-14 *START* -->
-<!-- "A ocupação soviética resultou na morte de afegãos, a maioria civis." -->
-<!-- "A ocupação soviética resultou na morte de afegãos, a maioria homens." -->
-<!-- "A ocupação soviética resultou na morte de afegãos, a maioria mulheres." -->
-      <antipattern>
-	      <token regexp='yes'>a|na</token>
-		  <token regexp='no'>maioria</token>
-		  <token postag='NC[CFM]P000' postag_regexp='yes'/>
-      </antipattern>
-<!-- MARCOAGPINTO 2020-06-14 *END* -->
 <!-- MARCOAGPINTO 2020-06-20 *START* -->
 <!-- "Segure o ovo direito ou vai quebrá-lo." -->
 <!-- "Segure os ovos direito ou vai quebrá-los." -->
@@ -1001,6 +1013,87 @@ title="Easy editing stylesheet" ?>
 		<token postag='VMP00PF|AQ0[CF]P0' postag_regexp='yes'/>
       </antipattern>	  	  
 <!-- MARCOAGPINTO 2020-08-26 (2-JUL-2020+) *END* -->
+<!-- MARCOAGPINTO 2020-09-08 (2-JUL-2020+) *START* -->
+<!-- "A emoção Corinthians." -->
+      <antipattern>
+	      <token postag='NC[CF]S000' postag_regexp='yes'/>
+		  <token postag='NPMS000' postag_regexp='no'/>
+	  </antipattern>	  	  
+<!-- MARCOAGPINTO 2020-09-08 (2-JUL-2020+) *END* -->
+<!-- MARCOAGPINTO 2020-09-30 (2-JUL-2020+) *START* -->
+<!-- "Ver na pasta SPAM caso nenhum link chegue." -->
+      <antipattern>
+		  <token regexp="yes">a|à|alguma|cada|como|com|da|desta|deste|em|na|nessa|nesta|ou|outra|para|pela|pelo|por|que|sem|sobre|sua</token> <!-- removed "uma" since it complained, create a special antipattern for it -->
+		  <token postag='NC[CF]S000|AQ0[CF]S0' postag_regexp='yes'/>
+		  <token postag='NC[CM]S000|AQ0[CM]S0' postag_regexp='yes'/>
+	  </antipattern>
+      <!-- "É preparado com um caldo fino de cor amarelada chamado tucupi." -->
+	  <!-- "Eu amo música rock." -->
+	  <!-- "1998: Surgem os primeiros players portáteis de MP3, usando memória flash." -->
+	  <!-- "Ao não permitir efeitos colaterais em funções, a linguagem oferece transparência referencial." -->
+      <antipattern>
+		  <token postag='NC[CF]S000|VMIP1S0|VMG0000|VMIP3S0|VMM02S0|RM' postag_regexp='yes'/>
+		  <token postag='NC[CF]S000|AQ0[CF]S0' postag_regexp='yes'/>
+		  <token postag='NC[CM]S000|AQ0[CM]S0' postag_regexp='yes'/>
+	  </antipattern>		  
+<!-- MARCOAGPINTO 2020-09-30 (2-JUL-2020+) *END* -->
+<!-- MARCOAGPINTO 2020-10-27 (21-OCT-2020+) *START* -->
+<!-- "Precisa agora de estar em quarentena 1 dia." -->
+<!-- "Precisa agora de estar em quarentena 14 dias." -->
+<!-- "Precisa agora de estar em quarentena 14 horas." -->
+<!-- "Precisa agora de estar em plantão 14 horas." -->
+      <antipattern>
+		  <token postag='NC[CFM]S000' postag_regexp='yes'/>
+		  <token postag='Z0CN0'></token>
+		  <token postag='AQ0[CFM][SP]0|NC[CFM][SP]000' postag_regexp='yes'/>
+      </antipattern>
+<!-- MARCOAGPINTO 2020-10-27 (21-OCT-2020+) *END* -->
+<!-- MARCOAGPINTO 2020-10-29 + 2020-10-30 (21-OCT-2020+) *START* -->
+<!-- "Ao testar um modelo tendo por base dados." -->
+<!-- "Ao testar um modelo tendo por resultado dados." -->
+<!-- "Cerca de 500 pessoas foram executadas em Paris, na maioria nobres." -->
+<!-- "Cerca de 500 pessoas foram executadas em Paris, na maioria senhores." -->
+<!-- "Cerca de 500 pessoas foram executadas em Paris, na maioria senhoras." -->
+<!-- "A ocupação soviética resultou na morte de afegãos, a maioria civis." -->
+<!-- "A ocupação soviética resultou na morte de afegãos, a maioria homens." -->
+<!-- "A ocupação soviética resultou na morte de afegãos, a maioria mulheres." -->
+      <antipattern>
+		  <token regexp='yes'>a|à|boa|cada|com|como|cuja|da|desta|em|essa|grande|maior|maioria|minoria|na|naquela|nesta|nossa|ou|pela|por|qual|sua|tal|toda|uma|[,(]</token>
+		  <token postag='NC[CFM]S000' postag_regexp='yes'/>
+		  <token postag='AQ0[CFM]P0|NC[CFM]P000' postag_regexp='yes'/>
+      </antipattern>
+      <antipattern>
+		  <token postag='AQ0[CFM]S0|NC[CFM]S000' postag_regexp='yes'/>
+		  <token postag='NC[CFM]S000' postag_regexp='yes'/>
+		  <token postag='AQ0[CFM]P0|NC[CFM]P000' postag_regexp='yes'/>
+      </antipattern>	  
+<!-- MARCOAGPINTO 2020-10-29 + 2020-10-30 (21-OCT-2020+) *END* -->
+<!-- MARCOAGPINTO 2020-11-01 (21-OCT-2020+) *START* -->
+<!-- "Penso que esta é uma foto mistério das mais lixadas." -->
+      <antipattern>
+		  <token regexp='yes'>a|à|boa|cada|com|como|cuja|da|desta|em|essa|grande|maior|maioria|minoria|na|naquela|nesta|nossa|ou|pela|por|qual|sua|tal|toda|uma|[,(]</token>
+		  <token postag='AQ0[CF]S0|NC[CF]S000' postag_regexp='yes'/>		  
+		  <token postag='AQ0[CM]S0|NC[CM]S000' postag_regexp='yes'/>
+		  <and>
+			<token negate="yes" regexp='yes'>de|na</token>
+			<token negate_pos="yes" postag='AQ0MS0|NCMS000' postag_regexp='yes'/>
+		  </and>
+      </antipattern>
+<!-- MARCOAGPINTO 2020-11-01 (21-OCT-2020+) *END* -->
+<!-- MARCOAGPINTO 2020-12-08 + 2020-12-09 (21-OCT-2020+) *START* -->
+<!-- "A sua conta LanguageTool gratuita foi criada com sucesso." -->
+      <antipattern>
+		<token postag='NC[CF][SP]000' postag_regexp='yes'/>
+		<token postag='NP.+' postag_regexp='yes'/>
+		<token postag='AQ0[CF][SP]0|NC[CF][SP]000|NP.+' postag_regexp='yes'/>
+      </antipattern>
+<!-- "O seu código LanguageTool gratuito foi criado com sucesso." -->
+      <antipattern>
+		<token postag='NC[CM][SP]000' postag_regexp='yes'/>
+		<token postag='NP.+' postag_regexp='yes'/>
+		<token postag='AQ0[CM][SP]0|NC[CM][SP]000|NP.+' postag_regexp='yes'/>
+      </antipattern>	  
+<!-- MARCOAGPINTO 2020-12-08 + 2020-12-09 (21-OCT-2020+) *END* -->
       <pattern>
           <token negate='yes' regexp='yes'>o|e|de|&hifen;</token> <!-- MARCOAGPINTO 2019-12-31 -->
         <marker>
@@ -1034,6 +1127,16 @@ title="Easy editing stylesheet" ?>
 	  <example type='correct'>Apenas testemunhos sem <marker>fim recebidos</marker> de todo o mundo.</example>
 	  <example type='correct'>Apenas testemunhos sem <marker>conta recebidos</marker> de todo o mundo.</example>
 	  <example type='correct'>Apenas testemunhas sem <marker>fim recebidas</marker> de todo o mundo.</example>
+	  <example type='correct'>A <marker>emoção Corinthians</marker>.</example>
+	  <example type='correct'>Ver na <marker>pasta SPAM</marker> caso nenhum link chegue.</example>
+	  <example type='correct'>Precisa agora de estar em <marker>quarentena 1 dia</marker>.</example>
+	  <example type='correct'>Precisa agora de estar em <marker>quarentena 14 dias</marker>.</example>
+	  <example type='correct'>Precisa agora de estar em <marker>quarentena 14 horas</marker>.</example>
+	 <example type='correct'>Precisa agora de estar em <marker>plantão 14 horas</marker>.</example>
+	 <example type='correct'>Ao testar um modelo tendo <marker>por base dados</marker>.</example>
+	 <example type='correct'>Ao testar um modelo tendo <marker>por resultado dados</marker>.</example>
+	 <example type='correct'>A sua <marker>conta LanguageTool</marker> gratuita foi criada com sucesso.</example>
+	 <example type='correct'>O seu <marker>código LanguageTool</marker> gratuito foi criado com sucesso.</example>
     </rule>
     <rule>
       <antipattern>
@@ -1169,6 +1272,20 @@ title="Easy editing stylesheet" ?>
 		  <token postag='AQ0[CM]P0' postag_regexp='yes'/>
 	  </antipattern>
 <!-- MARCOAGPINTO 2020-07-19 (2-JUL-2020+) *END* --> 
+<!-- MARCOAGPINTO 2020-12-08 + 2020-12-09 (21-OCT-2020+) *START* -->
+<!-- "A sua conta LanguageTool gratuita foi criada com sucesso." -->
+      <antipattern>
+		<token postag='NC[CF][SP]000' postag_regexp='yes'/>
+		<token postag='NP.+' postag_regexp='yes'/>
+		<token postag='AQ0[CF][SP]0|NC[CF][SP]000|NP.+' postag_regexp='yes'/>
+      </antipattern>
+<!-- "O seu código LanguageTool gratuito foi criado com sucesso." -->
+      <antipattern>
+		<token postag='NC[CM][SP]000' postag_regexp='yes'/>
+		<token postag='NP.+' postag_regexp='yes'/>
+		<token postag='AQ0[CM][SP]0|NC[CM][SP]000|NP.+' postag_regexp='yes'/>
+      </antipattern>	  
+<!-- MARCOAGPINTO 2020-12-08 + 2020-12-09 (21-OCT-2020+) *END* -->
       <pattern>
           <token negate='yes' regexp='yes'>de|&hifen;</token>
         <marker>
@@ -1239,6 +1356,30 @@ title="Easy editing stylesheet" ?>
           <token postag='AQ0MS0|NCMS000' postag_regexp='yes'/>
       </antipattern>	
 <!-- MARCOAGPINTO 2020-01-01 *END* -->
+<!-- MARCOAGPINTO 2020-12-08 (21-OCT-2020+) *START* -->
+<!--
+Basta colar uma lista de e-mails abaixo para enviar convites a todos nós.
+Basta colar uma lista de e-mails abaixo para enviar convites a todos vocês.
+Basta colar uma lista de e-mails abaixo para enviar convites a todos vós.
+Basta colar uma lista de e-mails abaixo para enviar convites a todos eles.
+-->
+      <antipattern>
+	    <token regexp='no'>a</token>
+		<token postag='DI0MP0' postag_regexp='no'/>
+		<token postag='PP1CP000|PP2CP000|PP3CS000|PP3CP000|PP3MP000' postag_regexp='yes'/>
+      </antipattern>
+<!--
+Basta colar uma lista de e-mails abaixo para enviar convites a todas nós.
+Basta colar uma lista de e-mails abaixo para enviar convites a todas vocês.
+Basta colar uma lista de e-mails abaixo para enviar convites a todas vós.
+Basta colar uma lista de e-mails abaixo para enviar convites a todas elas.
+-->
+      <antipattern>
+	    <token regexp='no'>a</token>
+		<token postag='DI0FP0' postag_regexp='no'/>
+		<token postag='PP1CP000|PP2CP000|PP3CS000|PP3CP000|PP3FP000' postag_regexp='yes'/>
+      </antipattern>
+<!-- MARCOAGPINTO 2020-12-08 (21-OCT-2020+) *END* -->
       <pattern>
           <unify negate="yes">
             <feature id="gender"/>
@@ -1366,12 +1507,37 @@ title="Easy editing stylesheet" ?>
           <token>a</token>
       </antipattern>
     <rule>
+<!-- MARCOAGPINTO 2020-10-05 (2-JUL-2020+) *START* -->
+	  <!-- "A Portugal coube o setor oriental do continente." -->
+      <antipattern>		  
+		  <token regexp="no">a</token>
+		  <token postag='NP[FM]S[0G]00' postag_regexp='yes'/>
+		  <token postag='V.+|PP1CSO00|CC|I|RG' postag_regexp='yes'/>
+	  </antipattern>
+	  <!-- "Atribuem-se a Newton as leis da mecânica clássica." -->
+      <antipattern>		  
+		  <token regexp="no">a</token>
+		  <token postag='NP[FM]S[0G]00' postag_regexp='yes'/>
+		  <token regexp="yes">as?|os?|das?|dos?|de</token>
+	  </antipattern>	   	  
+      <antipattern>	
+		  <token regexp="no">a</token>
+		  <token min="1" max="2" postag='NP[FM]S[0GS]00' postag_regexp='yes'/>
+		  <token regexp="yes">[,.)]</token>
+	  </antipattern> 	   	  	  
+	  <!-- "A César o que é de César." -->
+      <antipattern>		  
+		  <token regexp="no">a</token>
+		  <token postag='NC[CFM]P000|AQ0[CFM]P0|NP[FM]S[0G]00' postag_regexp='yes'/>
+		  <token regexp="yes">que|na|no|maiores|menores|como|por|o</token>
+	  </antipattern> 	  
+<!-- MARCOAGPINTO 2020-10-05 (2-JUL-2020+) *END* -->	  
       <pattern>
           <token>a
             <exception scope='previous'>não</exception>
             <exception negate_pos='yes' postag_regexp='yes' postag='D.+'/></token>
           <token postag='(?:[NZ].|A..)MS.+' postag_regexp='yes'>
-            <exception regexp='yes'>&pontos_cardeais;|contrário|nível|solo|um</exception><!-- |escassos -->
+            <exception regexp='yes'>&pontos_cardeais;|contrário|nível|solo|um|despropósito</exception><!-- |escassos --> <!-- MARCOAGPINTO 2020-10-04 (2-JUL-2020+) -->
             <exception postag_regexp='yes' postag='(?:[NZ].|A..)[CF].+'/></token>
       </pattern>
       <message>&MSG_ECG;</message>
@@ -1379,6 +1545,9 @@ title="Easy editing stylesheet" ?>
       <url>https://pt.wikipedia.org/wiki/Artigo_(gram%C3%A1tica)</url>
       <example correction="O dogma"><marker>A dogma</marker> de quem sabe muito.</example>
       <example>Isto influencia muito negativamente a segurança.</example>
+	  <example type='correct'><marker>A Portugal coube</marker> o setor oriental do continente.</example>
+	  <example type='correct'><marker>A César o</marker> que é de César.</example>
+	  <example type='correct'>Atribuem-se <marker>a Newton as</marker> leis da mecânica clássica.</example>
     </rule>
     <rule>
 <!-- MARCOAGPINTO 2020-06-03 *START* -->
@@ -1414,10 +1583,27 @@ title="Easy editing stylesheet" ?>
 		  <token postag='SPS00' postag_regexp='no'/>		  
       </antipattern>
 <!-- MARCOAGPINTO 2020-06-04 *END* -->
+<!-- MARCOAGPINTO 2020-10-05 + 2020-11-05 (2-JUL-2020+) *START* --> 
+	  <!-- "Os arqueólogos dedicam-se cada vez mais a fases tardias da evolução humana." -->
+      <antipattern>		  
+		  <token regexp="no">a</token>
+		  <token postag='NC[CFM]P000|AQ0[CFM]P0' postag_regexp='yes'/>
+		  <token postag='NC[CFM]P000|AQ0[CFM]P0' postag_regexp='yes'/>
+	  </antipattern>
+	  <!-- "O profeta, mas a evidências que apoiam que esta reivindicação é falsa." -->
+	  <!-- "A duzentas no inverno." -->
+	  <!-- "Vendendo-os posteriormente a crianças menores de idade." -->
+	  <!-- "Vendendo-os posteriormente a crianças." -->
+      <antipattern>		  
+		  <token regexp="no">a</token>
+		  <token postag='NC[CFM]P000|AQ0[CFM]P0|NP[FM]S[0G]00' postag_regexp='yes'/>
+		  <token regexp="yes">que|na|no|maiores|menores|como|por|o|[.,?!]</token>
+	  </antipattern>
+<!-- MARCOAGPINTO 2020-10-05 + 2020-11-05 (2-JUL-2020+) *END* -->
       <pattern>
 			<token>a
 				<exception negate_pos='yes' postag_regexp='yes' postag='D.+'/>
-				<exception scope="previous" regexp="no">ou</exception> <!-- MARCOAGPINTO 2020-02-20 "Pode haver falhas devido a erros ou a lacunas no software." -->
+				<exception scope="previous" regexp="yes">ou|daí</exception> <!-- MARCOAGPINTO 2020-02-20 + 2020-09-28 "Pode haver falhas devido a erros ou a lacunas no software." "Daí a duas semanas temos a festa."-->
 			</token>
 			<token postag='(?:[NZ].|A..)FP.+' postag_regexp='yes'>
 				<exception postag_regexp='yes' postag='(?:[NZ]..|A...)[NS].+'/></token>
@@ -1427,6 +1613,9 @@ title="Easy editing stylesheet" ?>
         <suggestion>a <match no='3' postag='(A...|[NZ]..).(.+)' postag_replace='$1S$2' postag_regexp='yes'/></suggestion>
       <url>https://pt.wikipedia.org/wiki/Artigo_(gram%C3%A1tica)</url>
       <example correction="as proteções|a proteção">...financiamento de projetos para <marker>a proteções</marker> da floresta…</example>
+	  <example type='correct'>Daí <marker>a duas</marker> semanas temos a festa.</example>
+	  <example type='correct'>Os arqueólogos dedicam-se cada vez mais <marker>a fases tardias</marker> da evolução humana.</example>
+	  <example type='correct'>O profeta, mas <marker>a evidências que</marker> apoiam que esta reivindicação é falsa.</example>
     </rule>
   </rulegroup>
 
@@ -1795,14 +1984,6 @@ title="Easy editing stylesheet" ?>
           <token postag='AQ0[CFM]S0' postag_regexp='yes'/>
       </antipattern>
 <!-- MARCOAGPINTO 2020-05-30 + 2020-06-20 *END* -->
-<!-- MARCOAGPINTO 2020-06-02 *START* -->
-<!-- "Foram substituídos em posteriores textos ecológicos um texto posterior." -->
-      <antipattern>
-		  <token postag='AQ0[CFM]P0' postag_regexp='yes'/>	
-		  <token postag='DI0MS0' postag_regexp='no'/>		  
-		  <token postag='NC[CM]S000' postag_regexp='yes'/>
-      </antipattern>
-<!-- MARCOAGPINTO 2020-06-02 *END* -->
 <!-- MARCOAGPINTO 2020-06-06 *START* -->
 <!-- "Somente no meio da década de 1990 é que o tecido 100% poliéster começou a ser utilizado." -->
 <!-- "Não esquecer o genocídio arménio e os seus 1,5 milhão de mortos." -->
@@ -1869,6 +2050,65 @@ title="Easy editing stylesheet" ?>
 		  <token regexp='yes'>as?|os?|pelas?|pelos?|nas?|nos?|com|em|de|um|uma|por|para|nestas?|nestes?</token>
       </antipattern>	
 <!-- MARCOAGPINTO 2020-07-31 (2-JUL-2020+) *END* -->
+<!-- MARCOAGPINTO 2020-10-15 (2-JUL-2020+) *START* --> 
+<!-- "Pedro, comes muito queijo." -->
+      <antipattern>	
+	      <token postag='V.+' postag_regexp='yes'/>
+		  <token postag='DI0MS0|NCMS000|PI0MS000|RG' postag_regexp='yes'/>
+		  <token postag='DI0[FM]S0|NC[CFM]S000|PI0[FM]S000|RG' postag_regexp='yes'/>
+	  </antipattern>
+<!-- MARCOAGPINTO 2020-10-15 (2-JUL-2020+) *END* -->
+<!-- MARCOAGPINTO 2020-11-05 (21-OCT-2020+) *START* -->
+<!-- "Demos tempo ao tempo porque, a seu tempo, sorriremos de novo." -->
+      <antipattern>
+		  <token inflected='yes'>dar</token>
+		  <token>tempo</token>
+      </antipattern>
+<!-- MARCOAGPINTO 2020-11-05 (21-OCT-2020+) *END* -->
+<!-- MARCOAGPINTO 2020-11-09 (21-OCT-2020+) *START* -->
+<!-- "Ele não escrevia os ditados direitinho." -->
+      <antipattern>
+		  <token postag='AQ0[CFM]P0|NC[CFM]P000' postag_regexp='yes'/>
+          <token postag='AQC[CFM]S0' postag_regexp='yes'/>
+      </antipattern>
+<!-- MARCOAGPINTO 2020-11-09 (21-OCT-2020+) *END* -->
+<!-- MARCOAGPINTO 2020-11-18 (21-OCT-2020+) *START* -->
+<!-- "Os ficheiros cache são carregados no início." -->
+<!-- "As palavras passe são carregadas no início." -->
+      <antipattern>
+		<token regexp='yes'>as|os</token>
+		<token postag='NC[CFM]P000|AQ0[CFM]P0' postag_regexp='yes'/>
+		<token postag='NC[CFM]S000|AQ0[CFM]S0' postag_regexp='yes'/>
+		<token postag='VMIP3P0|VMIM3P0|VMIS3P0' postag_regexp='yes'/>
+      </antipattern>
+<!-- "Portugal exporta para os mercados europeu, asiático e americano." -->	  
+      <antipattern>
+		<token regexp='yes'>as|os</token>
+		<token postag='NC[CFM]P000|AQ0[CFM]P0' postag_regexp='yes'/>
+		<token postag='NC[CFM]S000|AQ0[CFM]S0' postag_regexp='yes'/>
+		<token regexp='yes'>[.,(]</token>
+		<token negate_pos="yes" postag='SPS.+|V.+' postag_regexp='yes'/>
+      </antipattern>	  	  
+<!-- MARCOAGPINTO 2020-11-18 (21-OCT-2020+) *END* -->
+<!-- MARCOAGPINTO 2020-12-03 (21-OCT-2020+) *START* -->
+<!-- "Foram substituídos em posteriores textos ecológicos um texto posterior." -->
+<!-- "Desejo a todos um Feliz Natal." -->
+      <antipattern>
+		  <token postag='DI0.P0|AQ0.P0' postag_regexp='yes'/>	
+		  <token regexp='yes'>a|o|uma?</token>		  	  
+		  <token postag='NC.S000|NP.S[0G]00|AQ0.S0|RG' postag_regexp='yes'/>
+      </antipattern>
+<!-- MARCOAGPINTO 2020-12-03 (21-OCT-2020+) *END* -->
+<!-- MARCOAGPINTO 2020-12-07 (21-OCT-2020+) *START* -->
+<!-- "Mas com as outras era canja." -->
+<!-- "Mas com os outros era canja." -->
+      <antipattern>
+		<token postag='SPS.+' postag_regexp='yes'/>
+		<token postag='DA0.P0' postag_regexp='yes'/>
+		<token postag='DI0.P0' postag_regexp='yes'/>
+		<token postag='NC.S000|VMII.S0' postag_regexp='yes'/>
+      </antipattern>
+<!-- MARCOAGPINTO 2020-12-07 (21-OCT-2020+) *END* -->
       <pattern>
           <token negate='yes' regexp='yes'>&hifen;</token>
         <marker>
@@ -1892,7 +2132,6 @@ title="Easy editing stylesheet" ?>
       <example correction='O cão|Os cães|Os, cão'><marker>Os cão</marker> está no pasto.</example>
       <example correction="pai natal|pais natais|pais, natal">Havia <marker>pais natal</marker> na festa.</example>
       <example correction="todinho litoral|todo litoral|todinho, litoral|todo, litoral">Possui uma extensão aproximada de 378 km, o que representa 3,8% de <marker>todos litoral</marker> do México.</example>
-      <example correction="caso mais preocupante|casos mais preocupantes|casos mais, preocupante">Os <marker>casos mais preocupante</marker> são estas.</example>
       <example correction="o bugio|os bugios|os, bugio">Macacos maiores como <marker>os bugio</marker></example>
       <example>Conforme mais dados vão sendo acumulados de pessoas de todas as idades.</example>
       <example>Os rinocerontes serão anestesiados, antes de se remover o chifre.</example>
@@ -1904,6 +2143,14 @@ title="Easy editing stylesheet" ?>
       <example>Eu nem as encontro.</example>
 	  <example type='correct'>O campo B pode ser definido de muitas formas <marker>equivalentes baseado</marker> nos seus efeitos sobre o ambiente.</example>
 	  <example type='correct'>O campo B pode ser definido de muitas formas <marker>equivalentes baseada</marker> nas suas influências sobre o ambiente.</example>
+	  <example type='correct'>Pedro, <marker>comes muito queijo</marker>.</example>
+	  <example type='correct'>Ele não escrevia os <marker>ditados direitinho</marker>.</example>
+	  <example type='correct'><marker>Os ficheiros cache</marker> são carregados no início.</example>
+	  <example type='correct'><marker>As palavras passe</marker> são carregadas no início.</example>
+	  <example type='correct'>Portugal exporta para <marker>os mercados europeu,</marker> asiático e americano.</example>
+	  <example type='correct'>Desejo a <marker>todos um</marker> Feliz Natal.</example>
+	  <example type='correct'>Mas <marker>com as outras era</marker> canja.</example>
+	  <example type='correct'>Mas <marker>com os outros era</marker> canja.</example>
     </rule>
     <rule>
       <antipattern>
@@ -2035,21 +2282,6 @@ title="Easy editing stylesheet" ?>
 		<token regexp='yes'>aos|a</token>
       </antipattern>  
 <!-- MARCOAGPINTO 2020-05-28 *END* -->
-<!-- MARCOAGPINTO 2020-05-29 *START* -->
-<!-- "Com início 1 metro abaixo da superfície." -->
-<!-- "Com início 90 metros abaixo da superfície." -->  
-      <antipattern>
-          <token postag='NCMS000' postag_regexp='no'/>
-          <token>1</token>
-		  <token postag='NCMS000' postag_regexp='no'/>
-      </antipattern>	  
-      <antipattern>
-          <token postag='NCMS000' postag_regexp='no'/>
-          <token postag='Z0CN0' postag_regexp='no'>
-		  <exception>1</exception></token>
-		  <token postag='NCMP000' postag_regexp='no'/>
-      </antipattern>	  
-<!-- MARCOAGPINTO 2020-05-29 *END* -->
 <!-- MARCOAGPINTO 2020-05-29 *START* -->
 <!-- "Fomos ao porto catar pedregulhos." -->
 <!-- "Fomos ao porto catar pedras." -->
@@ -2314,6 +2546,50 @@ title="Easy editing stylesheet" ?>
 		<token postag='VMP00P[FM]|AQ0[CFM]P0' postag_regexp='yes'/>
       </antipattern>	  
 <!-- MARCOAGPINTO 2020-08-19 (2-JUL-2020+) *END* -->
+<!-- MARCOAGPINTO 2020-10-02 (2-JUL-2020+) *START* -->
+<!-- "Quando aparecer um cliente 5 minutos antes das 20h." -->
+<!-- "Quando aparecer um cliente cinco minutos antes das 20h." -->
+      <antipattern>		  
+		  <token postag='NC[CFM]S000|AQ0[CFM]S0' postag_regexp='yes'/>
+		  <and>
+			<token postag='Z0C[NP]0' postag_regexp='yes'/>
+			<token negate="yes" regexp="yes">1|um</token>
+		  </and>
+		  <token postag='NC[CFM]P000|AQ0[CFM]P0' postag_regexp='yes'/>
+	  </antipattern> 
+<!-- MARCOAGPINTO 2020-10-02 (2-JUL-2020+) *END* -->
+<!-- MARCOAGPINTO 2020-10-27 (21-OCT-2020+) *START* -->
+<!-- "As simulações deviam ser o mais realistas que há." -->
+<!-- "As simulações devem ser o mais realistas que há." -->
+<!-- "As simulações são o mais realistas que há." -->
+      <antipattern>
+		  <token postag='VM..3P0' postag_regexp='yes'/>
+          <token min="0" max="1" postag='VMN0000'></token>
+		  <token postag='DA0MS0|PD0MS000|PP3MSA00' postag_regexp='yes'/>
+          <token postag='RG'></token>
+		  <token postag='AQ0[CFM]P0|NC[CFM]P000' postag_regexp='yes'/>
+      </antipattern>
+<!-- MARCOAGPINTO 2020-10-27 (21-OCT-2020+) *END* -->
+<!-- MARCOAGPINTO 2020-10-29 + 2020-10-30 (21-OCT-2020+) *START* -->
+<!-- "Ao testar um modelo tendo por base dados." -->
+<!-- "Ao testar um modelo tendo por resultado dados." -->
+<!-- "Cerca de 500 pessoas foram executadas em Paris, na maioria nobres." -->
+<!-- "Cerca de 500 pessoas foram executadas em Paris, na maioria senhores." -->
+<!-- "Cerca de 500 pessoas foram executadas em Paris, na maioria senhoras." -->
+<!-- "A ocupação soviética resultou na morte de afegãos, a maioria civis." -->
+<!-- "A ocupação soviética resultou na morte de afegãos, a maioria homens." -->
+<!-- "A ocupação soviética resultou na morte de afegãos, a maioria mulheres." -->
+      <antipattern>
+		  <token regexp='yes'>a|à|boa|cada|com|como|cuja|da|desta|em|essa|grande|maior|maioria|minoria|na|naquela|nesta|nossa|ou|pela|por|qual|sua|tal|toda|uma|[,(]</token>
+		  <token postag='NC[CFM]S000' postag_regexp='yes'/>
+		  <token postag='AQ0[CFM]P0|NC[CFM]P000' postag_regexp='yes'/>
+      </antipattern>
+      <antipattern>
+		  <token postag='AQ0[CFM]S0|NC[CFM]S000' postag_regexp='yes'/>
+		  <token postag='NC[CFM]S000' postag_regexp='yes'/>
+		  <token postag='AQ0[CFM]P0|NC[CFM]P000' postag_regexp='yes'/>
+      </antipattern>	  
+<!-- MARCOAGPINTO 2020-10-29 + 2020-10-30 (21-OCT-2020+) *END* -->
       <pattern>
           <token negate='yes' regexp='yes'>e|ou|&hifen;</token>
         <marker>
@@ -2346,6 +2622,8 @@ title="Easy editing stylesheet" ?>
 	  <example type='correct'>Apenas testemunhos sem <marker>fim recebidos</marker> de todo o mundo.</example>
 	  <example type='correct'>Apenas testemunhos sem <marker>conta recebidos</marker> de todo o mundo.</example>
 	 <example type='correct'>Apenas testemunhas sem <marker>fim recebidas</marker> de todo o mundo.</example>
+	 <example type='correct'>As simulações <marker>devem ser</marker> o mais realistas que há.</example>
+	 <example type='correct'>As simulações <marker>são</marker> o mais realistas que há.</example>
     </rule>
     <rule>
       <antipattern>
@@ -2450,14 +2728,6 @@ title="Easy editing stylesheet" ?>
       </antipattern>  
 <!-- MARCOAGPINTO 2020-05-15 *END* -->
 <!-- MARCOAGPINTO 2020-05-25 *START* -->
-<!-- "A vantagem de permitir a um país melhores faixas climáticas." -->	  
-      <antipattern>
-		<token postag='NC[CM]S000' postag_regexp='yes'/>
-		<token postag='AQ0CP0' postag_regexp='no'/>
-		<token postag='NCFP000' postag_regexp='no'/>
-      </antipattern>  
-<!-- MARCOAGPINTO 2020-05-25 *END* -->
-<!-- MARCOAGPINTO 2020-05-25 *START* -->
 <!-- "De tal maneira densas que até a luz do Sol tem dificuldade em atravessá-las." -->	  
       <antipattern>
 		<token postag='AQ0FS0' postag_regexp='no'/>
@@ -2484,16 +2754,6 @@ title="Easy editing stylesheet" ?>
 		<token postag='NC[FM]P000' postag_regexp='yes'/>
       </antipattern>  
 <!-- MARCOAGPINTO 2020-05-25 *END* -->
-<!-- MARCOAGPINTO 2020-05-26 *START* -->
-<!-- "Cerca de 500 pessoas foram executadas em Paris, na maioria nobres." -->
-<!-- "Cerca de 500 pessoas foram executadas em Paris, na maioria senhores." -->
-<!-- "Cerca de 500 pessoas foram executadas em Paris, na maioria senhoras." -->
-      <antipattern>
-	    <token>na</token>
-		<token postag='NCFS000' postag_regexp='no'/>
-		<token postag='AQ0CP0|NC[FMC]P000' postag_regexp='yes'/>
-      </antipattern>  
-<!-- MARCOAGPINTO 2020-05-26 *END* -->
 <!-- MARCOAGPINTO 2020-05-30 *START* -->
 <!-- "Temos a referência mais antiga a epidemias no país." -->
 <!-- "Temos a referência mais antiga a comboios no país." -->
@@ -2571,16 +2831,6 @@ title="Easy editing stylesheet" ?>
       </antipattern>
 <!-- MARCOAGPINTO 2020-06-04 *END* -->
 <!-- MARCOAGPINTO 2020-06-14 *START* -->
-<!-- "A ocupação soviética resultou na morte de afegãos, a maioria civis." -->
-<!-- "A ocupação soviética resultou na morte de afegãos, a maioria homens." -->
-<!-- "A ocupação soviética resultou na morte de afegãos, a maioria mulheres." -->
-      <antipattern>
-	      <token regexp='yes'>a|na</token>
-		  <token regexp='no'>maioria</token>
-		  <token postag='NC[CFM]P000' postag_regexp='yes'/>
-      </antipattern>
-<!-- MARCOAGPINTO 2020-06-14 *END* -->
-<!-- MARCOAGPINTO 2020-06-14 *START* -->
 <!-- "Os remanescentes do regime derrubado juntaram-se a diferentes grupos." -->
 <!-- "Os remanescentes do regime derrubado juntaram-se a diferentes organizações." -->
       <antipattern>
@@ -2612,6 +2862,53 @@ title="Easy editing stylesheet" ?>
 		  <token postag='AQ0CP0' postag_regexp='no'/>	    
       </antipattern>	  
 <!-- MARCOAGPINTO 2020-07-03 (2-JUL-2020+) *END* -->
+<!-- MARCOAGPINTO 2020-10-16 (2-JUL-2020+) *START* --> 
+<!-- "O Rui quer enfrentar de forma eficaz ações entrópicas." -->
+      <antipattern>	
+		  <token negate="yes" regexp='yes'>a|o</token>
+	      <token postag='NC[CFM]S000|AQ0[CFM]S0' postag_regexp='yes'/>
+		  <token postag='NC[CFM]S000|AQ0[CFM]S0' postag_regexp='yes'/>
+		  <token postag='NC[CFM]P000|AQ0[CFM]P0' postag_regexp='yes'/>
+		  <token postag='NC[CFM]P000|AQ0[CFM]P0' postag_regexp='yes'/>
+	  </antipattern>
+<!-- MARCOAGPINTO 2020-10-16 (2-JUL-2020+) *END* -->
+<!-- MARCOAGPINTO 2020-10-29 + 2020-10-30 (21-OCT-2020+) *START* -->
+<!-- "Ao testar um modelo tendo por base dados." -->
+<!-- "Ao testar um modelo tendo por resultado dados." -->
+<!-- "Cerca de 500 pessoas foram executadas em Paris, na maioria nobres." -->
+<!-- "Cerca de 500 pessoas foram executadas em Paris, na maioria senhores." -->
+<!-- "Cerca de 500 pessoas foram executadas em Paris, na maioria senhoras." -->
+<!-- "A ocupação soviética resultou na morte de afegãos, a maioria civis." -->
+<!-- "A ocupação soviética resultou na morte de afegãos, a maioria homens." -->
+<!-- "A ocupação soviética resultou na morte de afegãos, a maioria mulheres." -->
+      <antipattern>
+		  <token regexp='yes'>a|à|boa|cada|com|como|cuja|da|desta|em|essa|grande|maior|maioria|minoria|na|naquela|nesta|nossa|ou|pela|por|qual|sua|tal|toda|uma|[,(]</token>
+		  <token postag='NC[CFM]S000' postag_regexp='yes'/>
+		  <token postag='AQ0[CFM]P0|NC[CFM]P000' postag_regexp='yes'/>
+      </antipattern>
+      <antipattern>
+		  <token postag='AQ0[CFM]S0|NC[CFM]S000' postag_regexp='yes'/>
+		  <token postag='NC[CFM]S000' postag_regexp='yes'/>
+		  <token postag='AQ0[CFM]P0|NC[CFM]P000' postag_regexp='yes'/>
+      </antipattern>	  
+<!-- MARCOAGPINTO 2020-10-29 + 2020-10-30 (21-OCT-2020+) *END* -->
+<!-- MARCOAGPINTO 2020-10-05 + 2020-11-05 (2-JUL-2020+) *START* --> 
+	  <!-- "Os arqueólogos dedicam-se cada vez mais a fases tardias da evolução humana." -->
+      <antipattern>		  
+		  <token regexp="no">a</token>
+		  <token postag='NC[CFM]P000|AQ0[CFM]P0' postag_regexp='yes'/>
+		  <token postag='NC[CFM]P000|AQ0[CFM]P0' postag_regexp='yes'/>
+	  </antipattern>
+	  <!-- "O profeta, mas a evidências que apoiam que esta reivindicação é falsa." -->
+	  <!-- "A duzentas no inverno." -->
+	  <!-- "Vendendo-os posteriormente a crianças menores de idade." -->
+	  <!-- "Vendendo-os posteriormente a crianças." -->
+      <antipattern>		  
+		  <token regexp="no">a</token>
+		  <token postag='NC[CFM]P000|AQ0[CFM]P0|NP[FM]S[0G]00' postag_regexp='yes'/>
+		  <token regexp="yes">que|na|no|maiores|menores|como|por|o|[.,?!]</token>
+	  </antipattern>
+<!-- MARCOAGPINTO 2020-10-05 + 2020-11-05 (2-JUL-2020+) *END* -->
       <pattern>
           <token negate='yes' regexp='yes'>e|ou|&hifen;</token>
         <marker>
@@ -2633,11 +2930,12 @@ title="Easy editing stylesheet" ?>
       <example correction='A vaca|As vacas|A, vacas'><marker>A vacas</marker> são malhadas.</example>
       <example>O programa Lendas do Futuro é bom?</example>
       <example>Uma vez acordadas as novas condições, será feito o abastecimento elétrico.</example>
-      <example correction='união empobrecida|uniões empobrecidas|união, empobrecidas'>As regiões na <marker>união empobrecidas</marker> acabaram por ser culpabilizadas.</example>
+<!--      <example correction='união empobrecida|uniões empobrecidas|união, empobrecidas'>As regiões na <marker>união empobrecidas</marker> acabaram por ser culpabilizadas.</example> --> <!-- Remmed by MARCOAGPINTO 2020-10-29 -->
       <example>As regiões da <marker>união empobrecidas</marker> acabaram por ser culpabilizados.</example>
       <example>…odo estudante confia no Sr. Akai porque ele nunca quebra promessas.</example>
       <example correction='bastante mesa|bastantes mesas|bastante, mesas'>Existem <marker>bastante mesas</marker>!</example>
       <example>Algo que nos une como plataforma a tantos continentes, a tantos oceanos, a tantas culturas, a tantas civilizações</example>
+	  <example type='correct'>O Rui quer enfrentar de <marker>forma eficaz ações entrópicas</marker>.</example>
     </rule>
     <rule>
       <antipattern>
@@ -2786,6 +3084,49 @@ title="Easy editing stylesheet" ?>
 		  <token regexp='yes'>as?|os?|pelas?|pelos?|nas?|nos?|com|em|de|um|uma|por|para|nestas?|nestes?</token>
       </antipattern>	
 <!-- MARCOAGPINTO 2020-07-31 (2-JUL-2020+) *END* -->
+<!-- MARCOAGPINTO 2020-11-05 (21-OCT-2020+) *START* -->
+<!-- "Demos tempo ao tempo porque, a seu tempo, sorriremos de novo." -->
+      <antipattern>
+		  <token inflected='yes'>dar</token>
+		  <token>tempo</token>
+      </antipattern>
+<!-- MARCOAGPINTO 2020-11-05 (21-OCT-2020+) *END* -->
+<!-- MARCOAGPINTO 2020-11-09 (21-OCT-2020+) *START* -->
+<!-- "Dez anos, ao longo dos quais Ana esperou pelo marido." -->
+      <antipattern>
+		  <token regexp='yes'>as|os|das|dos|nas|nos|pelas|pelos</token>
+		  <token postag='PE0CP000|PR0CP000|PT0CP000' postag_regexp='yes'/>
+          <token postag='NP.+' postag_regexp='yes'/>
+      </antipattern>
+<!-- MARCOAGPINTO 2020-11-09 (21-OCT-2020+) *END* -->
+<!-- MARCOAGPINTO 2020-11-18 (21-OCT-2020+) *START* -->
+<!-- "Os ficheiros cache são carregados no início." -->
+<!-- "As palavras passe são carregadas no início." -->
+      <antipattern>
+		<token regexp='yes'>as|os</token>
+		<token postag='NC[CFM]P000|AQ0[CFM]P0' postag_regexp='yes'/>
+		<token postag='NC[CFM]S000|AQ0[CFM]S0' postag_regexp='yes'/>
+		<token postag='VMIP3P0|VMIM3P0|VMIS3P0' postag_regexp='yes'/>
+      </antipattern>
+<!-- "Portugal exporta para os mercados europeu, asiático e americano." -->	  
+      <antipattern>
+		<token regexp='yes'>as|os</token>
+		<token postag='NC[CFM]P000|AQ0[CFM]P0' postag_regexp='yes'/>
+		<token postag='NC[CFM]S000|AQ0[CFM]S0' postag_regexp='yes'/>
+		<token regexp='yes'>[.,(]</token>
+		<token negate_pos="yes" postag='SPS.+|V.+' postag_regexp='yes'/>
+      </antipattern>	  	  
+<!-- MARCOAGPINTO 2020-11-18 (21-OCT-2020+) *END* -->
+<!-- MARCOAGPINTO 2020-12-07 (21-OCT-2020+) *START* -->
+<!-- "Mas com as outras era canja." -->
+<!-- "Mas com os outros era canja." -->
+      <antipattern>
+		<token postag='SPS.+' postag_regexp='yes'/>
+		<token postag='DA0.P0' postag_regexp='yes'/>
+		<token postag='DI0.P0' postag_regexp='yes'/>
+		<token postag='NC.S000|VMII.S0' postag_regexp='yes'/>
+      </antipattern>
+<!-- MARCOAGPINTO 2020-12-07 (21-OCT-2020+) *END* -->
       <pattern>
           <token negate='yes' regexp='yes'>&hifen;</token>
         <marker>
@@ -2808,13 +3149,18 @@ title="Easy editing stylesheet" ?>
       <example correction='A vaca|As vacas|As, vaca'><marker>As vaca</marker> são malhadas.</example>
       <example>Apresentou os programas Jornal do Mundo, Internacional Patati e Plus Berlin.</example>
       <example correction='fechadura grande|fechaduras grandes|fechaduras, grande'>Coloca essa chave nas <marker>fechaduras grande</marker>.</example>
-      <example correction="situação mais preocupante|situações mais preocupantes|situações mais, preocupante">A <marker>situações mais preocupante</marker> é esta.</example>
       <example>Conforme mais dados vão sendo acumulados de pessoas de todas as idades.</example>
       <example>Pega na chave das <marker>fechaduras grande</marker>.</example>
       <example>As respostas têm de ser o mais amplas possível para serem efectivos.</example>
       <example>Eu as encontro.</example>
 	  <example type='correct'>O campo B pode ser definido de muitas formas <marker>equivalentes baseado</marker> nos seus efeitos sobre o ambiente.</example>
 	  <example type='correct'>O campo B pode ser definido de muitas formas <marker>equivalentes baseada</marker> nas suas influências sobre o ambiente.</example>
+	  <example type='correct'>Dez anos, ao longo <marker>dos quais Ana</marker> esperou pelo marido.</example>
+	  <example type='correct'><marker>Os ficheiros cache</marker> são carregados no início.</example>
+	  <example type='correct'><marker>As palavras passe</marker> são carregadas no início.</example>
+	  <example type='correct'>Portugal exporta para <marker>os mercados europeu,</marker> asiático e americano.</example>
+	  <example type='correct'>Mas <marker>com as outras era</marker> canja.</example>
+	  <example type='correct'>Mas <marker>com os outros era</marker> canja.</example>
     </rule>
     <rule>
       <antipattern>
@@ -2917,6 +3263,30 @@ title="Easy editing stylesheet" ?>
 		  <token postag='DA0MS0' postag_regexp='no'/>		  	  
       </antipattern>
 <!-- MARCOAGPINTO 2020-06-06 *END* -->
+<!-- MARCOAGPINTO 2020-12-08 (21-OCT-2020+) *START* -->
+<!--
+Basta colar uma lista de e-mails abaixo para enviar convites a todos nós.
+Basta colar uma lista de e-mails abaixo para enviar convites a todos vocês.
+Basta colar uma lista de e-mails abaixo para enviar convites a todos vós.
+Basta colar uma lista de e-mails abaixo para enviar convites a todos eles.
+-->
+      <antipattern>
+	    <token regexp='no'>a</token>
+		<token postag='DI0MP0' postag_regexp='no'/>
+		<token postag='PP1CP000|PP2CP000|PP3CS000|PP3CP000|PP3MP000' postag_regexp='yes'/>
+      </antipattern>
+<!--
+Basta colar uma lista de e-mails abaixo para enviar convites a todas nós.
+Basta colar uma lista de e-mails abaixo para enviar convites a todas vocês.
+Basta colar uma lista de e-mails abaixo para enviar convites a todas vós.
+Basta colar uma lista de e-mails abaixo para enviar convites a todas elas.
+-->
+      <antipattern>
+	    <token regexp='no'>a</token>
+		<token postag='DI0FP0' postag_regexp='no'/>
+		<token postag='PP1CP000|PP2CP000|PP3CS000|PP3CP000|PP3FP000' postag_regexp='yes'/>
+      </antipattern>
+<!-- MARCOAGPINTO 2020-12-08 (21-OCT-2020+) *END* -->
       <pattern>
           <unify negate="yes">
             <feature id="number"/>
@@ -2982,6 +3352,26 @@ title="Easy editing stylesheet" ?>
 		  <token postag='NC[CFM]P000' postag_regexp='yes'/>
       </antipattern>  	  
 <!-- MARCOAGPINTO 2020-07-06 (2-JUL-2020+) *END* -->
+<!-- MARCOAGPINTO 2020-12-11 (21-OCT-2020+) *START* -->
+<!--
+O meu Horácio sai de casa e está temporadas sem pôr cá os pés.
+Tu sais de casa e estás temporadas sem pôr cá os pés.
+-->
+      <antipattern>
+          <token postag='VMIP3S0|VMM02S0|VMIP2S0' postag_regexp='yes'/>
+		  <token postag='NC.P000|NP.P[0GS]00|AQ0.P0' postag_regexp='yes'/>
+		  <token negate_pos="yes" postag='NC.P000|NP.P[0GS]00|AQ0.P0' postag_regexp='yes'>
+			<exception negate="no" regexp='yes'>[.,!?]</exception></token>
+      </antipattern>
+<!--
+O plural de cavalo é cavalos.
+-->	  
+      <antipattern>
+          <token postag='VMIP3S0|VMM02S0|VMIP2S0' postag_regexp='yes'/>
+		  <token postag='NC.P000|NP.P[0GS]00|AQ0.P0' postag_regexp='yes'/>
+		  <token regexp='yes'>[.,!?]</token>
+      </antipattern>	  
+<!-- MARCOAGPINTO 2020-12-11 (21-OCT-2020+) *END* -->
       <pattern case_sensitive='yes'>
           <token inflected='yes' postag_regexp='yes' postag='V....S.+' regexp='yes'>&verbos_de_ligacao;
             <exception postag_regexp='yes' postag='V.[NP].+'/>
@@ -2996,7 +3386,7 @@ title="Easy editing stylesheet" ?>
         <suggestion>\1 <match no='2' include_skipped='all'/> <match no='3' include_skipped='all' postag="(NC|A..|V.P.)(.)P(.+)" postag_replace='$1$2S$3' postag_regexp="yes"/></suggestion>
         <suggestion><match no='1' postag="(V....)S(.+)" postag_replace='$1P$2' postag_regexp="yes"/> <match no='2' include_skipped='all'/> <match no='3' include_skipped='all'/></suggestion>
     <!--<example correction='é rosa|são rosas'>Isto <marker>é rosas</marker>, Senhor. São rosas.</example>--><!-- TODO rosas? also from verb Rosar - Disambiguate colors/verbs -->
-      <example correction='é trevo|são trevos'>Isto <marker>é trevos</marker>, Senhor. São trevos.</example>
+    <!--  <example correction='é trevo|são trevos'>Isto <marker>é trevos</marker>, Senhor. São trevos.</example> -->
     <!--example correction='é muito pouco trevo|são muito pouco trevos'>Isto <marker>é muito pouco trevos</marker>, Senhor. São muito pouco trevos.</example XXX wrong suggestion due to min + max bug -->
       <example correction='Foi corrigido|Foram corrigidos'><marker>Foi corrigidos</marker> o valor da fatura.</example>
     <!--example correction="são funcionais|é funcional">Os correctores gramaticais <marker>é funcionais</marker>.</example XXX add after disambiguating funcionais-->
@@ -3004,6 +3394,8 @@ title="Easy editing stylesheet" ?>
       <example>Eles têm sido bons vizinhos até hoje.</example>
       <example>Nós devemos aprender a viver juntos como irmãos, ou vamos morrer juntos como tolos.</example>
       <example>O nosso País foi sempre dependente das importações dos países vizinhos.</example>
+	  <example type='correct'>O meu Horácio sai de casa e <marker>está temporadas</marker> sem pôr cá os pés.</example>
+	  <example type='correct'>Tu sais de casa e <marker>estás temporadas</marker> sem pôr cá os pés.</example>	  
     </rule>
     <rule>
 <!-- MARCOAGPINTO 2020-07-02 (2-JUL-2020+) *START* -->
@@ -3309,6 +3701,14 @@ title="Easy editing stylesheet" ?>
           <token postag_regexp='yes' postag='N.F.+'/>
       </antipattern>
     <rule>
+<!-- MARCOAGPINTO 2020-11-22 (21-OCT-2020+) *START* -->
+<!-- "O mais aproximado é a Rua da Coxa em Bragança." -->
+<!-- "Na mesma época foi criado o conceito de Europa Latina." -->
+      <antipattern>
+          <token regexp='yes'>a|de</token>
+          <token postag_regexp='yes' postag='N.[CF].+'/>
+      </antipattern>	
+<!-- MARCOAGPINTO 2020-11-22 (21-OCT-2020+) *END* -->
       <pattern>
           <token postag="SPS00"/><!-- TODO rethink postag_regexp='yes' CC|SENT_START Belize, Honduras e Panamá usam também a língua inglesa.-->
         <marker>
@@ -3757,15 +4157,15 @@ MARCOAGPINTO 2020-02-18 -->
             <exception scope='next'>,</exception></token>
           <token postag='V.[CIS].3S0' postag_regexp='yes'/>
       </antipattern>
-<!-- MARCOAGPINTO 2020-03-13 *START* -->
+<!-- MARCOAGPINTO 2020-10-21 (21-OCT-2020+) *START* --> 
+<!-- "E antes em nós semeia esta vileza." -->
 <!-- "A probabilidade de prosseguir trilhas entre nós é conseguida na função." -->
       <antipattern>
-			<token  postag_regexp="no" postag="SPS00"/>
-			<token  postag_regexp="yes" postag="PP1CP000|NCMP000"/>
-			<token  postag_regexp="no" postag="VMIP3S0"/>
-			<token  postag_regexp="no" postag="VMP00SF"/>			
-      </antipattern>
-<!-- MARCOAGPINTO 2020-03-13 *END* -->
+		  <token postag='SPS.+' postag_regexp='yes'/>
+		  <token postag='PP.+|NC[CFM]P000|AQ0[CFM]P0' postag_regexp='yes'/>
+		  <token postag='VMIP3S0|VMM02S0' postag_regexp='yes'/>
+	  </antipattern>
+<!-- MARCOAGPINTO 2020-10-21 (21-OCT-2020+) *END* -->
       <pattern>
           <token>nós</token>
           <token min="0" max="3" postag='R.+' postag_regexp='yes'>
@@ -3781,6 +4181,8 @@ MARCOAGPINTO 2020-02-18 -->
       <example type="correct"><marker>Nós ainda não passeamos</marker> na praia.</example>
       <example>Nós preocupar-nos-iamos, talvez, com esta manifestação de ignorância.</example>
       <example>Um de nós passeia na praia.</example>
+	  <example type='correct'>E antes em <marker>nós semeia</marker> esta vileza.</example>
+	  <example type='correct'>A probabilidade de prosseguir trilhas entre <marker>nós é</marker> conseguida na função.</example>
     </rule>
     <rule>
       <pattern>
@@ -4163,6 +4565,25 @@ MARCOAGPINTO 2020-02-18 -->
 		<token postag='VMIP3S0|VMM02S0' postag_regexp='yes'/>
       </antipattern>	  
 <!-- MARCOAGPINTO 2020-08-13 (2-JUL-2020+) *END* -->
+<!-- MARCOAGPINTO 2020-10-26 (21-OCT-2020+) *START* -->
+<!-- "Já tirei o anterior porque imaginei que não querias ser descoberto." -->
+      <antipattern>
+		  <token postag='VMIS1S0' postag_regexp='no'/>
+		  <token></token>
+		  <token postag='AQ0[CFM][SP]0|NC[CFM][SP]000' postag_regexp='yes'/>
+		  <token postag='CS' postag_regexp='no'/>
+		  <token postag='VMIS1S0' postag_regexp='no'/>
+      </antipattern>
+	  <!-- "Já tirei o anterior por que imaginei que não querias ser descoberto." -->
+      <antipattern>
+	      <token postag='VMIS1S0' postag_regexp='no'/>
+		  <token></token>
+		  <token postag='AQ0[CFM][SP]0|NC[CFM][SP]000' postag_regexp='yes'/>
+		  <token postag='RG' postag_regexp='no'/>
+		  <token postag='RG' postag_regexp='no'/>
+		  <token postag='VMIS1S0' postag_regexp='no'/>
+      </antipattern>
+<!-- MARCOAGPINTO 2020-10-26 (21-OCT-2020+) *END* -->
       <antipattern>
 		  <token postag='VMN0000' postag_regexp='no'/>
 		  <token postag='DA0[FM]P0' postag_regexp='yes'/>
@@ -4429,6 +4850,35 @@ MARCOAGPINTO 2020-02-18 -->
         <token postag='VMI[SM]3P0' postag_regexp='yes'/>
       </antipattern>	  	  
 <!-- MARCOAGPINTO 2020-08-04 + 2020-08-05 (2-JUL-2020+) *END* -->
+<!-- MARCOAGPINTO 2020-10-21 (21-OCT-2020+) *START* --> 
+<!-- "Sem a sua presença ficamos à rasca." -->
+<!-- "Sem a sua presença ficámos à rasca." -->
+      <antipattern>
+		  <token postag='DP.+' postag_regexp='yes'/>
+		  <token postag='NC[CFM]S000|AQ0[CFM]S0' postag_regexp='yes'/>
+		  <token postag='VMI[SP]1P0' postag_regexp='yes'/>
+		  <token postag='SPS.+' postag_regexp='yes'/>
+	  </antipattern>
+<!-- MARCOAGPINTO 2020-10-21 (21-OCT-2020+) *END* -->
+<!-- MARCOAGPINTO 2020-10-26 (21-OCT-2020+) *START* -->
+<!-- "Já tirei o anterior porque imaginei que não querias ser descoberto." -->
+      <antipattern>
+		  <token postag='VMIS1S0' postag_regexp='no'/>
+		  <token></token>
+		  <token postag='AQ0[CFM][SP]0|NC[CFM][SP]000' postag_regexp='yes'/>
+		  <token postag='CS' postag_regexp='no'/>
+		  <token postag='VMIS1S0' postag_regexp='no'/>
+      </antipattern>
+	  <!-- "Já tirei o anterior por que imaginei que não querias ser descoberto." -->
+      <antipattern>
+	      <token postag='VMIS1S0' postag_regexp='no'/>
+		  <token></token>
+		  <token postag='AQ0[CFM][SP]0|NC[CFM][SP]000' postag_regexp='yes'/>
+		  <token postag='RG' postag_regexp='no'/>
+		  <token postag='RG' postag_regexp='no'/>
+		  <token postag='VMIS1S0' postag_regexp='no'/>
+      </antipattern>
+<!-- MARCOAGPINTO 2020-10-26 (21-OCT-2020+) *END* -->
       <pattern>
 <!-- MARCOAGPINTO 2020-05-09 *START* -->
 <!-- "As pessoas no meu trabalho infelizmente não falam Alemão, apenas português." -->	  
@@ -4458,7 +4908,24 @@ MARCOAGPINTO 2020-02-18 -->
 	  <example type='correct'>Ele e o <marker>seu irmão foram</marker> castrados.</example>
 	  <example type='correct'>Ele e a <marker>sua irmã foram</marker> castrados.</example>
 	  <example type='correct'>Grandes rios que correm <marker>a região escavaram</marker> grandes e profundos vales.</example>
+	  <example type='correct'>Sem a <marker>sua presença ficamos</marker> à rasca.</example>
+	  <example type='correct'>Sem a <marker>sua presença ficámos</marker> à rasca.</example>
     </rule>
+	
+    <!-- 	VERBO_SER + EU fui eu -->
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-11-12 (21-OCT-2020+)     -->
+    <rule>
+      <pattern>
+		<marker>
+			<token regexp='yes'>foi|foram</token>
+		</marker>
+        <token>eu</token>
+      </pattern>
+      <message>&MSG_ECV;</message>
+        <suggestion>fui</suggestion>
+      <example correction='fui'>Quem deu a cara <marker>foi</marker> eu.</example>
+    </rule>
+	
   </rulegroup>
 
     <!-- General verbal concordance errors - They + Verb -->
@@ -5242,6 +5709,16 @@ MARCOAGPINTO 2020-02-18 -->
           <token postag_regexp='yes' postag='R.+'>
             <exception negate_pos='yes' postag_regexp='yes' postag='R.+'/></token>
       </antipattern>
+      <antipattern>
+          <token>de</token>
+          <token>forma</token>
+          <token postag="A..[CF]S.+" postag_regexp="yes"/>
+      </antipattern>
+      <antipattern>
+          <token>de</token>
+          <token regexp='yes'>jeito|modo</token>
+          <token postag="A..[CM]S.+" postag_regexp="yes"/>
+      </antipattern>
     <rule id='PHRASAL_VERB_PREFERIR' name='Regência verbal: Preferir X a Y'>
     <!--      Created by Tiago F. Santos, 2017-01-24      -->
     <!-- Loosely based on CoGrOO rule -->
@@ -5338,7 +5815,7 @@ MARCOAGPINTO 2020-02-18 -->
       <pattern>
           <token inflected='yes'>ter</token>
           <token postag='VMN0000'>
-            <exception regexp='yes'>poder|prazer</exception></token>
+            <exception regexp='yes'>poder|prazer|fazer</exception></token> <!-- MARCOAGPINTO 2020-10-27 (21-OCT-2020+): Added "FAZER" -->
       </pattern>
       <message>Dependendo do significado, deve separar os verbos. <suggestion>\1 de \2</suggestion> se é uma obrigação, ou <suggestion>\1 que \2</suggestion> se é uma constatação.</message>
       <url>https://ciberduvidas.iscte-iul.pt/consultorio/perguntas/duvidas-sobre-o-ter-de-e-o-ter-que/14247</url>
@@ -5346,6 +5823,7 @@ MARCOAGPINTO 2020-02-18 -->
       <example>Terei prazer em ajudá-la..</example>
       <example>…s industriais, por serem em número muito restrito têm poder oligopolístico sobre esse mercado.</example>
       <example>…rimeira é eleita por sufrágio universal directo e tem poderes fundamentalmente legislativos, além de fiscalizar…</example>
+	  <example type='correct'>Que mal tem <marker>fazer chichi</marker> na piscina?</example>	
     </rule>
     <rule id='PHRASAL_VERB_RESIDIR_EM' name='Regência verbal: Residir em'>
     <!--      Created by Tiago F. Santos, 2018-09-19      -->
@@ -5358,6 +5836,14 @@ MARCOAGPINTO 2020-02-18 -->
           <token regexp='yes'>residentes?|morad(?:as?|or(?:es)?)</token>
           <token postag_regexp='yes' postag='A.+'/>
       </antipattern>
+<!-- MARCOAGPINTO 2020-10-06 + 2020-10-27 (21-OCT-2020+) *START* --> 
+<!-- "No núcleo reside a força imprescindível dos modelos." -->
+      <antipattern>		  
+		  <token regexp="yes">residem?</token>
+		  <token regexp="yes">as?|os?|um|uns|umas?</token>
+		  <token postag='NC[CFM][SP]000|AQ0[CFM][SP]0' postag_regexp='yes'/>
+	  </antipattern>
+<!-- MARCOAGPINTO 2020-10-06 + 2020-10-27 (21-OCT-2020+) *END* -->
       <pattern>
           <token inflected='yes' regexp='yes'>residir|morar|residente|morador</token>
           <token postag_regexp='yes' postag='[DN].+'>
@@ -5373,6 +5859,7 @@ MARCOAGPINTO 2020-02-18 -->
       <example>Lá reside o perigo.</example>
       <example>…que residentes cubanos nos Estados Unidos…</example>
       <example>, entre residentes estrangeiros e nacionais no regime fiscal.</example>
+	  <example type='correct'>No núcleo <marker>reside a</marker> força imprescindível dos modelos.</example>
     </rule>
     <rule id='PHRASAL_VERB_SOBREPOR_SOBRE' name='Regência verbal: Sobrepor sobre/a'>
     <!--      Created by Tiago F. Santos, 2019-09-21      -->
@@ -5470,7 +5957,7 @@ MARCOAGPINTO 2020-02-18 -->
         </marker>
           <token negate_pos='yes' postag_regexp='yes' postag='V.[^P].+'/>
       </pattern>
-      <message>Certos pronomes relativos, conjunções subordinativas e advérbios  devem ser seguidos de próclise.</message>
+      <message>Certos pronomes relativos, conjunções subordinativas e advérbios devem ser seguidos de próclise.</message>
         <suggestion><match no='1' include_skipped='all'/> <match no='2' include_skipped='all'/> \5 \3</suggestion>
       <example correction='Quem lhe contou'><marker>Quem contou-lhe</marker> essa notícia?</example>
       <example correction='que ela lhe tenha'>É natural <marker>que ela tenha-lhe</marker> dado notícia.</example>
@@ -5696,7 +6183,8 @@ MARCOAGPINTO 2020-02-18 -->
           <token inflected="yes" regexp="yes"><!--seguro|certo|farto-->alegre|triste|entristecer|surpreender|convencer|preocupar|cansar|aborrecer</token>
           <token>que</token>
       </pattern>
-      <message>Neste contexto, o verbo é seguido normalmente da preposição 'de':  <suggestion>\1 \2 de \3</suggestion></message>
+      <message>Neste contexto, o verbo é seguido normalmente da preposição 'de'.</message>
+      <suggestion>\1 \2 de \3</suggestion>
       <url>https://ciberduvidas.iscte-iul.pt/consultorio/perguntas/uso-de-de-que-de-novo-queismo-e-dequeismo/19156</url>
       <short>Possível queísmo</short>
       <example correction="Estamos alegres de que"><marker>Estamos alegres que</marker> falta pouco para acabar.</example>
@@ -5710,7 +6198,8 @@ MARCOAGPINTO 2020-02-18 -->
             <exception postag="VM..3.." postag_regexp="yes"/></token>
           <token>que</token>
       </pattern>
-      <message>Neste contexto, o verbo é seguido normalmente da preposição 'de':  <suggestion>\1 \2 de que</suggestion></message>
+      <message>Neste contexto, o verbo é seguido normalmente da preposição 'de'.</message>
+      <suggestion>\1 \2 de que</suggestion>
       <url>https://ciberduvidas.iscte-iul.pt/consultorio/perguntas/uso-de-de-que-de-novo-queismo-e-dequeismo/19156</url>
       <short>Possível queísmo</short>
       <example correction="Me preocupo de que"><marker>Me preocupo que</marker> haja comida para todos.</example>
@@ -6329,6 +6818,16 @@ MARCOAGPINTO 2020-02-18 -->
       <url>https://ciberduvidas.iscte-iul.pt/consultorio/perguntas/connosco-com-a-gente-e-com-nos-no-portugues-europeu/26842</url>
       <short>Linguagem informal</short>
       <example correction="connosco">Ele veio <marker>com nós</marker> para o revéillon.</example>
+    </rule>
+
+    <rule id='FORMAL_PRA_PARA' name="Expressões 'para'">
+    <!--      Created by Marco A.G.Pinto, Portuguese rule 2020-10-13 (2-JUL-2020+)     -->
+      <pattern>
+          <token>pra</token>
+      </pattern>
+      <message>Será que quis dizer <suggestion>para</suggestion>?</message>
+      <short>Linguagem informal</short>
+      <example correction="para">Tudo isso <marker>pra</marker> quê?</example>
     </rule>
 
     <rule id='DAR_À_LUZ' name="Expressão invariável: 'dar à luz'">
@@ -7587,6 +8086,68 @@ MARCOAGPINTO 2020-02-18 -->
 
  <category id='MISC' name="Sem Categoria Definida" type="uncategorized">
 
+    <rulegroup id='À_MINHA-TUA-SUA-VOSSA_VERB' name="à + minha/tua/sua/vossa(s) + verb" >
+    <!--      Created by Marco A.G.Pinto, Portuguese rule - 2020-09-07 (2-JUL-2020+) -->
+		<rule>
+			<pattern>			    
+				<token>à</token>
+				<token postag='V.+' postag_regexp='yes'/> 
+				<token>de</token>
+				<token>mim</token>			
+			</pattern>
+			<message>Substitua por <suggestion>à minha \2</suggestion>.</message>
+			<example correction="à minha procura">Eles andaram meses <marker>à procura de mim</marker>.</example>
+			<example type='correct'>Eles andaram meses <marker>à minha procura</marker>.</example>
+		</rule>		
+		<rule>
+			<pattern>			    
+				<token>à</token>
+				<token postag='V.+' postag_regexp='yes'/> 
+				<token>de</token>
+				<token>ti</token>			
+			</pattern>
+			<message>Substitua por <suggestion>à tua \2</suggestion>.</message>
+			<example correction="à tua procura">Eles andaram meses <marker>à procura de ti</marker>.</example>
+			<example type='correct'>Eles andaram meses <marker>à tua procura</marker>.</example>
+		</rule>
+		<rule>
+			<pattern>			    
+				<token>à</token>
+				<token postag='V.+' postag_regexp='yes'/> 
+				<token>de</token>
+				<token>si</token>			
+			</pattern>
+			<message>Substitua por <suggestion>à sua \2</suggestion>.</message>
+			<example correction="à sua procura">Eles andaram meses <marker>à procura de si</marker>.</example>
+			<example type='correct'>Eles andaram meses <marker>à sua procura</marker>.</example>
+		</rule>
+		<rule>
+			<pattern>			    
+				<token>à</token>
+				<token postag='V.+' postag_regexp='yes'/> 
+				<token>de</token>
+				<token regexp='no'>você</token>			
+			</pattern>
+			<message>Substitua por </message>
+			<suggestion>à sua \2</suggestion>
+			<suggestion>à tua \2</suggestion>
+			<example correction="à sua procura|à tua procura">Eles andaram meses <marker>à procura de você</marker>.</example>
+			<example type='correct'>Eles andaram meses <marker>à sua procura</marker>.</example>
+			<example type='correct'>Eles andaram meses <marker>à tua procura</marker>.</example>
+		</rule>		
+		<rule>
+			<pattern>			    
+				<token>à</token>
+				<token postag='V.+' postag_regexp='yes'/> 
+				<token>de</token>
+				<token regexp='no'>vocês</token>			
+			</pattern>
+			<message>Substitua por <suggestion>à vossa \2</suggestion>.</message>
+			<example correction="à vossa procura">Eles andaram meses <marker>à procura de vocês</marker>.</example>
+			<example type='correct'>Eles andaram meses <marker>à vossa procura</marker>.</example>
+		</rule>
+	</rulegroup>
+
     <rule id='ABDICAR_DIREITOS_PRIVILÉGIOS' name="Abdicar de direitos/privilégios">
     <!--      Created by Marco A.G.Pinto, Portuguese rule      -->
       <pattern>
@@ -7670,6 +8231,578 @@ MARCOAGPINTO 2020-02-18 -->
       <message>Substitua por <suggestion>que</suggestion>.</message>
       <example correction="que">Vamos ambicionar <marker>a que</marker> seja uma vitória.</example>
     </rule>
+	
+    <!-- AO MESMO TEMPO em simultâneo -->	
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-10-22 (21-OCT-2020+)     -->
+	<rule id='AO_MESMO_TEMPO-EM_SIMULTANEO' name="Em simultâneo">
+      <pattern>
+		<token negate_pos="yes" postag='SENT_START'/>
+			<marker>
+				<token>ao</token>
+				<token>mesmo</token>
+				<token>tempo</token>
+			</marker>	
+		<token negate="yes">que</token>
+      </pattern>
+      <message>Substitua por <suggestion>em simultâneo</suggestion>.</message>
+      <example correction="em simultâneo">Tudo aconteceu <marker>ao mesmo tempo</marker>.</example>
+    </rule>
+	
+    <!-- 	AS COISAS NÃO VÃO VERBO_INF nada vai Verb_info -->	
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-11-02 (21-OCT-2020+)     -->
+    <rule id='AS_COISAS_NÃO_VÃO_VERBO_INF' name="Nada vai + verb_inf">
+		<pattern>
+		  <marker>
+			<token>as</token>
+			<token>coisas</token>
+			<token>não</token>
+			<token>vão</token>
+		  </marker>
+		  <token postag='VMN0000' postag_regexp='no'/>
+		</pattern>		
+		<message>Substitua por <suggestion>nada vai</suggestion>.</message>
+		<example correction="nada vai">Em princípio <marker>as coisas não vão</marker> melhorar.</example>  
+    </rule>
+	
+    <!-- 	ATENÇÃO QUE VERB_MERECER atenção devida-->	
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-11-23 (21-OCT-2020+)     -->
+    <rule id='ATENÇÃO_QUE_VERB_MERECER_atenção_devida' name="Atenção devida">
+		<pattern>
+			<token regexp='no'>atenção</token>
+			<marker>
+				<token regexp='no'>que</token>
+				<token inflected='yes'>merecer</token>
+			</marker>
+		</pattern>		
+		<message>Substitua por <suggestion>devida</suggestion>.</message>
+		<example correction="devida">Não vos posso dar a atenção <marker>que merecem</marker>.</example>  
+	</rule>
+	
+    <!-- 	CADA VEZ MAIOR/MENOR crescente/decrescente -->	
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-10-31 (21-OCT-2020+)     -->
+    <rulegroup id='CADA_VEZ_MAIOR_MENOR_CRESCENTE_DECRESCENTE' name="Cada vez maior/menor > crescente/decrescente">
+	
+	  <!-- CRESCENTE -->
+	  <rule>
+		<pattern>
+	      <token regexp='yes'>a|e|é|o|um|uma</token>
+		  <marker>
+			<token>cada</token>
+			<token>vez</token>
+			<token>maior</token>
+		  </marker>
+		</pattern>
+		<message>Substitua por <suggestion>crescente</suggestion>.</message>
+		<example correction="crescente">O <marker>cada vez maior</marker> número de cometas descobertos tornou o processo problemático.</example>
+	  </rule>
+	  <rule>
+		<pattern>
+	      <token postag='AQ0[CFM]S0|NC[CFM]S000' postag_regexp='yes'/>
+		  <marker>
+			<token>cada</token>
+			<token>vez</token>
+			<token>maior</token>
+		  </marker>
+		</pattern>
+		<message>Substitua por <suggestion>crescente</suggestion>.</message>
+		<example correction="crescente">O número <marker>cada vez maior</marker> de cometas descobertos tornou o processo problemático.</example>
+	  </rule>
+	  
+	  <!-- DECRESCENTE -->
+	  <rule>
+		<pattern>
+	      <token regexp='yes'>a|e|é|o|um|uma</token>
+		  <marker>
+			<token>cada</token>
+			<token>vez</token>
+			<token>menor</token>
+		  </marker>
+		</pattern>
+		<message>Substitua por <suggestion>decrescente</suggestion>.</message>
+		<example correction="decrescente">O <marker>cada vez menor</marker> número de cometas descobertos tornou o processo problemático.</example>
+	  </rule>
+	  <rule>
+		<pattern>
+	      <token postag='AQ0[CFM]S0|NC[CFM]S000' postag_regexp='yes'/>
+		  <marker>
+			<token>cada</token>
+			<token>vez</token>
+			<token>menor</token>
+		  </marker>
+		</pattern>
+		<message>Substitua por <suggestion>decrescente</suggestion>.</message>
+		<example correction="decrescente">O número <marker>cada vez menor</marker> de cometas descobertos tornou o processo problemático.</example>
+	  </rule>
+	  
+    </rulegroup>
+	
+    <!-- COM A MAIOR DAS CALMAS com a maior naturalidade -->
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-10-04 (2-JUL-2020+)     -->
+    <rule id='COM_A_MAIOR_DAS_CALMAS' name="Com a maior naturalidade">
+      <pattern>
+		<token>com</token>
+		<token>a</token>
+		<token>maior</token>		
+	    <marker>
+			<token>das</token>
+			<token>calmas</token>
+		</marker>
+      </pattern>
+      <message>Linguagem informal. Substitua por <suggestion>naturalidade</suggestion>.</message>
+      <example correction="naturalidade">O Rui surgiu com a maior <marker>das calmas</marker>.</example>
+    </rule>
+
+    <!-- DAR NA VISTA das nas vistas -->	
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-10-26 (21-OCT-2020+)     -->
+    <rule id='DAR_NA_VISTA' name="Dar nas vistas">
+      <pattern>
+		  <token inflected='yes'>dar</token>
+		  <marker>
+			<token>na</token>
+			<token>vista</token>
+		  </marker>
+      </pattern>
+      <message>Esta expressão é utilizada no plural: <suggestion>nas vistas</suggestion>.</message>
+      <example correction="nas vistas">Procura não dar <marker>na vista</marker>.</example>
+    </rule>
+
+    <!-- 	DENTRO DE/DA(S)/DO(S) em/na(s)/no(s) -->	
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-11-19 (21-OCT-2020+)     -->
+    <rulegroup id='DENTRO_DE_DA_DAS_DO_DOS_EM_NA_NAS_NO_NOS' name="Dentro de/da(s)/do(s) > em/na(s)/no(s)">
+	
+	    <!-- DE/EM -->
+		<rule>
+			<pattern>
+				<token negate="yes" regexp='yes'>de|e|para|por|sempre</token>
+				<marker>
+					<token regexp='no'>dentro</token>
+					<token regexp='no'>de</token>
+				</marker>
+				<token postag='NC.+|AQ.+' postag_regexp='yes'/>
+			</pattern>		
+			<message>Substitua por <suggestion>em</suggestion>.</message>
+			<example correction="em">Estes conflitos ocorrem <marker>dentro de</marker> cidades.</example>  
+		</rule>
+		
+	    <!-- DA/NA -->
+		<rule>
+			<pattern>
+				<token negate="yes" regexp='yes'>de|e|para|por|sempre</token>
+				<marker>
+					<token regexp='no'>dentro</token>
+					<token regexp='no'>da</token>
+				</marker>
+				<token postag='NC.+|AQ.+' postag_regexp='yes'/>
+			</pattern>		
+			<message>Substitua por <suggestion>na</suggestion>.</message>
+			<example correction="na">Estes conflitos ocorrem <marker>dentro da</marker> cidade.</example>  
+		</rule>
+
+	    <!-- DAS/NAS -->
+		<rule>
+			<pattern>
+				<token negate="yes" regexp='yes'>de|e|para|por|sempre</token>
+				<marker>
+					<token regexp='no'>dentro</token>
+					<token regexp='no'>das</token>
+				</marker>
+				<token postag='NC.+|AQ.+' postag_regexp='yes'/>
+			</pattern>		
+			<message>Substitua por <suggestion>nas</suggestion>.</message>
+			<example correction="nas">Estes conflitos ocorrem <marker>dentro das</marker> cidades.</example>  
+		</rule>
+
+	    <!-- DO/NO -->
+		<rule>
+			<pattern>
+				<token negate="yes" regexp='yes'>de|e|para|por|sempre</token>
+				<marker>
+					<token regexp='no'>dentro</token>
+					<token regexp='no'>do</token>
+				</marker>
+				<token postag='NC.+|AQ.+' postag_regexp='yes'/>
+			</pattern>		
+			<message>Substitua por <suggestion>no</suggestion>.</message>
+			<example correction="no">Estes conflitos ocorrem <marker>dentro do</marker> território.</example>  
+		</rule>
+
+	    <!-- DOS/NOS -->
+		<rule>
+			<pattern>
+				<token negate="yes" regexp='yes'>de|e|para|por|sempre</token>
+				<marker>
+					<token regexp='no'>dentro</token>
+					<token regexp='no'>dos</token>
+				</marker>
+				<token postag='NC.+|AQ.+' postag_regexp='yes'/>
+			</pattern>		
+			<message>Substitua por <suggestion>nos</suggestion>.</message>
+			<example correction="nos">Estes conflitos ocorrem <marker>dentro dos</marker> territórios.</example>  
+		</rule>
+
+	</rulegroup>
+
+    <!-- DE N EM N a cada N -->	
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-10-22 (21-OCT-2020+)     -->
+	<rule id='DE_N_EM_N-A_CADA_N' name="A cada N">
+		<pattern>
+			<token>de</token>
+			<token postag='Z0[CFM][SPN]0' postag_regexp='yes'/>
+			<token>em</token>
+			<token><match no="1"/></token>
+		</pattern>
+		<message>Substitua por <suggestion>a cada \2</suggestion>.</message>
+		<example correction="a cada dois">O Rui fala <marker>de dois em dois</marker> minutos.</example>
+    </rule>
+
+    <!-- DE QUALQUER DAS MANEIRAS de qualquer maneira -->	
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-10-27 (21-OCT-2020+)     -->
+    <rule id='DE_QUALQUER_DAS_MANEIRAS_DE_QUALQUER_MANEIRA' name="De qualquer maneira">
+      <pattern>
+          <token>de</token>
+		  <token>qualquer</token>
+		  <marker>
+			<token>das</token>
+			<token>maneiras</token>
+		  </marker>
+      </pattern>
+      <message>Substitua por <suggestion>maneira</suggestion>.</message>
+      <example correction="maneira">De qualquer <marker>das maneiras</marker> sugiro isso.</example>
+    </rule>
+
+    <!-- DELIMITADA(O) COM/DE/POR [UMA] FONTEIRA(S) FÍSICA(S) delimitada(o) fisicamente -->
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-10-08 (2-JUL-2020+)     -->
+    <rule id='DELIMITADA_COM-DE-POR_FRONTEIRAS_FISICAS' name="Delimitada(o)(s) fisicamente">
+      <pattern>
+		  <token regexp="yes">delimitadas?|delimitados?</token>
+		  <marker>
+			<token regexp="yes">com|de|por</token>
+			<token min="0" max="1" regexp="no">uma</token>
+			<token regexp="yes">fronteiras?</token>
+			<token regexp="yes">físicas?</token>
+		  </marker>
+      </pattern>
+      <message>Substitua por <suggestion>fisicamente</suggestion>.</message>
+      <example correction="fisicamente">A área é delimitada <marker>por fronteiras físicas</marker>.</example>
+	  <example type='correct'>A área é delimitada <marker>fisicamente</marker>.</example>
+    </rule>
+	
+    <!-- 	DEPOIS DE após -->	
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-11-05 (21-OCT-2020+)     -->
+    <rule id='DEPOIS_DE_APÓS' name="Depois de > após">
+		<pattern>
+			<marker>
+				<token>depois</token>
+				<token>de</token>				
+			</marker>
+			<token postag='V.+|NCMS000' postag_regexp='yes'>
+				<exception postag_regexp="yes" postag='NP.+'></exception>
+				<exception>amanhã</exception>
+			</token>
+		</pattern>		
+		<message>Substitua por <suggestion>após</suggestion>.</message>
+		<example correction="após">Isto tudo <marker>depois de</marker> saber os resultados.</example> 
+	</rule>
+	
+    <!-- DIFERENTES diferem	-->
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-10-11 (2-JUL-2020+)     -->
+    <rule id='DIFERENTES' name="Diferir">
+      <pattern>
+		  <marker>
+		    <token inflected='yes'>ser</token>
+			<token regexp="yes">diferentes?</token>
+		  </marker>
+		  <and>
+			<token negate_pos="yes" postag='NC[CFM][SP]000|AQ0[CFM][SP]0' postag_regexp='yes'/>
+			<token negate="yes" regexp="yes">[.]|as?|os?</token>
+		  </and>
+      </pattern>
+      <message>Substitua por</message>
+	    <suggestion><match no='1' postag='V.+' postag_regexp='yes'>diferir</match></suggestion>      
+      <example correction="diferem">Os terroristas <marker>são diferentes</marker> dos criminosos comuns.</example>      
+    </rule>	
+	
+	<!-- EM CASO caso -->
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-12-09 (21-OCT-2020+)  *START*   -->
+    <rule id='EM_CASO_CASO' name="Em caso > caso">
+      <pattern>
+		<token postag='V.+' postag_regexp='yes'/>
+		<marker>
+			<token>em</token>
+			<token>caso</token>
+		</marker>
+		<token postag='V.+' postag_regexp='yes'/>
+      </pattern>
+      <message>Substitua por <suggestion>caso</suggestion>.</message>
+      <example correction="caso">Para nos ajudar <marker>em caso</marker> tenhamos dúvidas.</example>
+    </rule>
+	
+    <!-- EM QUE _verboeu_ EM a _verboinfinitivo_ em -->	
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-10-26 (21-OCT-2020+)     -->
+    <rule id='EM_QUE_VERBOEU_EM' name="A + Verbo Infinitivo + em" type="style">
+      <pattern>
+          <token>em</token>
+		  <token>que</token>
+		  <token min="0" max="1">eu</token>
+		  <token postag='VMIP1S0' postag_regexp='no'/>
+		  <token>em</token>
+      </pattern>
+      <message>Em certos contextos, esta perífrase pode ser simplificada.</message>
+	  <suggestion>a <match no='4' postag='VMIP1S0' postag_regexp="yes" postag_replace='VMN0000'/> em</suggestion>
+      <example correction="a morar em">Foram bons os 20 anos <marker>em que moro em</marker> Lisboa.</example>
+    </rule>
+
+    <!-- 	EM SIM em si -->	
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-11-25 (21-OCT-2020+)     -->
+    <rule id='EM_SIM_em_si' name="Confusão: sim > si">
+		<pattern>
+			<token regexp='no'>em</token>
+			<marker>
+				<token regexp='no'>sim</token>
+			</marker>
+		</pattern>		
+		<message>Substitua por <suggestion>si</suggestion>.</message>
+		<example correction="si">Liberte o escritor que há em <marker>sim</marker>.</example> 
+	</rule>
+
+    <!-- 	ESTA está-->	
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-11-23 (21-OCT-2020+)     -->
+    <rule id='ESTA_está' name="Confusão: esta > está">
+		<pattern>
+			<token negate="yes" regexp='yes'>[,]</token>
+			<token postag='AQ.+|NC.+|NP.+|CS' postag_regexp='yes'/>
+			<marker>
+				<token regexp='no'>esta</token>				
+			</marker>
+			<token postag='VMP00S[FM]' postag_regexp='yes'/>
+		</pattern>		
+		<message>Substitua por <suggestion>está</suggestion>.</message>
+		<example correction="está">Vê na etiqueta que <marker>esta</marker> agarrada ao cabaz.</example>  
+	</rule>
+
+    <rule id='ESTAR_DE_ACORDO' name="concordar">
+    <!--      Created by Marco A.G.Pinto, Portuguese rule - 2020-09-30 (2-JUL-2020+)     -->
+      <pattern>
+          <token inflected='yes'>estar</token>
+          <token regexp="no">de</token>
+          <token regexp="no">acordo</token>
+      </pattern>
+      <message>Substitua por <suggestion><match no='1' postag='V.+' postag_regexp='yes'>concordar</match></suggestion>.</message>
+      <example correction="concordam">Os responsáveis <marker>estão de acordo</marker>.</example>
+    </rule>
+
+    <!-- ESTAR À ESPERA esperar -->
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-10-13 (2-JUL-2020+)     -->
+    <rule id='ESTAR_A_ESPERA' name="Esperar" type="style">
+      <pattern>
+		  <token inflected='yes'>estar</token>
+		  <token regexp="yes">nas?|nos?|em</token>
+		  <token postag='NC[CFM][SP]000|AQ0[CFM][SP]0' postag_regexp='yes'/>
+		  <token regexp="no">à</token>
+		  <token inflected='yes'>esperar</token>
+      </pattern>
+      <message>Em certos contextos, esta perífrase pode ser simplificada.</message>
+	  <suggestion><match no='1' postag='V.+' postag_regexp='yes'>esperar</match> \2 \3</suggestion>
+      <example correction="esperar na fila">O Rui optou por <marker>estar na fila à espera</marker>.</example>
+    </rule>
+
+    <!-- ESTAR A VERB_INFINITIVE verb (verb1 person)-->
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-10-19 (2-JUL-2020+)     -->	
+    <rulegroup id='ESTAR_A_VERB-INFINITIVE' name="Estar + a + Verbo_Infinitivo" type="style">
+	  <rule>
+		<pattern>
+			<and>
+				<token inflected='yes'>estar</token>
+				<token postag='VMII1S0|VMII3S0' postag_regexp='yes'/>
+			</and>
+			<token regexp="no">a</token>
+			<token postag='VMN0000' postag_regexp='no'/>
+		</pattern>
+		<message>Em certos contextos, esta perífrase pode ser simplificada.</message>
+		<suggestion><match no='3' postag='VMN0000' postag_regexp="yes" postag_replace='VMII3S0'/></suggestion>
+		<example correction="tomava">O Rui <marker>estava a tomar</marker> café.</example>
+	  </rule>
+	  <rule>
+		<pattern>
+			<and>
+				<token inflected='yes'>estar</token>
+				<token postag='VMII3P0' postag_regexp='no'/>
+			</and>
+			<token regexp="no">a</token>
+			<token postag='VMN0000' postag_regexp='no'/>
+		</pattern>
+		<message>Em certos contextos, esta perífrase pode ser simplificada.</message>
+		<suggestion><match no='3' postag='VMN0000' postag_regexp="yes" postag_replace='VMII3P0|VMIM3P0|VMIS3P0'/></suggestion>
+		<example correction="tomaram|tomavam">O Rui e Ana <marker>estavam a tomar</marker> café.</example>
+	  </rule>
+	</rulegroup>
+
+    <!-- 	ESTAR + ADVÉRBIO + A + VERBO verbo + advérbio -->	
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-11-05 (21-OCT-2020+)     -->
+    <rulegroup id='ESTAR_ADVÉRBIO_A_VERBO_VERBO_ADVÉRBIO' name="Estar + Advérbio + A + Verbo > Verbo + Advérbio" type="style">
+	
+	    <!-- ESTOU -->
+		<rule>
+			<pattern>
+				<token>estou</token>
+				<token postag='RM' postag_regexp='no'/>
+				<token>a</token>				
+				<token postag='V.+' postag_regexp='yes'/>
+			</pattern>		
+			<message>Em certos contextos, esta perífrase pode ser simplificada.</message>
+			<suggestion><match no='4' postag='V.+' postag_regexp="yes" postag_replace='VMIP1S0'/> \2</suggestion>
+			<example correction="treino atualmente">Por isso <marker>estou atualmente a treinar</marker> para a guerra.</example> 
+		</rule>
+
+	    <!-- ESTÁS -->
+		<rule>
+			<pattern>
+				<token>estás</token>
+				<token postag='RM' postag_regexp='no'/>
+				<token>a</token>				
+				<token postag='V.+' postag_regexp='yes'/>
+			</pattern>		
+			<message>Em certos contextos, esta perífrase pode ser simplificada.</message>
+			<suggestion><match no='4' postag='V.+' postag_regexp="yes" postag_replace='VMIP2S0'/> \2</suggestion>
+			<example correction="treinas atualmente">Por isso <marker>estás atualmente a treinar</marker> para a guerra.</example> 
+		</rule>
+
+	    <!-- ESTÁ -->
+		<rule>
+			<pattern>
+				<token>está</token>
+				<token postag='RM' postag_regexp='no'/>
+				<token>a</token>				
+				<token postag='V.+' postag_regexp='yes'/>
+			</pattern>		
+			<message>Em certos contextos, esta perífrase pode ser simplificada.</message>
+			<suggestion><match no='4' postag='V.+' postag_regexp="yes" postag_replace='VMIP3S0|VMM02S0'/> \2</suggestion>
+			<example correction="treina atualmente|treines atualmente">Por isso <marker>está atualmente a treinar</marker> para a guerra.</example> 
+		</rule>
+		
+	    <!-- ESTAMOS -->
+		<rule>
+			<pattern>
+				<token>estamos</token>
+				<token postag='RM' postag_regexp='no'/>
+				<token>a</token>				
+				<token postag='V.+' postag_regexp='yes'/>
+			</pattern>		
+			<message>Em certos contextos, esta perífrase pode ser simplificada.</message>
+			<suggestion><match no='4' postag='V.+' postag_regexp="yes" postag_replace='VMIP1P0'/> \2</suggestion>
+			<example correction="treinamo atualmente|treinamos atualmente">Por isso <marker>estamos atualmente a treinar</marker> para a guerra.</example> 
+		</rule>		
+
+	    <!-- ESTAIS -->
+		<rule>
+			<pattern>
+				<token>estais</token>
+				<token postag='RM' postag_regexp='no'/>
+				<token>a</token>				
+				<token postag='V.+' postag_regexp='yes'/>
+			</pattern>		
+			<message>Em certos contextos, esta perífrase pode ser simplificada.</message>
+			<suggestion><match no='4' postag='V.+' postag_regexp="yes" postag_replace='VMIP2P0'/> \2</suggestion>
+			<example correction="treinai atualmente|treinais atualmente">Por isso <marker>estais atualmente a treinar</marker> para a guerra.</example> 
+		</rule>		
+	
+	    <!-- ESTÃO -->
+		<rule>
+			<pattern>
+				<token>estão</token>
+				<token postag='RM' postag_regexp='no'/>
+				<token>a</token>				
+				<token postag='V.+' postag_regexp='yes'/>
+			</pattern>		
+			<message>Em certos contextos, esta perífrase pode ser simplificada.</message>
+			<suggestion><match no='4' postag='V.+' postag_regexp="yes" postag_replace='VMIP3P0'/> \2</suggestion>
+			<example correction="treinam atualmente">Por isso <marker>estão atualmente a treinar</marker> para a guerra.</example> 
+		</rule>		
+	
+	</rulegroup>
+
+    <!-- ESTAR NO ECRÃ -->
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-10-13 (2-JUL-2020+)     -->
+    <rule id='ESTAR_NO_ECRA' name="Estar no ecrã">
+      <pattern>
+		  <token regexp="yes">aqueles?|aquilo|daqueles?|daquilo</token>
+		  <token regexp="no">que</token>
+		  <token regexp="yes">aparecem?|está|estão</token>
+		  <token regexp="yes">nas?|nos?</token>
+		  <token regexp="yes">ecrãs?|écrans?|telas?|visor|visores|monitor|monitores</token>
+      </pattern>
+      <message>Substitua por <suggestion>\1 \4 \5</suggestion>.</message>
+      <example correction="aquilo no ecrã">Vê tudo <marker>aquilo que está no ecrã</marker>.</example>
+    </rule>
+
+    <!-- FAZER USO DE usar recorrer -->
+    <rulegroup id='FAZER_USO_DE-USAR-RECORRER' name="Fazer uso de > usar > recorrer">
+    <!--      Created by Marco A.G.Pinto, Portuguese rule - 2020-10-02 (2-JUL-2020+)     -->
+	  <!-- DE -->
+	  <rule>
+		<pattern>
+			<token inflected='yes'>fazer</token>
+			<token regexp="no">uso</token>
+			<token regexp="no">de</token>
+		</pattern>
+		<message>Substitua por:</message>
+		<suggestion><match no='1' postag='V.+' postag_regexp='yes'>usar</match></suggestion>
+		<suggestion><match no='1' postag='V.+' postag_regexp='yes'>recorrer</match> a</suggestion>
+		<example correction="usar|recorrer a">Vamos <marker>fazer uso de</marker> simuladores.</example>
+	   </rule>
+	   
+	  <!-- DA -->
+	  <rule>
+		<pattern>
+			<token inflected='yes'>fazer</token>
+			<token regexp="no">uso</token>
+			<token regexp="no">da</token>
+		</pattern>
+		<message>Substitua por:</message>
+		<suggestion><match no='1' postag='V.+' postag_regexp='yes'>usar</match> a</suggestion>
+		<suggestion><match no='1' postag='V.+' postag_regexp='yes'>recorrer</match> à</suggestion>
+		<example correction="usar a|recorrer à">Vamos <marker>fazer uso da</marker> tecnologia.</example>
+	   </rule>
+
+	  <!-- DAS -->
+	  <rule>
+		<pattern>
+			<token inflected='yes'>fazer</token>
+			<token regexp="no">uso</token>
+			<token regexp="no">das</token>
+		</pattern>
+		<message>Substitua por:</message>
+		<suggestion><match no='1' postag='V.+' postag_regexp='yes'>usar</match> as</suggestion>
+		<suggestion><match no='1' postag='V.+' postag_regexp='yes'>recorrer</match> às</suggestion>
+		<example correction="usar as|recorrer às">Vamos <marker>fazer uso das</marker> tecnologias.</example>
+	   </rule>	   
+
+	  <!-- DO -->
+	  <rule>
+		<pattern>
+			<token inflected='yes'>fazer</token>
+			<token regexp="no">uso</token>
+			<token regexp="no">do</token>
+		</pattern>
+		<message>Substitua por:</message>
+		<suggestion><match no='1' postag='V.+' postag_regexp='yes'>usar</match> o</suggestion>
+		<suggestion><match no='1' postag='V.+' postag_regexp='yes'>recorrer</match> ao</suggestion>
+		<example correction="usar o|recorrer ao">Vamos <marker>fazer uso do</marker> computador.</example>
+	   </rule>
+
+	  <!-- DOS -->
+	  <rule>
+		<pattern>
+			<token inflected='yes'>fazer</token>
+			<token regexp="no">uso</token>
+			<token regexp="no">dos</token>
+		</pattern>
+		<message>Substitua por:</message>
+		<suggestion><match no='1' postag='V.+' postag_regexp='yes'>usar</match> os</suggestion>
+		<suggestion><match no='1' postag='V.+' postag_regexp='yes'>recorrer</match> aos</suggestion>
+		<example correction="usar os|recorrer aos">Vamos <marker>fazer uso dos</marker> computadores.</example>
+	   </rule>
+    </rulegroup>
 
     <rule id='IMAGEM_DE_SATELITE' name="Imagem satélite -> Imagem de satélite">
     <!--      Created by Tiago F. Santos, 2019-09-07      -->
@@ -7909,6 +9042,20 @@ MARCOAGPINTO 2020-02-18 -->
         <suggestion>devido</suggestion>
       <example correction='devido'>Tudo isto é <marker>derivado</marker> ao calor.</example>
     </rule>
+	
+    <!-- 	DESCULPAR ESTE DESABAFO desculpar o desabafo -->	
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-11-04 (21-OCT-2020+)     -->
+    <rule id='DESCULPAR_DESABAFO' name="Desculpar o desabafo">
+		<pattern>
+		    <token inflected='yes'>desculpar</token>
+			<marker>
+				<token postag='DD0MS0' postag_regexp='no'/>
+			</marker>
+			<token>desabafo</token>
+		</pattern>		
+		<message>Substitua por <suggestion>o</suggestion>.</message>
+		<example correction="o">Desculpem <marker>este</marker> desabafo.</example> 
+	</rule>
 
     <rule id='ENSINOS_SUPERIORES' name="Ensino superior">
     <!--      Created by Marco A.G.Pinto, Portuguese rule      -->
@@ -8610,6 +9757,23 @@ MARCOAGPINTO 2020-02-18 -->
       <message>Substitua por <suggestion>de vez em quando</suggestion>.</message>
       <example correction="de vez em quando">Ela aparece <marker>de vês em quando</marker>.</example>
     </rule>
+	
+    <!-- DE VOCÊS vossas -->	
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-10-24 (21-OCT-2020+)     -->
+	<rule id='DE_VOCES_VOSSAS' name="de vocês -> vossas">
+		<pattern>
+			<token postag='V.+' postag_regexp='yes'/>
+			<token min="0" max="1" postag='DI.+|AQ0[CFM]P0' postag_regexp='yes'/>
+			<token postag='NCFP000' postag_regexp='no'/>			
+			<marker>
+				<token>de</token>	
+				<token>vocês</token>	
+			</marker>
+			<token regexp='yes'>[.,!?]|e|ou|com|como|que|por</token>
+		</pattern>
+		<message>Substitua por <suggestion>vossas</suggestion>.</message>
+		<example correction="vossas">Temos saudades <marker>de vocês</marker>.</example>
+    </rule>
 
   <rulegroup id='DECRETO_DE_LEI' name="Decreto-lei">
     <!--      Created by Marco A.G.Pinto, Portuguese rule      -->
@@ -8896,6 +10060,39 @@ MARCOAGPINTO 2020-02-18 -->
       <message>Substitua por <suggestion>maiores \2</suggestion>.</message>
       <example correction="maiores as">São <marker>maior as</marker> hipóteses.</example>
     </rule>
+	
+    <!-- MAIS REDUZIDA(O)(S) inferior(es) -->	
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-10-25 (21-OCT-2020+)     -->
+    <rulegroup id='MAIS_REDUZIDA_INFERIOR' name="Inferior(es)/menor(es)/menos">
+	  <rule>
+		<pattern>
+			<token postag='V.+|CS|I|RG|AQ0[CFM][SP]0|DI0MS0|CC|NC[CFM][SP]000' postag_regexp='yes'/>
+			<marker>
+				<token>mais</token>
+				<token regexp='yes'>reduzida|reduzido</token>
+			</marker>
+		</pattern>
+		<message>Substitua por</message>
+		<suggestion>inferior</suggestion>
+		<suggestion>menor</suggestion>
+		<suggestion>menos</suggestion>
+		<example correction="inferior|menor|menos">Temos um grau de incerteza, embora <marker>mais reduzido</marker>.</example>
+	  </rule>
+	  <rule>
+		<pattern>
+			<token postag='V.+|CS|I|RG|AQ0[CFM][SP]0|DI0MS0|CC|NC[CFM][SP]000' postag_regexp='yes'/>
+			<marker>
+				<token>mais</token>
+				<token regexp='yes'>reduzidas|reduzidos</token>
+			</marker>
+		</pattern>
+		<message>Substitua por</message>
+		<suggestion>inferiores</suggestion>
+		<suggestion>menores</suggestion>
+		<suggestion>menos</suggestion>
+		<example correction="inferiores|menores|menos">Temos graus de incerteza, embora <marker>mais reduzidos</marker>.</example>
+	  </rule>
+    </rulegroup>
 
     <!-- MAS E SIM mas é sim -->
     <rule id='MAS_E_SIM' name="Mas é sim">
@@ -8986,7 +10183,49 @@ MARCOAGPINTO 2020-02-18 -->
       <message>Substitua por <suggestion>música</suggestion>.</message>
       <example correction="música">A Ana é uma <marker>mulher músico</marker>.</example>
     </rule>
-
+	
+    <!-- NÃO HÁ/HAVIA MAIS NENHUM/NENHUNS -->
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-10-08 (2-JUL-2020+)     -->
+    <rule id='NAO_HA-HAVIA_MAIS_NENHUM-NENHUNS' name="Ser único">
+      <pattern>
+		  <marker>
+			<token regexp="no">não</token>
+			<token regexp="yes">há|havia</token>
+			<token regexp="no">mais</token>
+			<token regexp="yes">nenhum|nenhuns</token>
+		  </marker>
+		  <token negate_pos="yes" postag='NC[CFM][SP]000|AQ0[CFM][SP]0' postag_regexp='yes'/>
+      </pattern>
+      <message>Substitua por</message>
+	  <suggestion>é único</suggestion>
+	  <suggestion>era único</suggestion>
+      <example correction="é único|era único">Procurei e <marker>não havia mais nenhum</marker>.</example>
+	  <example type='correct'>Procurei e <marker>era único</marker>.</example>
+    </rule>
+	
+    <!-- NÃO MILITARES civis -->
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-10-18 (2-JUL-2020+)     -->
+    <rulegroup id='NAO_MILITARES' name="Civil/Civis">
+	  <rule>
+		<pattern>
+		  <token regexp="no">não</token>
+		  <token regexp="no">militar</token>	  
+		</pattern>
+		<message>Veja se pretende referir uma organização/empresa civil.</message>
+		<suggestion>civil</suggestion>
+		<example correction="civil">Há uma empresa <marker>não militar</marker> a criar simuladores.</example>
+	  </rule>
+	  <rule>
+		<pattern>
+		  <token regexp="no">não</token>
+		  <token regexp="no">militares</token>	  
+		</pattern>
+		<message>Veja se pretende referir uma organização/empresa civil.</message>
+		<suggestion>civis</suggestion>
+		<example correction="civis">Há empresas <marker>não militares</marker> a criar simuladores.</example>
+	  </rule>
+    </rulegroup>
+	
     <!-- NÃO VEZ QUE não vês que -->
     <rule id='NÃO_VEZ_QUE' name="Confusão: vez - vês">
       <pattern>
@@ -9073,6 +10312,32 @@ MARCOAGPINTO 2020-02-18 -->
       <message>Se o orador é do sexo masculino, utilize <suggestion>obrigado</suggestion>.</message>
       <example correction="obrigado">O meu muito <marker>obrigada</marker> por tudo.</example>
     </rule>
+	
+    <rulegroup id='OLA_OLÁ' name="Confusão: ola - olá">
+    <!--      Created by Marco A.G.Pinto, Portuguese rule - 2020-09-15 (2-JUL-2020+)   -->
+	  <rule>
+		<pattern>
+			<token postag='SENT_START'/>
+			<marker>
+				<token regexp='no'>ola</token>
+			</marker>
+			<token min="0" max="1" regexp='no'></token>
+			<token postag='NP[FM][SP]000|NC[CFM][SP]000|DP.+' postag_regexp='yes'/>
+		</pattern>
+		<message>Substitua por <suggestion>olá</suggestion>.</message>
+		<example correction="Olá"><marker>Ola</marker> Ana.</example>
+	  </rule>
+	  <rule>
+		<pattern>
+			<token inflected='yes'>dizer</token>
+			<marker>
+				<token regexp='no'>ola</token>
+			</marker>
+		</pattern>
+		<message>Substitua por <suggestion>olá</suggestion>.</message>
+		<example correction="olá">Vou dizer <marker>ola</marker> à Ana.</example>
+	  </rule>
+    </rulegroup>
 
     <rule id='ORA_DE_REFEIÇÃO' name="Hora de refeição">
     <!--      Created by Marco A.G.Pinto, Portuguese rule      -->
@@ -9121,17 +10386,18 @@ MARCOAGPINTO 2020-02-18 -->
       <example correction="prefere">A Ana <marker>prefere antes</marker> a Matemática.</example>
     </rule>
 
-    <!-- O MAIS + ADJ-PLURAL + POSSÍVEIS - o mais adj-plural possível -->
-    <rule id='O_MAIS_ADJ-PLURAL_POSSÍVEIS' name="Erro de concordância de número - possíveis-possível">
+    <!-- O MAIS/MENOS + ADJ-PLURAL + POSSÍVEIS - o mais/menos adj/subst-plural possível -->
+	<!--      Created and improved by Marco A.G.Pinto, Portuguese rule 2020-10-27 (21-OCT-2020+)     -->
+    <rule id='O_MAIS-MENOS_ADJ-SUBST-PLURAL_POSSÍVEIS' name="Erro de concordância de número - possíveis-possível">
       <pattern>
           <token>o</token>
-          <token>mais</token>
-          <token postag="AQ0CP0"/>
+          <token regexp='yes'>mais|menos</token>
+          <token postag='NC[CFM]P000|AQ0[CFM]P0' postag_regexp='yes'/>
         <marker>
           <token>possíveis</token>
         </marker>
       </pattern>
-      <message>&MSG_ECN;</message>
+      <message>Neste contexto esta palavra é invariável.</message>
         <suggestion>possível</suggestion>
       <example correction="possível">Faz perguntas o mais abrangentes <marker>possíveis</marker>.</example>
     </rule>
@@ -9146,6 +10412,21 @@ MARCOAGPINTO 2020-02-18 -->
       <example correction="para ficar">Esforça-te <marker>para fica</marker> bem.</example>
     </rule>
 
+	<!-- PARA FICAR A OCUPAR para ocupar -->
+    <rule id='PARA_FICAR_A_OCUPAR' name="Para ocupar">
+    <!--      Created by Marco A.G.Pinto, Portuguese rule - 2020-10-01 (2-JUL-2020+)     -->
+      <pattern>
+		  <token regexp="no">para</token>
+		  <marker>
+			<token inflected='yes'>ficar</token>
+			<token regexp="no">a</token>
+			<token inflected='yes'>ocupar</token>
+		  </marker>
+      </pattern>
+      <message>Substitua por <suggestion><match no='2' postag='V.+' postag_regexp='yes'>ocupar</match></suggestion>.</message>
+      <example correction="ocupar">Fotografa na vertical para <marker>ficar a ocupar</marker> a imagem toda.</example>
+    </rule>
+
     <!-- PEDIR UM CONCELHO pedir um conselho -->
     <rule id='PEDIR_UM_CONCELHO' name="Confusão: concelho - conselho">
       <pattern>
@@ -9155,6 +10436,23 @@ MARCOAGPINTO 2020-02-18 -->
       </pattern>
       <message>Substitua por <suggestion>\1 um conselho</suggestion>.</message>
       <example correction="pedir um conselho">Devemos <marker>pedir um concelho</marker> ao padre.</example>
+    </rule>
+
+    <!-- PARAR DE CHATEAR parar de incomodar/importunar -->
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-10-06 (2-JUL-2020+)     -->
+    <rule id='PARAR_DE_CHATEAR' name="Parar de incomodar/importunar">
+		<pattern>
+			<token inflected='yes'>parar</token>
+			<token regexp="no">de</token>
+			<token min="0" max="1" regexp="yes">as?|os?|me|te|lhes?|nos|vos</token>
+			<marker>
+				<token inflected='yes'>chatear</token>
+			</marker> 	
+		</pattern>
+		<message>Expressão de uso vulgar, considere</message>
+			<suggestion><match no='4' postag='V.+' postag_regexp='yes'>incomodar</match></suggestion>
+			<suggestion><match no='4' postag='V.+' postag_regexp='yes'>importunar</match></suggestion>
+		<example correction="incomodar|importunar">Pare de <marker>chatear</marker> os vizinhos.</example>
     </rule>
 
     <rule id='PERFILHAR_DA_DOUTRINA_DE' name="Perfilhar a doutrina de">
@@ -9169,6 +10467,25 @@ MARCOAGPINTO 2020-02-18 -->
       </pattern>
       <message>Substitua por <suggestion>a</suggestion>.</message>
       <example correction="a">O Rui perfilha <marker>da</marker> doutrina de Buda.</example>
+    </rule>
+
+    <rule id='PERSISTEM_AO_LONGO_DE_TEMPO' name="Persistem + há + Tempo">
+    <!--      Created by Marco A.G.Pinto, Portuguese rule - 2020-09-09 (2-JUL-2020+)   -->
+      <pattern>
+	      <and>
+			<token inflected='yes'>persistir</token>
+			<token postag='VMIP3P0' postag_regexp='no'/>			
+		  </and>	
+		  <marker>
+			<token>ao</token>
+			<token>longo</token>
+			<token>de</token>
+			<token min="0" max="1" postag='DI0[FM]P0|AQ0[CFM]P0' postag_regexp='yes'/>
+			<token regexp='yes'>segundos|minutos|horas|dias|semanas|meses|anos|décadas|séculos|milénios</token>
+		  </marker>
+      </pattern>
+      <message>Substitua por <suggestion>há \5 \6</suggestion>.</message>
+      <example correction="há décadas">Devemos melhorar as deficiências que persistem <marker>ao longo de décadas</marker>.</example>
     </rule>
 
     <!-- PIOR EDUCADO mais mal-educado -->
@@ -9258,6 +10575,81 @@ MARCOAGPINTO 2020-02-18 -->
       <example correction="gosto em convidá">Terei o maior <marker>prazer em convidá</marker>-los para a festa.</example>
     </rule>
 
+	<!-- É NECESSÁRIO ESTAR PRESENTE é presencial -->
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-12-02 (21-OCT-2020+)  *START*   -->
+    <rulegroup id='PRESENTE_PRESENCIAL' name="é presencial">
+	
+	  <rule>
+		<pattern>
+			<token>é</token>
+			<token>necessário</token>
+			<token>estar</token>
+			<token min="0" max="1" regexp='yes'>fisicamente|pessoalmente|presencialmente</token>
+			<token>presente</token>
+			<token regexp='yes'>[.,!?]</token>
+		</pattern>
+		<message>Substitua por <suggestion>é presencial\6</suggestion>.</message>
+		<example correction="É presencial?"><marker>É necessário estar presente?</marker></example>
+	  </rule>	
+	
+	  <rule>
+		<pattern>
+			<token>é</token>
+			<token>necessário</token>
+			<token>estar</token>
+			<token min="0" max="1" regexp='yes'>fisicamente|pessoalmente|presencialmente</token>
+			<token>presente</token>
+			<token>na</token>
+			<token postag='NC.+' postag_regexp='yes'/>
+		</pattern>
+		<message>Substitua por <suggestion>a \7 é presencial</suggestion>.</message>
+		<example correction="A reunião é presencial"><marker>É necessário estar presente na reunião</marker>?</example>
+	  </rule>
+	  
+	  <rule>
+		<pattern>
+			<token>é</token>
+			<token>necessário</token>
+			<token>estar</token>
+			<token min="0" max="1" regexp='yes'>fisicamente|pessoalmente|presencialmente</token>
+			<token>presente</token>
+			<token>nas</token>
+			<token postag='NC.+' postag_regexp='yes'/>
+		</pattern>
+		<message>Substitua por <suggestion>as \7 são presenciais</suggestion>.</message>
+		<example correction="As aulas são presenciais"><marker>É necessário estar presente nas aulas</marker>?</example>
+	  </rule>	  
+	  
+	  <rule>
+		<pattern>
+			<token>é</token>
+			<token>necessário</token>
+			<token>estar</token>
+			<token min="0" max="1" regexp='yes'>fisicamente|pessoalmente|presencialmente</token>
+			<token>presente</token>
+			<token>no</token>
+			<token postag='NC.+' postag_regexp='yes'/>
+		</pattern>
+		<message>Substitua por <suggestion>o \7 é presencial</suggestion>.</message>
+		<example correction="O curso é presencial"><marker>É necessário estar presente no curso</marker>?</example>
+	  </rule> 
+	
+	  <rule>
+		<pattern>
+			<token>é</token>
+			<token>necessário</token>
+			<token>estar</token>
+			<token min="0" max="1" regexp='yes'>fisicamente|pessoalmente|presencialmente</token>
+			<token>presente</token>
+			<token>nos</token>
+			<token postag='NC.+' postag_regexp='yes'/>
+		</pattern>
+		<message>Substitua por <suggestion>os \7 são presenciais</suggestion>.</message>
+		<example correction="Os cursos são presenciais"><marker>É necessário estar presente nos cursos</marker>?</example>
+	  </rule> 
+	
+    </rulegroup>
+
     <rule id='PROBLEMA_BASILAR' name="problema básico">
     <!--      Created by Marco A.G.Pinto, Portuguese rule      -->
       <pattern>
@@ -9333,6 +10725,36 @@ MARCOAGPINTO 2020-02-18 -->
       <example correction="recomendável">É <marker>recomendável de</marker> fazer um backup mensal.</example>
     </rule>
 
+    <!-- REFORMAR PARA SEMPRE reformar de vez	-->
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-10-12 (2-JUL-2020+)     -->
+    <rulegroup id='REFORMAR_PARA_SEMPRE_DE_VEZ' name="Reformar de vez">
+	  <rule>
+		<pattern>
+			<token inflected='yes'>reformar</token>
+			<marker>
+				<token regexp="no">para</token>
+				<token regexp="no">sempre</token>
+			</marker>			
+		</pattern>
+		<message>Substitua por <suggestion>de vez</suggestion>.</message>
+		<example correction="de vez">Vou-me reformar <marker>para sempre</marker>.</example>      
+	  </rule>
+
+	  <rule>
+		<pattern>
+			<token inflected='yes'>reformar</token>
+			<token spacebefore='no' regexp='yes'>&hifen;</token>
+			<token regexp='yes' spacebefore='no'>se|me</token>			
+			<marker>
+				<token regexp="no">para</token>
+				<token regexp="no">sempre</token>
+			</marker>			
+		</pattern>
+		<message>Substitua por <suggestion>de vez</suggestion>.</message>
+		<example correction="de vez">A Ana vai reformar-se <marker>para sempre</marker>.</example>      
+	  </rule>
+    </rulegroup>
+
     <!-- RIU-ME rio-me -->
     <rule id='RIU-ME' name="Confusão: rio-me">
       <pattern>
@@ -9343,6 +10765,51 @@ MARCOAGPINTO 2020-02-18 -->
       <message>Substitua por <suggestion>rio-me</suggestion>.</message>
       <example correction="rio-me">Eu <marker>riu-me</marker> das tuas piadas.</example>
     </rule>
+	
+    <!-- SÃO/É PARA SER/SEREM PARTPASSADO são para Infinitivo -->
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-10-15 (2-JUL-2020+)     -->
+    <rule id='SAO-E_PARA_SER-SEREM_PARTPASSADO' name="São/É + para + Verbo Infinitivo" type="style">
+      <pattern>
+		  <token inflected='yes'>ser</token>
+		  <token regexp="no">para</token>
+		  <token inflected='yes'>ser</token>
+		  <token postag='VMP00[SP][FM]' postag_regexp='yes'/>
+      </pattern>
+      <message>Em certos contextos, esta perífrase pode ser simplificada.</message>
+	  <suggestion>\1 \2 <match no='4' postag='VMP00[SP][FM]' postag_regexp="yes" postag_replace='VMN0000'/></suggestion>
+      <example correction="são para usar">Os anéis <marker>são para serem usados</marker> de manhã.</example>
+    </rule>
+
+    <!-- SE CASO caso -->	
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-10-20 (2-JUL-2020+)     -->
+	<rule id='SE_CASO-CASO' name="Se caso -> caso">
+      <pattern>
+		  <marker>
+			<token>se</token>
+			<token>caso</token>
+		  </marker>		  			
+		  <token min="1" max="2"><exception regexp='no'>com</exception><exception postag='V.+' postag_regexp='yes'/></token>
+		  <token postag='V.+' postag_regexp='yes'/>		  
+      </pattern>
+      <message>Substitua por <suggestion>caso</suggestion>.</message>
+      <example correction="Caso"><marker>Se caso</marker> eles vierem, não os atenda.</example>
+    </rule>
+
+    <!-- 	QUE NUNCA MAIS ACABA(M) sem fim -->	
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-11-30 (21-OCT-2020+)     -->
+    <rule id='SEM_FIM' name="Sem fim">
+		<pattern>
+			<token postag='NC.+|AQ.+' postag_regexp='yes'/>			
+		    <marker>
+				<token>que</token>
+				<token>nunca</token>
+				<token>mais</token>
+				<token regexp='yes'>acabam?</token>				
+			</marker>
+		</pattern>		
+		<message>Substitua por <suggestion>sem fim</suggestion>.</message>
+		<example correction="sem fim">Temos livros <marker>que nunca mais acabam</marker>.</example>  
+	</rule>
 
     <rule id='SERVIR_A_FAZER' name="Servir para fazer">
     <!--      Created by Marco A.G.Pinto, Portuguese rule      -->
@@ -9355,6 +10822,23 @@ MARCOAGPINTO 2020-02-18 -->
       </pattern>
       <message>Substitua por <suggestion>para</suggestion>.</message>
       <example correction="para">O martelo serviu <marker>a</marker> fazer o banco.</example>
+    </rule>
+
+    <!-- SER + QUEM + VERB_ESSE + WORD era quem chegasse primeiro -->	
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-10-29 (21-OCT-2020+)     -->
+    <rule id='SER_QUEM_VERB-ESSE_WORD' name="Ser + quem + Verbo -esse + Palavra > Verbo Ser + Verbo -esse_inf + Palavra" type="style">
+      <pattern>
+	      <token></token>
+		  <marker>
+			<token inflected='yes'>ser</token>
+			<token>quem</token>
+			<token postag='VMSI[13][SP]0' postag_regexp='yes'/>			
+		  </marker>
+		  <token negate="yes" regexp='yes'>[.,!?]</token>
+      </pattern>
+      <message>Em certos contextos, esta perífrase pode ser simplificada.</message>
+	  <suggestion>\2 <match no='4' postag='VMSI[13][SP]0' postag_regexp="yes" postag_replace='VMN0000'/></suggestion>
+      <example correction="era chegar">A vitória na guerra <marker>era quem chegasse</marker> primeiro à bandeira inimiga.</example>
     </rule>
 
     <rule id='SOBRE_MESA' name="Sobremesa">
@@ -9371,6 +10855,22 @@ MARCOAGPINTO 2020-02-18 -->
       <example correction='sobremesa'>Vai comer a <marker>sobre mesa</marker>.</example>
     </rule>
 
+    <!-- SUBSTÂNCIA essência -->	
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-10-22 (21-OCT-2020+)     -->
+	<rule id='SUBSTANCIA_ESSENCIA' name="Substância -> Essência">
+		<pattern>
+			<token>a</token>
+			<token regexp='yes'>autêntica|genuína|real|verdadeira</token>
+			<marker>
+				<token>substância</token>
+			</marker>
+			<token regexp='yes'>das?|dos?|de|delas?|deles?|destas?|destes?</token>
+			<token></token>
+		</pattern>
+		<message>Substitua por <suggestion>essência</suggestion></message>
+		<example correction="essência">Nestes momentos vê-se a verdadeira <marker>substância</marker> das pessoas.</example>
+    </rule>
+	
     <rule id='TAL_VEZ' name="Confusão: tal vez - talvez">
     <!--      Created by Marco A.G.Pinto, Portuguese rule      -->
       <pattern>
@@ -9459,11 +10959,14 @@ MARCOAGPINTO 2020-02-18 -->
     </rule>
 
     <rule id='TORNAR_MAIS_DIFICIL' name="Dificultar">
-    <!--      Created by Marco A.G.Pinto, Portuguese rule      -->
+    <!--      Created by Marco A.G.Pinto, Portuguese rule 2020-11-24 (21-OCT-2020+)     -->
       <pattern>
+		<marker>
           <token inflected='yes'>tornar</token>
-		  <token>mais</token>
+		  <token min="0" max="1" regexp='no'>mais</token>
 		  <token>difícil</token>
+		</marker>
+		<token postag='DA.+|V.+|SPS.+' postag_regexp='yes'/>
       </pattern>
       <message>Substitua por <match no='1' postag='V.+' postag_regexp='yes'>dificultar</match>.</message>
         <suggestion><match no='1' postag='V.+' postag_regexp='yes'>dificultar</match></suggestion>
@@ -9471,14 +10974,45 @@ MARCOAGPINTO 2020-02-18 -->
     </rule>
 
     <rule id='TORNAR_MAIS_FACIL' name="Facilitar">
-    <!--      Created by Marco A.G.Pinto, Portuguese rule      -->
+    <!--      Created by Marco A.G.Pinto, Portuguese rule 2020-11-24 (21-OCT-2020+)     -->
       <pattern>
+		<marker>
           <token inflected='yes'>tornar</token>
-		  <token>mais</token>
+		  <token min="0" max="1" regexp='no'>mais</token>
 		  <token>fácil</token>
+		</marker>
+		<token postag='DA.+|V.+|SPS.+' postag_regexp='yes'/>
       </pattern>
       <message>Substitua por <suggestion><match no='1' postag='V.+' postag_regexp='yes'>facilitar</match></suggestion></message>
       <example correction="facilitar">As regras vão <marker>tornar mais fácil</marker> o jogo.</example>
+    </rule>
+	
+    <rule id='TORNAR_MAIS_FORTE' name="Fortelecer">
+    <!--      Created by Marco A.G.Pinto, Portuguese rule 2020-11-24 (21-OCT-2020+)     -->
+      <pattern>
+	      <marker>
+			<token inflected='yes'>tornar</token>
+			<token min="0" max="1" regexp='no'>mais</token>
+			<token>forte</token>
+		  </marker>
+		  <token postag='DA.+|V.+|SPS.+' postag_regexp='yes'/>
+      </pattern>
+      <message>Substitua por <suggestion><match no='1' postag='V.+' postag_regexp='yes'>fortalecer</match></suggestion></message>
+      <example correction="fortalecer">As regras vão <marker>tornar mais forte</marker> o acordo.</example>
+    </rule>
+
+    <rule id='TORNAR_MAIS_FRACO' name="Enfraquecer">
+    <!--      Created by Marco A.G.Pinto, Portuguese rule 2020-11-24 (21-OCT-2020+)     -->
+      <pattern>
+		<marker>
+          <token inflected='yes'>tornar</token>
+		  <token min="0" max="1" regexp='no'>mais</token>
+		  <token regexp='yes'>fraca|fraco</token>
+		</marker>
+		<token postag='DA.+|V.+|SPS.+' postag_regexp='yes'/>
+      </pattern>
+      <message>Substitua por <suggestion><match no='1' postag='V.+' postag_regexp='yes'>enfraquecer</match></suggestion></message>
+      <example correction="enfraquecer">As regras vão <marker>tornar mais fraco</marker> o acordo.</example>
     </rule>
 	
     <rule id='TRABALHO_PAGO' name="trabalho remunerado">
@@ -9523,6 +11057,59 @@ MARCOAGPINTO 2020-02-18 -->
       <example correction="conceitos-chave">Na tese temos vários <marker>conceitos chave</marker>.</example>
     </rule>
 	
+    <!-- MUITO FRIO -->
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-10-02 (2-JUL-2020+)     -->
+    <rule id='MUITO_FRIO' name="Muito frio">
+      <pattern>
+	    <marker>
+          <token>um</token>
+          <token>frio</token>
+		  <token regexp='yes'>da|de|do</token>
+		  <token postag='NC[CFM][SP]000|AQ0[CFM][SP]0|VMN0000' postag_regexp='yes'/>
+		</marker>
+		<token negate="yes" regexp='yes'>as?|os?</token>		  
+      </pattern>
+      <message>Linguagem informal. Substitua por <suggestion>muito frio</suggestion>.</message>
+      <example correction="muito frio">Está <marker>um frio de rachar</marker>.</example>
+    </rule>
+	
+    <!-- 	QUE + VERB + COM verb_inf + com -->	
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-11-02 + 2020-11-14 (21-OCT-2020+)     -->
+    <rulegroup id='QUE_VERB_COM_VERBINF_COM' name="Que + Verbo + Com > Verbo_inf + com" type="style">
+		<rule>
+			<pattern>	
+				<token postag='V.+|RG' postag_regexp='yes'>
+					<exception>tempo</exception>
+					<exception postag='NC.+' postag_regexp='yes'/>
+				</token>
+				<marker>
+					<token>que</token>
+					<token postag='VMII1S0|VMII3S0' postag_regexp='yes'/>
+				</marker>
+				<token>com</token>
+			</pattern>		
+			<message>Em certos contextos, esta perífrase pode ser simplificada.</message>
+			<suggestion><match no='3' postag='VMII1S0|VMII3S0' postag_regexp="yes" postag_replace='VMN0000'/></suggestion>
+			<example correction="estar">O Rui disse <marker>que estava</marker> com pressa.</example>  
+		</rule>
+		<rule>
+			<pattern>
+				<token postag='V.+|RG' postag_regexp='yes'>
+					<exception>tempo</exception>
+					<exception postag='NC.+' postag_regexp='yes'/>
+				</token>
+				<marker>
+					<token>que</token>
+					<token postag='VMII3P0' postag_regexp='no'/>
+				</marker>
+				<token>com</token>
+			</pattern>		
+			<message>Em certos contextos, esta perífrase pode ser simplificada.</message>
+			<suggestion><match no='3' postag='VMII3P0' postag_regexp="yes" postag_replace='VMN03P0'/></suggestion>
+			<example correction="estarem">Uns clientes disseram <marker>que estavam</marker> com pressa.</example>  
+		</rule>
+	</rulegroup>
+	
     <rule id='UMA_COISA_ALGO' name="Algo">
     <!--      Created by Marco A.G.Pinto, Portuguese rule - 2020-06-27    -->
       <pattern>
@@ -9539,15 +11126,226 @@ MARCOAGPINTO 2020-02-18 -->
       <example correction="algo">Tudo isto para <marker>uma coisa</marker> que aconteceu.</example>
     </rule>
 
-    <rule id='VÍDEO_CONFERÊNCIA' name="Videoconferência">
-    <!-- Created by Marco A.G. Pinto, Portuguese rule -->
+    <!-- VELHA ESCOLA velha guarda -->	
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-10-27 (21-OCT-2020+)     -->
+    <rule id='VELHA_ESCOLA_VELHA_GUARDA' name="Velha escola -> Velha guarda">
       <pattern>
+		  <token inflected='yes'>ser</token>
+          <token>da</token>
+		  <token>velha</token>
+		  <marker>
+			<token>escola</token>
+		  </marker>
+      </pattern>
+      <message>Se for uma frase idiomática, utilize <suggestion>guarda</suggestion>.</message>
+      <example correction="guarda">O Rui é da velha <marker>escola</marker>.</example>
+    </rule>
+
+    <!-- 	VERB + QUE + É verb + ser(em) -->	
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-11-02 + 2020-11-06 (21-OCT-2020+)     -->
+    <rulegroup id='VERB_QUE_É_VERB_SER' name="Que é/são > ser(em)" type="style">
+		<rule>
+			<pattern>
+				<token postag='V.+' postag_regexp='yes'>
+				<exception regexp='no'>é</exception>
+				<exception postag_regexp='yes' postag='NC[CFM][SP]000|AQ0[CFM][SP]0'/></token>
+				<marker>
+					<token>que</token>
+					<token>é</token>
+				</marker>
+				<token negate="yes" regexp='yes'>horas?|[.,!?]
+					<exception postag_regexp="no" postag='CS'/>
+				</token>
+			</pattern>		
+			<message>Em certos contextos, esta perífrase pode ser simplificada.</message>
+			<suggestion>ser</suggestion>
+			<example correction="ser">Mas depende sempre daquilo que consideras <marker>que é</marker> o problema.</example>  
+		</rule>
+		<rule>
+			<pattern>
+				<token postag='V.+' postag_regexp='yes'>
+				<exception regexp='no'>é</exception>
+				<exception postag_regexp='yes' postag='NC[CFM][SP]000|AQ0[CFM][SP]0'/></token>
+				<marker>
+					<token>que</token>
+					<token>são</token>
+				</marker>
+				<token negate="yes" regexp='yes'>horas?|[.,!?]
+					<exception postag_regexp="no" postag='CS'/>
+				</token>				
+			</pattern>		
+			<message>Em certos contextos, esta perífrase pode ser simplificada.</message>
+			<suggestion>serem</suggestion>
+			<example correction="serem">Mas depende sempre daquilo que consideras <marker>que são</marker> os problemas.</example>  
+		</rule>		
+	</rulegroup>
+
+    <!-- VERBO1 QUE VERBO2 VERBO3 O QUE verbo2_infinitivo verbo3_infinitivo o que -->	
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-10-23 + 2020-11-17 (21-OCT-2020+)     -->
+	<rule id='VERBO1_QUE_VERBO2_VERBO3_O_QUE' name="verbo2 + verbo3_infinitivo" type="style">
+		<antipattern>
+			<token postag='V.+' postag_regexp='yes'/>			
+			<token>que</token>
+			<token postag='V.+' postag_regexp='yes'/>
+			<token postag='SPS.+' postag_regexp='yes'/>
+			<token>o</token>
+			<token>que</token>			
+		</antipattern>
+		<pattern>
+			<token postag='V.+' postag_regexp='yes'/>			
+			<marker>
+				<token>que</token>
+				<token postag='V.+' postag_regexp='yes'/>
+				<token postag='V.+' postag_regexp='yes'/>					
+			</marker>
+			<token>o</token>
+			<token>que</token>			
+		</pattern>
+		<message>Em certos contextos, esta perífrase pode ser simplificada.</message>
+		<suggestion><match no='3' postag='V.+' postag_regexp="yes" postag_replace='VMN03[SP]0'/> \4</suggestion>
+		<example correction="ir ver|irem ver">Falei com o Rui que me disse <marker>que ia ver</marker> o que se passava com o software.</example>
+    </rule>
+	
+    <!-- 	VERBO_ESTAR + A + VERBO_INF verbo -->	
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-11-11 (21-OCT-2020+)     -->
+    <rulegroup id='VERBO_ESTAR_A_VERBO_INF' name="Verbo estar + a + Verbo_inf > Verbo" type="style">
+	
+	    <!-- estou -->
+		<rule>
+			<pattern>
+				<token negate_pos="yes" postag='SENT_START'/>
+				<marker>
+					<token>estou</token>
+					<token>a</token>
+					<token postag='VMN0000' postag_regexp='no'/>
+				</marker>
+			</pattern>		
+			<message>Em certos contextos, esta perífrase pode ser simplificada.</message>
+			<suggestion><match no='4' postag='VMN0000' postag_regexp="yes" postag_replace='VMIP1S0'/></suggestion>
+			<example correction="oriento">Temos diferentes perspetivas mediante a lógica pela qual me <marker>estou a orientar</marker>.</example>
+		</rule>
+
+	    <!-- estás -->
+		<rule>
+			<pattern>
+				<token negate_pos="yes" postag='SENT_START'/>
+				<marker>
+					<token>estás</token>
+					<token>a</token>
+					<token postag='VMN0000' postag_regexp='no'/>
+				</marker>
+			</pattern>		
+			<message>Em certos contextos, esta perífrase pode ser simplificada.</message>
+			<suggestion><match no='4' postag='VMN0000' postag_regexp="yes" postag_replace='VMIP2S0'/></suggestion>
+			<example correction="orientas">Temos diferentes perspetivas mediante a lógica pela qual me <marker>estás a orientar</marker>.</example>
+		</rule>
+
+	    <!-- está -->
+		<rule>
+			<pattern>
+				<token negate_pos="yes" postag='SENT_START'/>
+				<marker>
+					<token>está</token>
+					<token>a</token>
+					<token postag='VMN0000' postag_regexp='no'/>
+				</marker>
+			</pattern>		
+			<message>Em certos contextos, esta perífrase pode ser simplificada.</message>
+			<suggestion><match no='4' postag='VMN0000' postag_regexp="yes" postag_replace='VMIP3S0|VMM02S0'/></suggestion>
+			<example correction="orienta|orientes">Temos diferentes perspetivas mediante a lógica pela qual me <marker>está a orientar</marker>.</example>
+		</rule>
+
+	    <!-- estamos -->
+		<rule>
+			<pattern>
+				<token negate_pos="yes" postag='SENT_START'/>
+				<marker>
+					<token>estamos</token>
+					<token>a</token>
+					<token postag='VMN0000' postag_regexp='no'/>
+				</marker>
+			</pattern>		
+			<message>Em certos contextos, esta perífrase pode ser simplificada.</message>
+			<suggestion><match no='4' postag='VMN0000' postag_regexp="yes" postag_replace='VMIP1P0'/></suggestion>
+			<example correction="orientamo|orientamos">Temos diferentes perspetivas mediante a lógica pela qual nos <marker>estamos a orientar</marker>.</example>
+		</rule>
+
+	    <!-- estais -->
+		<rule>
+			<pattern>
+				<token negate_pos="yes" postag='SENT_START'/>
+				<marker>
+					<token>estais</token>
+					<token>a</token>
+					<token postag='VMN0000' postag_regexp='no'/>
+				</marker>
+			</pattern>		
+			<message>Em certos contextos, esta perífrase pode ser simplificada.</message>
+			<suggestion><match no='4' postag='VMN0000' postag_regexp="yes" postag_replace='VMIP2P0'/></suggestion>
+			<example correction="orientai|orientais">Temos diferentes perspetivas mediante a lógica pela qual nos <marker>estais a orientar</marker>.</example>
+		</rule>
+
+	    <!-- estão -->
+		<rule>
+			<pattern>
+				<token negate_pos="yes" postag='SENT_START'/>
+				<marker>
+					<token>estão</token>
+					<token>a</token>
+					<token postag='VMN0000' postag_regexp='no'/>
+				</marker>
+			</pattern>		
+			<message>Em certos contextos, esta perífrase pode ser simplificada.</message>
+			<suggestion><match no='4' postag='VMN0000' postag_regexp="yes" postag_replace='VMIP3P0'/></suggestion>
+			<example correction="orientam">Temos diferentes perspetivas mediante a lógica pela qual nos <marker>estão a orientar</marker>.</example>
+		</rule>
+
+	</rulegroup>
+
+    <!-- 	VERB TER + PARTICÍPIO PASSADO Pret. Perf. Ind. de Part_Passado -->	
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-11-04 (21-OCT-2020+)     -->
+    <rulegroup id='VERB_TER_MAIS_PARTICIPIO_PASSADO' name="Verbo Ter + Part_Passado > Verbo Pret. Perf. Ind. de Part_Passado" type="style">
+		<rule>
+			<pattern>
+				<token>tinha</token>
+				<token postag='VMP00SM' postag_regexp='no'/>
+			</pattern>		
+			<message>Em certos contextos, esta perífrase pode ser simplificada.</message>
+			<suggestion><match no='2' postag='VMP00SM' postag_regexp="yes" postag_replace='VMIS1S0|VMIS3S0|VMIM3S0'/></suggestion>
+			<example correction="foi|fora|fui">Essa honra <marker>tinha sido</marker> entregue a Ernest Hemingway.</example> 
+		</rule>
+		<rule>
+			<pattern>
+				<token>tinham</token>
+				<token postag='VMP00SM' postag_regexp='no'/>
+			</pattern>		
+			<message>Em certos contextos, esta perífrase pode ser simplificada.</message>
+			<suggestion><match no='2' postag='VMP00SM' postag_regexp="yes" postag_replace='VMIM3P0|VMIS3P0'/></suggestion>
+			<example correction="foram">Essas honras <marker>tinham sido</marker> entregues a Ernest Hemingway.</example>  
+		</rule>		
+	</rulegroup>
+
+    <!-- VÍDEO CONFERÊNCIA videoconferência -->	
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-10-24 (21-OCT-2020+)     -->
+    <rulegroup id='VÍDEO_CONFERÊNCIA' name="Videoconferência">
+	  <rule>
+		<pattern>
           <token>vídeo</token>
           <token regexp='yes'>conferências?</token>
-      </pattern>
-      <message>Substitua por <suggestion>video\2</suggestion>.</message>
-      <example correction="videoconferência">Vou realizar uma <marker>vídeo conferência</marker> no Skype.</example>
-    </rule>
+		</pattern>
+		<message>Substitua por <suggestion>video\2</suggestion>.</message>
+		<example correction="videoconferência">Vou realizar uma <marker>vídeo conferência</marker> no Skype.</example>
+	  </rule>
+	  <rule>
+		<pattern>
+          <token regexp='yes'>conferências?</token>
+		  <token regexp='yes'>de|com|por</token>
+          <token>vídeo</token>		  
+		</pattern>
+		<message>Substitua por <suggestion>video\1</suggestion>.</message>
+		<example correction="videoconferência">Vou realizar uma <marker>conferência de vídeo</marker> no Skype.</example>
+	  </rule>
+    </rulegroup>
 
     <rule id='VISANDO_A_CONSEGUIR' name="Visando conseguir">
     <!-- Created by Marco A.G. Pinto, Portuguese rule -->
@@ -9864,6 +11662,22 @@ MARCOAGPINTO 2020-02-18 -->
       <example>Depois das várias aplicações que tem sido instaladas para impedir malware…</example>
     </rule>
   </rulegroup>
+
+    <!-- ULTRAPASSAR superar/vencer	-->
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-10-11 (2-JUL-2020+)     -->
+    <rule id='ULTRAPASSAR' name="Superar/Vencer">
+      <pattern>
+		  <marker>
+			<token inflected='yes'>ultrapassar</token>
+		  </marker>	
+          <token regexp="yes">as?|umas?|os?|um|uns|das?|dos?|de</token>
+          <token regexp="yes">provas?|desafios?</token>
+      </pattern>
+      <message>Substitua por</message>
+	    <suggestion><match no='1' postag='V.+' postag_regexp='yes'>superar</match></suggestion>
+        <suggestion><match no='1' postag='V.+' postag_regexp='yes'>vencer</match></suggestion>
+      <example correction="superar|vencer">A Ana vai <marker>ultrapassar</marker> a prova.</example>      
+    </rule>
 
   <rulegroup type='grammar' id='CONTRACOES_OBRIGATORIAS' name="Contrações obrigatórias">
     <!--     Created by Tiago F. Santos, on 2016-10-31   -->
@@ -10693,6 +12507,26 @@ MARCOAGPINTO 2020-02-18 -->
     </rule>
   </rulegroup>
 
+	<!-- VÍRGULA A MAIS -->
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-12-08 (21-OCT-2020+)  *START*   -->
+    <rule id='VERB_COMMA_NOT_NEEDED' name="Vírgula não necessária">
+      <pattern>
+	    <marker>
+		  <token postag='VMM03S0|VMSP[13]S0' postag_regexp='yes'>
+			<exception postag_regexp='yes' postag='SPS.+'/></token>
+		  <token min="0" max="1" postag='SPS.+|DA.+' postag_regexp='yes'/>
+		  <token postag='PI.+' postag_regexp='yes'/>
+		  <token regexp='yes' spacebefore='no'>[,]</token>
+		  <token postag='V.+' postag_regexp='yes'/>
+		  <token regexp='no' spacebefore='no'>-</token>
+		  <token regexp='yes' spacebefore='no'>la|lo|lhes?|te|vos</token>
+		</marker>		
+      </pattern>
+      <message>Vírgula não necessária.</message>
+	  <suggestion>\1 \2 \3 \5\6\7</suggestion>
+      <example correction="deixe ninguém usá-la">Não <marker>deixe ninguém, usá-la</marker> com você e ganhar o jogo.</example>
+    </rule>
+
   <rulegroup id='VERB_COMMA_CONJUNCTION' name="Locuções entre vírgulas: portanto, por exemplo, na verdade">
     <!-- Created by Tiago F. Santos, Portuguese rule, 2016-10-25 -->
     <!-- <url>http://www.lpeu.com.br/q/v73qc</url>               -->
@@ -10702,6 +12536,50 @@ MARCOAGPINTO 2020-02-18 -->
           <token regexp="yes">[\.!?]</token>
           <token regexp="yes" spacebefore='no'>”|»|&quot;</token>
       </antipattern>
+	  
+	<!-- ÀS VEZES às vezes -->
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-12-13 (21-OCT-2020+)  *START*   -->
+    <rule>
+      <pattern>
+		<marker>
+			<token postag='V.+' postag_regexp='yes'>
+			 <exception regexp='no'>é</exception>
+			 <exception postag_regexp='yes' postag='NC.+|AQ.+'/></token>
+		</marker>	
+		<token regexp='yes'>às|por</token>
+		<token postag='RG' postag_regexp='no'>
+			<exception postag_regexp='no' postag='CC'/>
+			<exception regexp='no'>que</exception>
+		</token>
+		<token postag='V.+|DI.+' postag_regexp='yes'>
+			<exception postag_regexp='yes' postag='NC.+|AQ.+|CS'/></token>
+		<token postag='V.+|DI.+' postag_regexp='yes'>
+			<exception postag_regexp='yes' postag='NC.+|AQ.+|CS'/></token>			
+      </pattern>
+      <message>Esta locução deve ser separada por vírgulas.</message>
+        <suggestion>\1,</suggestion>
+      <example correction="funcionam,">Os números <marker>funcionam</marker> às vezes podem é estar em baixo.</example>
+	  <example type='correct'>Os números <marker>funcionam,</marker> às vezes podem é estar em baixo.</example>
+	  <example type='correct'>Os números <marker>funcionam,</marker> por vezes podem é estar em baixo.</example>
+    </rule>
+	  
+	<!-- POR FAVOR por favor, -->
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-12-13 (21-OCT-2020+)  *START*   -->
+    <rule>
+      <pattern>
+	    <token postag='SENT_START' postag_regexp='no'/>
+        <marker>		  
+          <token>por</token>
+          <token>favor</token>
+        </marker>
+          <token>
+            <exception postag_regexp='yes' postag="_PUNCT|''"/></token>
+      </pattern>
+      <message>Esta locução deve ser separada por vírgulas.</message>
+        <suggestion>\2 \3,</suggestion>
+      <example correction="Por favor,"><marker>Por favor</marker> faça tudo bem feito.</example>
+    </rule>
+	
     <rule>
       <antipattern>
           <token regexp='yes'>&quot;</token>
@@ -11514,6 +13392,12 @@ MARCOAGPINTO 2020-02-18 -->
 
   <rulegroup id='FINAL_STOPS' name="Pontuação: pontuação final em falta" default='on'>
     <!-- Created by Tiago F. Santos, Portuguese rule, -->
+    <antipattern>
+      <token postag='SENT_START'/>
+      <token postag='DP.+' postag_regexp='yes'/>
+      <token min="1" max="3" postag='AQ.+|NC.+|NP.+' postag_regexp='yes'/>
+      <token postag='SENT_END' regexp='yes'>[,]</token>
+    </antipattern>
     <rule>
       <antipattern>
         <marker>
@@ -11929,17 +13813,19 @@ MARCOAGPINTO 2020-02-18 -->
       </pattern>
       <message>'etc.' não deve ser precedido por 'e'.</message>
         <suggestion>, etc.</suggestion>
-      <example correction=", etc.">Pode comer francezinhas, feijoada, quiche <marker>e etc.</marker></example>
+      <example correction=", etc.">Pode comer francezinhas, feijoada, quiche<marker> e etc.</marker></example>
     </rule>
     <rule>
       <pattern>
           <token negate="yes" regexp='yes'>,|e</token>
-          <token>etc</token>
+          <marker>
+            <token>etc</token>
+          </marker>
           <token>.</token>
       </pattern>
       <message>Deve-se utilizar a vírgula antes de 'etc.'.</message>
-        <suggestion>\1, etc.</suggestion>
-      <example correction="quiche, etc.">Pode comer francezinhas, feijoada, <marker>quiche etc.</marker></example>
+        <suggestion>, etc</suggestion>
+        <example correction=", etc">Pode comer francezinhas, feijoada, quiche<marker> etc</marker>.</example>
     </rule>
     <rule>
       <pattern>
@@ -12323,6 +14209,15 @@ MARCOAGPINTO 2020-02-18 -->
           <token regexp='yes'>\p{L}|&abreviaturas;|etc</token>
           <token spacebefore='no'>.</token>
       </antipattern>
+<!-- MARCOAGPINTO 2020-12-11 (21-OCT-2020+) *START* -->
+<!--
+O quê?!
+-->
+      <antipattern>
+          <token spacebefore='no' regexp='yes'>[?]</token>
+		  <token spacebefore='no' regexp='yes'>[!]</token>
+      </antipattern>
+<!-- MARCOAGPINTO 2020-12-11 (21-OCT-2020+) *END* -->	  
       <pattern>
           <token regexp="yes">[.,;:!?…]</token>
           <token regexp="yes">[.,;:!?…]</token>
@@ -12334,6 +14229,7 @@ MARCOAGPINTO 2020-02-18 -->
       <example>…cana-de-açúcar, cacau, tomate, críticos, etc., para exportação.</example>
       <example>CUNNINGHAM, Philip A.; STARR, Arthur F.; Sharing Shalom: A Process for Local Interfaith Di…</example>
       <example>Ex.: Sua Excelência saíu à rua</example>
+	  <example type='correct'>O quê<marker>?!</marker></example>
     </rule>
     <rule>
       <pattern>
@@ -12516,7 +14412,9 @@ MARCOAGPINTO 2020-02-18 -->
             <exception negate_pos='yes' postag='I'/></token>
         </marker>
           <token>
-            <exception postag_regexp='yes' postag="I|_PUNCT|''"/></token>
+            <exception postag_regexp='yes' postag="I|_PUNCT|''"/>
+			<exception postag_regexp='yes' postag="SPS.+|CS|PP.+"/> <!-- MARCOAGPINTO 2020-11-13 (21-OCT-2020+) -->
+		 </token>
       </pattern>
       <message>As interjeições devem ser finalizadas com pontos de exclamação ou interrogação.</message>
         <suggestion>\1!</suggestion>
@@ -12582,6 +14480,15 @@ MARCOAGPINTO 2020-02-18 -->
           <token>a</token>
           <token><match no='0'/></token>
       </antipattern>
+<!-- MARCOAGPINTO 2020-12-04 (21-OCT-2020+) *START* -->
+<!-- "Ele percorreu Portugal de lés a lés a fazer levantamentos musicais." -->
+      <antipattern>
+		  <token>de</token>
+		  <token></token>
+		  <token>a</token>
+		  <token><match no="1"/></token>
+      </antipattern>
+<!-- MARCOAGPINTO 2020-12-04 (21-OCT-2020+) *END* -->
       <pattern>
           <token negate_pos="yes" postag="SENT_START" regexp="yes">
             <exception>e</exception>\p{L}+</token>
@@ -12598,6 +14505,7 @@ MARCOAGPINTO 2020-02-18 -->
       <example>As instruções são executadas passo a passo a partir do começo da lista.</example>
       <example>…integrar o dia a dia a partir do…</example>
       <example>Vamos pensar em soluções terra-a-terra.</example>
+	  <example type='correct'>Ele percorreu Portugal de <marker>lés a lés a</marker> fazer levantamentos musicais.</example>
     </rule>
   </rulegroup>
 
@@ -18637,6 +20545,21 @@ o tomate'>
       <example correction="às vezes">É que <marker>hás vezes</marker> temos de tomar decisões.</example>
     </rule>
 
+	<!-- NA não -->
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-12-07 (21-OCT-2020+)  *START*   -->
+    <rule id='NA_NÃO' name="Confusão: na - não">
+      <pattern>
+		  <token postag='RG' postag_regexp='no'/>
+		  <marker>
+			<token>na</token>
+		  </marker>
+          <token postag='V.+' postag_regexp='yes'>
+			<exception postag_regexp='yes' postag='N.+|AQ.+|DP.+'/></token>
+      </pattern>
+      <message>Substitua por <suggestion>não</suggestion>.</message>
+      <example correction="não">Mas lá dentro <marker>na</marker> tinha carvão, mas outros artigos.</example>
+    </rule>
+
   <rulegroup id='TRAZ_TRÁS' name="Confusão: traz - trás">
     <!--      Created by Marco A.G.Pinto, Portuguese rule      -->
     <rule>
@@ -19129,6 +21052,16 @@ o tomate'>
       <example correction='alguns áfricos'><marker>alguns africos</marker>.</example>
     </rule>
     <rule id='PARONYM_ACIDULA_1' name='Confusão: verbo no lugar do parónimo acentuado (í)'>
+<!-- MARCOAGPINTO 2020-11-14 (21-OCT-2020+) *START* -->
+<!-- "A entrevista integra uma nova série documental." -->
+<!-- "A entrevista legitima uma nova série documental." -->
+      <antipattern>
+          <token regexp='yes'>&art_detecao_paronimos;</token>
+          <token min='0' postag='A.+' postag_regexp='yes'/>
+          <token regexp='yes'>&verb_detecao_paronimos_i;</token>
+		  <token postag='DI.+' postag_regexp='yes'/>
+      </antipattern>	  	  
+<!-- MARCOAGPINTO 2020-11-14 (21-OCT-2020+) *END* -->
       <pattern>
           <token regexp='yes'>&art_detecao_paronimos;</token>
           <token min='0' postag='A.+' postag_regexp='yes'/>
@@ -25765,6 +27698,24 @@ TODO Write better examples
     <!-- Based on Lightproof by Tiago F. Santos, 2017-07-03 -->
       <url>https://pt.wikipedia.org/wiki/Paron%C3%ADmia</url>
       <short>Nesta situação acentua-se a palavra</short>
+<!-- MARCOAGPINTO 2020-12-11 (21-OCT-2020+) *START* -->
+    <rule>
+      <antipattern case_sensitive='yes'>
+          <token>Ministério</token>
+          <token>da</token>
+          <token>Educação</token>
+      </antipattern>
+      <pattern>
+          <token regexp='yes'>(?:[A-Za-z]+dade|[A-Za-z]+ência|[A-Za-z]+[sç]ão|[A-Za-z]+ária|[A-Za-z]+mente|à|a(?:dvocacia|genda|legria|lma|ntipatia)|[\xc1á]rea|a(?:rte|ula|ura)|b(?:astante|em|iblioteca|riga)|c(?:abine|adeia|adeira|ampanha|areira|arta|asa|ausa|ena|ensura|erimônia|iência|isterna|ivil|oisa|om|onfiança|onsulta|onversa|ousa|rítica)|d(?:a|e|efensora|efensoria|efesa|emanda|enúncia|esgraça|esonra|esordem|espedida|espesa|isputa|ívida)|é|e(?:conomia|m|missora|mpresa|ncomenda)|ênfase|e(?:ntrada|ra|scola|scritura|sfera|stá|státua|steira|stima|vento)|expec?tativa|f(?:ace|azem|azenda|é|eira|esta|ez|igura|inanceira|ita|onte|ora|oram|orça|orma|ortuna|osse|otografia)|g(?:arantia|astança)|higiene|h(?:istória|omenagem|onra|ospitalar)|i(?:magem|ncerteza|ndiferença|nfraestrutura|niciativa|nsegurança)|justiça|l(?:eitura|impeza|inguagem|ivraria|uz)|mais|m(?:áquina|edicina|emória|entira|esa|iséria|issa|odéstia|oral|orte|ulher|useologia)|n(?:amorada|atureza|otícia)|o(?:bra|ferta|pinião|rdem|rgia)|palavra|p(?:alestra|arceria|arte|arvalheira|asmaceira|az|ela|enal|erformance|essoa|ista|olêmica|olítica|ose|oupança|raça|referissem|reguiça|restando|rofessora|rofissional|romessa|romotora|romotoria|rova)|q(?:ueixa|uestão)|razão|r(?:eceita|ede|elevância|epugnância|etórica|eunião|iqueza|uptura)|saúde|s(?:ecretaria|egurança|eja|er|erá|erventia|ervidora|ido|impatia|ocial|olene|uspeita)|t(?:anto|ão|arifa|elefônica|irania|olerância|omada|orna|ornada|ornado|ornar|ornasse|ornava|ornei|ornou|rajetória|ribuna)|venda|v(?:ergonha|ia|iagem|ida|igilância|irtude|isita|istoria)|voze?)s?</token>
+        <marker>
+          <token regexp='yes'>especificas?</token>
+        </marker>
+      </pattern>
+      <message>Esta palavra é um verbo. Se pretende referir-se a um nome ou adjetivo, deve utilizar a forma acentuada.</message>
+        <suggestion>específica<match no='2' regexp_match='.+?(s?)$' regexp_replace='$1'/></suggestion>
+      <example correction="específica">tornou <marker>especifica</marker></example>
+    </rule>
+<!-- MARCOAGPINTO 2020-12-11 (21-OCT-2020+) *END* -->	
     <rule>
       <pattern>
           <token regexp='yes'>(?:À|a(?:lguma|ntiga|quela)?|àquela|autêntica|c(?:ada|hamavam|om)|d(?:a|aquela|e|écima|essa|esta|ita|uma)|É|e(?:m|ssa|sta|studa|xtensa)?|fechar|f(?:oi|utura)|grande|g(?:rossa|rosseira)|histórica|i(?:mensa|mportante|nternacional)|m(?:aior|aravilhosa|elhor|esma|ortífera|últipla)|n(?:a|aquela|esta|ona|ossa|ova|uma)|o(?:itava|u|utra)|p(?:ela|equena|rimeira|rópria)|q(?:ualquer|uarta|uerem|uinta)|r(?:eal|ecente|eferida|ica)|s(?:egunda|em|étima|exta|ua)|tanta|t(?:enho|erá|erceira)|última|uma?|única|velha|verdadeira)s?</token>
@@ -27375,6 +29326,23 @@ TODO Write better examples
         </marker>
       </antipattern>-->
     <rule>
+<!-- MARCOAGPINTO 2020-11-04 (21-OCT-2020+) *START* -->
+<!-- "Ver subcapítulo 3.6." -->
+      <antipattern>
+		  <token postag='V.+' postag_regexp='yes'/>
+		  <token min="0" max="1" regexp='yes'>as?|os?|das?|dos?|nas?|nos?</token>
+		  <token regexp='yes'>capítulos?|subcapítulos?|partes?|parágrafos?|equação|equações|figuras?|tabelas?</token>
+		  <token postag='Z0CN0' postag_regexp='no'/>
+      </antipattern>
+<!-- MARCOAGPINTO 2020-11-04 (21-OCT-2020+) *END* -->
+<!-- MARCOAGPINTO 2020-11-08 (21-OCT-2020+) *START* -->
+<!-- "Na tabela do subcapítulo 5.6, constata-se os resultados previstos." -->
+      <antipattern>
+		  <token regexp='yes'>as?|os?|das?|dos?|nas?|nos?</token>
+		  <token regexp='yes'>capítulos?|subcapítulos?|partes?|parágrafos?|equação|equações|figuras?|tabelas?</token>
+		  <token postag='Z0CN0' postag_regexp='no'/>
+      </antipattern>
+<!-- MARCOAGPINTO 2020-11-08 (21-OCT-2020+) *END* -->
       <pattern>
           <token regexp="yes">\d+\.\d+
             <exception regexp="yes">\d{1,3}\.\d{3}</exception></token>
@@ -27405,8 +29373,9 @@ TODO Write better examples
       <example>No último censo nacional, 600.000 argentinos (1,autoidentificaram como indígena…</example>
       <example>GNOME 3.16 – 3.20 Committer</example>
       <example><marker>111.231</marker></example><!-- XXX Corrigido pela segunda regra -->
+	  <example type='correct'>Ver subcapítulo <marker>3.6</marker>.</example>
     </rule>
-    <rule>
+    <!--<rule>
       <pattern>
           <token regexp="yes">\d{2,3}\.\d{3}</token>
       </pattern>
@@ -27431,23 +29400,47 @@ TODO Write better examples
         <suggestion><match no='1' regexp_match='(\d{1,2})\.(\d{3})' regexp_replace='$1$2'/></suggestion>
       <example correction="1,231|1 231|1231"><marker>1.231</marker></example>
       <example><marker>19.349</marker></example>
-    </rule>
+    </rule>-->
     <rule>
       <pattern>
           <token regexp="yes">\d{1,3},\d{3}\.\d+</token>
       </pattern>
       <message>Para separar os decimais, utilize uma vírgula.</message>
-        <suggestion><match no='1' regexp_match='(\d{1,3}),(\d{3})\.(\d+)' regexp_replace='$1 $2,$3'/></suggestion>
-      <example correction="21 349,56"><marker>21,349.56</marker></example>
+        <suggestion><match no='1' regexp_match='(\d{1,3}),(\d{3})\.(\d+)' regexp_replace='$1&#160;$2,$3'/></suggestion>
+        <suggestion><match no='1' regexp_match='(\d{1,3}),(\d{3})\.(\d+)' regexp_replace='$1.$2,$3'/></suggestion>
+        <example correction="21&#160;349,56|21.349,56"><marker>21,349.56</marker></example>
     </rule>
     <rule>
       <pattern>
           <token regexp="yes">\d{1,3},\d{3},\d{3}\.\d+</token>
       </pattern>
       <message>Para separar os decimais, utilize uma vírgula.</message>
-        <suggestion><match no='1' regexp_match='(\d{1,3}),(\d{1,3}),(\d{3})\.(\d+)' regexp_replace='$1 $2 $3,$4'/></suggestion>
-      <example correction="21 999 349,56"><marker>21,999,349.56</marker></example>
+        <suggestion><match no='1' regexp_match='(\d{1,3}),(\d{1,3}),(\d{3})\.(\d+)' regexp_replace='$1&#160;$2&#160;$3,$4'/></suggestion>
+        <suggestion><match no='1' regexp_match='(\d{1,3}),(\d{1,3}),(\d{3})\.(\d+)' regexp_replace='$1.$2.$3,$4'/></suggestion>
+        <example correction="21&#160;999&#160;349,56|21.999.349,56"><marker>21,999,349.56</marker></example>
     </rule>
+  </rulegroup>
+  <rulegroup id="THOUSANDS_SEPARATOR" name="separador de milhares">
+     <rule>
+          <pattern>
+              <token regexp="yes">\d{1,3}\,000</token>
+          </pattern>
+          <message>Para separar os milhares, use um ponto ou um espaço. Está correto se forem decimais.</message>
+          <suggestion><match no='1' regexp_match='(\d{1,2}),(\d{3})' regexp_replace='$1.$2'/></suggestion>
+          <suggestion><match no='1' regexp_match='(\d{1,2}),(\d{3})' regexp_replace='$1&#160;$2'/></suggestion>
+          <example correction="5.000|5&#160;000">Mais de <marker>5,000</marker> verificações</example>
+         <example>Milhares: 5.344</example>
+         <example>Decimais: 5,344</example>
+      </rule>
+      <rule>
+          <pattern>
+              <token regexp="yes">\d{1,3},\d{3},\d{3}</token>
+          </pattern>
+          <message>Para separar os milhares, use um ponto ou um espaço.</message>
+          <suggestion><match no='1' regexp_match='(\d{1,3}),(\d{3}),(\d{3})' regexp_replace='$1.$2.$3'/></suggestion>
+          <suggestion><match no='1' regexp_match='(\d{1,3}),(\d{3}),(\d{3})' regexp_replace='$1&#160;$2&#160;$3'/></suggestion>
+          <example correction="5.500.300|5&#160;500&#160;300">Mais de <marker>5,500,300</marker> caracteres</example>
+      </rule>
   </rulegroup>
 
     <rule id="NO_SPACE_CLOSING_QUOTE" name="Espaçamento: Aspas de fecho">
@@ -29725,8 +31718,7 @@ TODO Write better examples
                     &date_dmy;
       </pattern>
       <filter class="org.languagetool.rules.pt.NewYearDateFilter" args="year:\5 month:\3 day:\1"/>
-      <message>Um novo ano começou. Será que quis dizer <suggestion>\1 \3 {realYear}</suggestion>?
-      </message>
+      <message>Um novo ano começou. Será que quis dizer <suggestion>\1 \3 {realYear}</suggestion>?</message>
       <example correction="7 Outubro 2014">Festival Pop/Rock - <marker>7 Outubro 2013</marker></example>
       <example correction="7 Out 2014">Festival Pop/Rock - <marker>7 Out 2013</marker></example>
       <example>Festival Pop/Rock - Terça-feira, <marker>7 Outubro 2014</marker></example>
@@ -29738,8 +31730,7 @@ TODO Write better examples
                     &date_mdy;
       </pattern>
       <filter class="org.languagetool.rules.pt.NewYearDateFilter" args="year:\4 month:\1 day:\2"/>
-      <message>Um novo ano começou. Será que quis dizer <suggestion>\1 \2, {realYear}</suggestion>?
-      </message>
+      <message>Um novo ano começou. Será que quis dizer <suggestion>\1 \2, {realYear}</suggestion>?</message>
       <example correction="Outubro 7, 2014">Festival Pop/Rock - <marker>Outubro 7, 2013</marker></example>
       <example correction="Out 7, 2014">Festival Pop/Rock - <marker>Out 7, 2013</marker></example>
       <example>Festival Pop/Rock - Terça-feira, <marker>Out 7, 2014</marker></example>
@@ -29756,8 +31747,7 @@ TODO Write better examples
                     &date_dmy_numbers;
       </pattern>
       <filter class="org.languagetool.rules.pt.NewYearDateFilter" args="year:\5 month:\3 day:\1"/>
-      <message>Um novo ano começou. Será que quis dizer <suggestion>\1/\3/{realYear}</suggestion>?
-      </message>
+      <message>Um novo ano começou. Será que quis dizer <suggestion>\1/\3/{realYear}</suggestion>?</message>
       <example correction="31/10/2014">Festival Pop/Rock 2014 - <marker>31/10/2013</marker></example>
       <example>Festival Pop/Rock 2014 - <marker>31/10/2014</marker></example>
       <example>Festival Pop/Rock 2014 - <marker>31/10/2018</marker></example>
@@ -29775,8 +31765,7 @@ TODO Write better examples
                     &date_mdy_numbers;
       </pattern>
       <filter class="org.languagetool.rules.pt.NewYearDateFilter" args="year:\5 month:\1 day:\3"/>
-      <message>Um novo ano começou. Será que quis dizer <suggestion>\1/\3/{realYear}</suggestion>?
-      </message>
+      <message>Um novo ano começou. Será que quis dizer <suggestion>\1/\3/{realYear}</suggestion>?</message>
       <example correction="10/31/2014">Festival Pop/Rock 2014 - <marker>10/31/2013</marker></example>
       <example>Festival Pop/Rock 2014 - <marker>10/31/2014</marker></example>
       <example>Festival Pop/Rock 2014 - <marker>10/31/2018</marker></example>
@@ -30310,6 +32299,20 @@ TODO Write better examples
  </category>
 
  <category id='STYLE' name="Estilo" type="style">
+     
+     <!-- DE FORMA/MODO + ADJ adv -->
+     <!--      Created by Marco A.G.Pinto, Portuguese rule 2020-10-08 (2-JUL-2020+)     -->
+     <rule id='DE_FORMA-MODO_ADJ' name="De + forma/modo + Adj -> Advérbio" tags="picky">
+         <pattern>
+             <token regexp="no">de</token>
+             <token regexp="yes">forma|modo</token>
+             <token postag='AQ0[CFM]S0' postag_regexp='yes'><exception regexp="yes">.*[áéíóúâêôãõàèìòù].*</exception></token>
+         </pattern>
+         <message>Substitua por</message>
+         <suggestion><match no='3' postag='AQ0[CFM]S0' postag_regexp='yes' postag_replace='AQ0[CF]S0'/>mente</suggestion>
+         <example correction="permanentemente">A Ana foi banida <marker>de forma permanente</marker> por violar as regras.</example>
+         <example type='correct'>A Ana foi banida <marker>permanentemente</marker> por violar as regras.</example>
+     </rule>
 
     <rule id='MULTIPLE_VERBS_IN_A_ROW' name='Uso excessivo de verbos consecutivos' default='off'> <!-- TODO re-enable when pseudo-chunker is implemented -->
     <!-- Created by Tiago F. Santos , Portuguese rule, 2017-01-20 	-->
@@ -30693,20 +32696,6 @@ TODO Write better examples
       <example correction="à última hora">Eles decidiram tudo <marker>à última da hora</marker>.</example>
     </rule>
 
-    <rule type='style' default='off' id='DEPOIS_DE' name="Expressão: Após">
-    <!--     Created by Marco A.G. Pinto, Portuguese rule,   -->
-      <pattern>
-        <marker>
-          <token>depois</token>
-          <token>de</token>
-        </marker>
-          <token>
-            <exception>amanhã</exception></token>
-      </pattern>
-      <message>Substitua por <suggestion>após</suggestion>.</message>
-      <example correction="após">Faz isso <marker>depois de</marker> saber os resultados.</example>
-    </rule>
-
     <rule id='ENQUANTO_POSSA_SER' name="Expressão: Enquanto puder ser">
     <!--     Created by Marco A.G. Pinto, Portuguese rule,   -->
       <pattern>
@@ -30808,7 +32797,11 @@ TODO Write better examples
         <token />
         <token>-</token>
         <token spacebefore="no" regexp="yes">(?:&barbarismos;|&barbarismos2;|&barbarismos3;)s?</token>
-      </antipattern>	  
+      </antipattern>
+      <antipattern>
+        <token>curriculum</token>
+        <token>vitae</token>
+      </antipattern>
       <pattern case_sensitive='yes'>
           <token regexp='yes'>(?:&barbarismos;|&barbarismos2;|&barbarismos3;)s?
             <exception regexp='yes'>(?:bit|kilo(?:bit|byte|volt|watt)|giga(?:byte|watt)|quilohertz|out)s?|versus</exception></token><!-- XXX remove after regenerating regexp -->
@@ -30965,7 +32958,7 @@ TODO Write better examples
           <token>gente</token>
         </marker>
       </pattern>
-      <message>O uso de "a gente" pode ser interpretado como desrespeitoso. Considere remover  ou substituí-lo pelo pronome de tratamente mais adequado.</message>
+      <message>O uso de "a gente" pode ser interpretado como desrespeitoso. Considere remover ou substituí-lo pelo pronome de tratamente mais adequado.</message>
         <suggestion>nós</suggestion>
         <suggestion/>
       <url>https://ciberduvidas.iscte-iul.pt/consultorio/perguntas/connosco-com-a-gente-e-com-nos-no-portugues-europeu/26842</url>
@@ -30984,7 +32977,7 @@ TODO Write better examples
         </marker>
           <token postag="V.+" postag_regexp='yes'/>
       </pattern>
-      <message>O uso de "a gente" pode ser interpretado como desrespeitoso. Considere remover  ou substituí-lo pelo pronome de tratamente mais adequado.</message>
+      <message>O uso de "a gente" pode ser interpretado como desrespeitoso. Considere remover ou substituí-lo pelo pronome de tratamente mais adequado.</message>
         <suggestion/>
         <suggestion>nós</suggestion>
       <url>https://ciberduvidas.iscte-iul.pt/consultorio/perguntas/connosco-com-a-gente-e-com-nos-no-portugues-europeu/26842</url>
@@ -32988,6 +34981,188 @@ TODO Write better examples
       <example correction="ónus da prova">O <marker>anos da prova</marker> é nosso.</example>
     </rule>
 
+    <rulegroup id='PARA-POR_TER_PARTICIPIO-PASSADO' name='Para/Por + Ter + Particípio passado'>
+	<!--      Created by Marco A.G.Pinto, Portuguese rule - 2020-09-28 (2-JUL-2020+)   -->
+
+	  <!-- EU/ELE -> POR TER ESTADO -->
+	  <rule>
+		<pattern>
+			<token regexp='yes'>para|por</token>
+			<token min="0" max="1" regexp='yes'>eu|ele</token>
+			<marker>				
+				<token regexp='no'>ter</token>
+				<token postag='VMP00SM' postag_regexp='no'/>
+			</marker>	
+		</pattern>
+		<message>Em certos contextos, esta perífrase pode ser simplificada.</message>
+		<suggestion><match no='4' postag='VMP00SM' postag_regexp="yes" postag_replace='VMN0000'/></suggestion>
+		<example correction='estar'>Isso por <marker>ter estado</marker> a ler o artigo.</example>
+		<example type='correct'>Isso por <marker>estar</marker> a ler o artigo.</example>
+      </rule>
+
+	  <!-- TU -> POR TERES ESTADO -->
+	  <rule>
+		<pattern>
+			<token regexp='yes'>para|por</token>
+			<token min="0" max="1" regexp='no'>tu</token>
+			<marker>				
+				<token regexp='no'>teres</token>
+				<token postag='VMP00SM' postag_regexp='no'/>
+			</marker>	
+		</pattern>
+		<message>Em certos contextos, esta perífrase pode ser simplificada.</message>
+		<suggestion><match no='4' postag='VMP00SM' postag_regexp="yes" postag_replace='VMN02S0'/></suggestion>
+		<example correction='estares'>Isso por <marker>teres estado</marker> a ler o artigo.</example>
+		<example type='correct'>Isso por <marker>estares</marker> a ler o artigo.</example>
+      </rule>
+
+	  <!-- NÓS -> POR TERMOS ESTADO -->
+	  <rule>
+		<pattern>
+			<token regexp='yes'>para|por</token>
+			<token min="0" max="1" regexp='no'>nós</token>
+			<marker>				
+				<token regexp='no'>termos</token>
+				<token postag='VMP00SM' postag_regexp='no'/>
+			</marker>	
+		</pattern>
+		<message>Em certos contextos, esta perífrase pode ser simplificada.</message>
+		<suggestion><match no='4' postag='VMP00SM' postag_regexp="yes" postag_replace='VMN01P0'/></suggestion>
+		<example correction='estarmos'>Isso por <marker>termos estado</marker> a ler o artigo.</example>
+		<example type='correct'>Isso por <marker>estarmos</marker> a ler o artigo.</example>
+      </rule>
+
+	  <!-- VÓS/VOCÊS/ELES -> POR TEREM ESTADO -->
+	  <rule>
+		<pattern>
+			<token regexp='yes'>para|por</token>
+			<token min="0" max="1" regexp='yes'>vós|vocês|eles</token>
+			<marker>				
+				<token regexp='no'>terem</token>
+				<token postag='VMP00SM' postag_regexp='no'/>
+			</marker>	
+		</pattern>
+		<message>Em certos contextos, esta perífrase pode ser simplificada.</message>
+		<suggestion><match no='4' postag='VMP00SM' postag_regexp="yes" postag_replace='VMN03P0'/></suggestion>
+		<example correction='estarem'>Isso por <marker>terem estado</marker> a ler o artigo.</example>
+		<example type='correct'>Isso por <marker>estarem</marker> a ler o artigo.</example>
+      </rule>
+
+	</rulegroup>
+
+    <!-- 	PORQUE + VERBO_EU_ELE + A(S)/O(S) por/ao verbo_inf a(s)/o(s) -->	
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-11-17 (21-OCT-2020+)     -->
+    <rule id='PORQUE_VERBOEUELE_AS_OS_POR_AO_VERBOINF_AS_OS' name="Porque + Verbo Eu/ele + A(s)/O(s) > Por/Ao + Verbo_inf + a(s)/o(s)">
+		<pattern>
+		    <marker>
+				<token>porque</token>
+				<token postag='VMIS1S0|VMIS3S0' postag_regexp='yes'/>				
+			</marker>
+			<token regexp='yes'>as?|os?</token>
+		</pattern>		
+		<message>Em certos contextos, esta perífrase pode ser simplificada.</message>
+		<suggestion>ao <match no='2' postag='VMIS1S0|VMIS3S0' postag_regexp="yes" postag_replace='VMN0000'/></suggestion>
+		<suggestion>por <match no='2' postag='VMIS1S0|VMIS3S0' postag_regexp="yes" postag_replace='VMN0000'/></suggestion>
+		<example correction="ao sentir|por sentir">Comentei o sucedido <marker>porque senti</marker> os efeitos rapidamente.</example>  
+	</rule>
+	
+    <rulegroup id='QUE_VERBO' name="Que + Verbo > Verbo_inf">
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-11-26 + 2020-11-27 (21-OCT-2020+)     -->
+<!--
+=EU=
+Afirmei a minha inocência alegando que era canhoto.
+=TU=
+Afirmaste a tua inocência alegando que eras canhoto.
+=ELE=
+Afirmou a sua inocência alegando que era canhoto.
+=NÓS=
+Afirmámos a nossa inocência alegando que éramos canhotos.
+=VÓS/VOCÊS/ELES=
+Afirmaram a vossa inocência alegando que eram canhotos.
+-->	
+
+	  <!-- EU/ELE -> QUE ERA -->
+	  <rule> 
+		<antipattern>
+			<token postag='SPS.+|NC.+|AQ.+' postag_regexp='yes'/>
+			<token regexp='no'>que</token>
+			<token postag='V.+' postag_regexp='yes'/>
+		</antipattern>
+		<pattern>
+			<token postag='V.+' postag_regexp='yes'>
+			<exception regexp='yes'>é|ser</exception></token>
+			<marker>
+				<token regexp='no'>que</token>
+				<token postag='VMII[13]S0' postag_regexp='yes'/>
+			</marker>	
+		</pattern>
+		<message>Em certos contextos, esta perífrase pode ser simplificada.</message>
+		<suggestion><match no='3' postag='VMII[123]S0' postag_regexp="yes" postag_replace='VMN0000'/></suggestion>
+		<example correction='ser'>Afirmei a minha inocência alegando <marker>que era</marker> canhoto.</example>
+      </rule>
+
+	  <!-- TU -> QUE ERAS -->
+	  <rule>
+		<antipattern>
+			<token postag='SPS.+|NC.+|AQ.+' postag_regexp='yes'/>
+			<token regexp='no'>que</token>
+			<token postag='V.+' postag_regexp='yes'/>
+		</antipattern>
+		<pattern>
+			<token postag='V.+' postag_regexp='yes'>
+			<exception regexp='yes'>é|ser</exception></token>
+			<marker>
+				<token regexp='no'>que</token>
+				<token postag='VMII2S0' postag_regexp='no'/>
+			</marker>	
+		</pattern>
+		<message>Em certos contextos, esta perífrase pode ser simplificada.</message>
+		<suggestion><match no='3' postag='VMII2S0' postag_regexp="yes" postag_replace='VMN02S0'/></suggestion>
+		<example correction='seres'>Afirmaste a tua inocência alegando <marker>que eras</marker> canhoto.</example>
+      </rule>
+
+	  <!-- NÓS -> QUE ÉRAMOS -->
+	  <rule>
+		<antipattern>
+			<token postag='SPS.+|NC.+|AQ.+' postag_regexp='yes'/>
+			<token regexp='no'>que</token>
+			<token postag='V.+' postag_regexp='yes'/>
+		</antipattern>
+		<pattern>
+			<token postag='V.+' postag_regexp='yes'>
+			<exception regexp='yes'>é|ser</exception></token>
+			<marker>
+				<token regexp='no'>que</token>
+				<token postag='VMII1P0' postag_regexp='no'/>
+			</marker>	
+		</pattern>
+		<message>Em certos contextos, esta perífrase pode ser simplificada.</message>
+		<suggestion><match no='3' postag='VMII1P0' postag_regexp="yes" postag_replace='VMN01P0'/></suggestion>
+		<example correction='sermos'>Afirmámos a nossa inocência alegando <marker>que éramos</marker> canhotos.</example>
+      </rule>
+
+	  <!-- VÓS/VOCÊS/ELES -> QUE ERAM -->
+	  <rule>
+		<antipattern>
+			<token postag='SPS.+|NC.+|AQ.+' postag_regexp='yes'/>
+			<token regexp='no'>que</token>
+			<token postag='V.+' postag_regexp='yes'/>
+		</antipattern>  
+		<pattern>
+			<token postag='V.+' postag_regexp='yes'>
+			<exception regexp='yes'>é|ser</exception></token>
+			<marker>
+				<token regexp='no'>que</token>
+				<token postag='VMII3P0' postag_regexp='no'/>
+			</marker>	
+		</pattern>
+		<message>Em certos contextos, esta perífrase pode ser simplificada.</message>
+		<suggestion><match no='3' postag='VMII3P0' postag_regexp="yes" postag_replace='VMN03P0'/></suggestion>
+		<example correction='serem'>Afirmaram a vossa inocência inocência alegando <marker>que eram</marker> canhotos.</example>
+      </rule>
+	  
+	</rulegroup>
+
     <rule id='SEXTA_DE_VIME' name="Calinada: Sexta de vime">
     <!-- Created by Marco A.G.Pinto -->
       <pattern>
@@ -32997,6 +35172,119 @@ TODO Write better examples
       </pattern>
       <message>Substitua por <suggestion>cesta de vime</suggestion>.</message>
       <example correction="cesta de vime">Ela tem uma <marker>sexta de vime</marker>.</example>
+    </rule>
+
+    <rulegroup id='TER_PARTICIPIO-PASSADO' name='Ter + Particípio passado'>
+	<!--      Created by Marco A.G.Pinto, Portuguese rule - 2020-09-16 (2-JUL-2020+)   -->
+	
+	  <!-- TENHO -->
+	  <rule>
+		<pattern>
+			<marker>
+				<token>tenho</token>
+				<and>
+					<token postag='VMP00SM' postag_regexp='no'/>
+					<token negate="yes" regexp='yes' inflected='yes'>vir|ver</token>
+				</and>
+			</marker>	
+			<token regexp='yes'>as?|os?|em|há|desde|um|uns|umas?|muitas|muitos|com|que</token>
+		</pattern>
+		<message>Em certos contextos, esta perífrase pode ser simplificada.</message>
+		<suggestion><match no='2' postag='VMP00SM' postag_regexp="yes" postag_replace='VMIP1S0'/></suggestion>
+		<example correction='pesquiso'>Eu <marker>tenho pesquisado</marker> o assunto há décadas.</example>
+		<example type='correct'>Eu <marker>pesquiso</marker> o assunto há décadas.</example>
+      </rule>
+
+	  <!-- TENS -->
+	  <rule>
+		<pattern>
+			<marker>
+				<token>tens</token>
+				<and>
+					<token postag='VMP00SM' postag_regexp='no'/>
+					<token negate="yes" regexp='yes' inflected='yes'>vir|ver</token>
+				</and>				
+			</marker>	
+			<token regexp='yes'>as?|os?|em|há|desde|um|uns|umas?|muitas|muitos|com|que</token>
+		</pattern>
+		<message>Em certos contextos, esta perífrase pode ser simplificada.</message>
+		<suggestion><match no='2' postag='VMP00SM' postag_regexp="yes" postag_replace='VMIP2S0'/></suggestion>
+		<example correction='pesquisas'>Tu <marker>tens pesquisado</marker> o assunto há décadas.</example>
+		<example type='correct'>Tu <marker>pesquisas</marker> o assunto há décadas.</example>
+      </rule>
+
+	  <!-- TEM -->
+	  <rule>
+		<pattern>
+			<marker>
+				<token>tem</token>
+				<and>
+					<token postag='VMP00SM' postag_regexp='no'/>
+					<token negate="yes" regexp='yes' inflected='yes'>vir|ver</token>
+				</and>				
+			</marker>	
+			<token regexp='yes'>as?|os?|em|há|desde|um|uns|umas?|muitas|muitos|com|que</token>
+		</pattern>
+		<message>Em certos contextos, esta perífrase pode ser simplificada.</message>
+		<suggestion><match no='2' postag='VMP00SM' postag_regexp="yes" postag_replace='VMIP3S0'/></suggestion>
+		<example correction='pesquisa'>O professor <marker>tem pesquisado</marker> o assunto há décadas.</example>
+		<example type='correct'>O professor <marker>pesquisa</marker> o assunto há décadas.</example>
+      </rule>
+	  
+	  <!-- TEMOS -->
+	  <rule>
+		<pattern>
+			<marker>
+				<token>temos</token>
+				<and>
+					<token postag='VMP00SM' postag_regexp='no'/>
+					<token negate="yes" regexp='yes' inflected='yes'>vir|ver</token>
+				</and>				
+			</marker>	
+			<token regexp='yes'>as?|os?|em|há|desde|um|uns|umas?|muitas|muitos|com|que</token>
+		</pattern>
+		<message>Em certos contextos, esta perífrase pode ser simplificada.</message>
+		<suggestion><match no='2' postag='VMP00SM' postag_regexp="yes" postag_replace='VMIP1P0'/></suggestion>
+		<example correction='pesquisamo|pesquisamos'>Nós <marker>temos pesquisado</marker> o assunto há décadas.</example>
+		<example type='correct'>Nós <marker>pesquisamos</marker> o assunto há décadas.</example>
+      </rule>	  
+
+	  <!-- TÊM -->
+	  <rule>
+		<pattern>
+			<marker>
+				<token>têm</token>
+				<and>
+					<token postag='VMP00SM' postag_regexp='no'/>
+					<token negate="yes" regexp='yes' inflected='yes'>vir|ver</token>
+				</and>				
+			</marker>	
+			<token regexp='yes'>as?|os?|em|há|desde|um|uns|umas?|muitas|muitos|com|que</token>
+		</pattern>
+		<message>Em certos contextos, esta perífrase pode ser simplificada.</message>
+		<suggestion><match no='2' postag='VMP00SM' postag_regexp="yes" postag_replace='VMIP3P0'/></suggestion>
+		<example correction='pesquisam'>Os senhores <marker>têm pesquisado</marker> o assunto há décadas.</example>
+		<example type='correct'>Os senhores <marker>pesquisam</marker> o assunto há décadas.</example>
+		<example type='correct'>Eles <marker>pesquisam</marker> o assunto há décadas.</example>
+      </rule>	  
+	</rulegroup>
+
+    <rule id='QUE_TEM-TÊM' name="Que tem/têm">
+    <!--      Created by Marco A.G.Pinto, Portuguese rule - 2020-09-29 (2-JUL-2020+)     -->
+      <pattern>
+	      <token postag='NC[CFM][SP]000|NP[FM]S[0G]00|AQ0[CFM][SP]0' postag_regexp='yes'/>
+		  <token min="0" max="1" regexp='yes' spacebefore='yes'>[)"'’]</token>
+		  <token min="0" max="1" regexp='yes' spacebefore='no'>[,]</token>
+		  <marker>
+			<token>que</token>
+			<token regexp="yes">tem|têm</token>		  
+		  </marker>
+		  <token postag='NC[CFM][SP]000|AQ0[CFM][SP]0' postag_regexp='yes'>
+	  	  <exception regexp='yes'>lá|são|disponível</exception></token>
+      </pattern>
+      <message>Substitua por <suggestion>com</suggestion>.</message>
+      <example correction="com">São dicionários <marker>que têm</marker> milhões de palavras.</example>
+	  <example type='correct'>São dicionários <marker>com</marker> milhões de palavras.</example>
     </rule>
 
     <rule id='UM_BAIXO-ASSINADO' name="Calinada: Um abaixo-assinado">
@@ -33146,16 +35434,20 @@ TODO Write better examples
       <example correction='verosimilhança'>A estimativa de máxima <marker>semelhança</marker> é usada em Estatística.</example>
     </rule>
 
-    <rule id='FURTO_DE_IDENTIDADE' name="Usurpação de identidade">
-    <!-- Created by Marco A.G. Pinto, 2017-XX-XX -->
-      <pattern>
-          <token>furto</token>
-          <token>de</token>
-          <token regexp='yes'>identidades?</token>
-      </pattern>
-      <message>Substitua por <suggestion>usurpação de \3</suggestion>.</message>
-      <example correction="usurpação de identidade">É comum ser alvo de <marker>furto de identidade</marker> na Internet.</example>
-    </rule>
+    <!-- 	FURTO/ROUBO DA/DE IDENTIDADE usurpação de identidade -->	
+	<!--      Created by Marco A.G.Pinto, Portuguese rule 2020-11-18 (21-OCT-2020+)     -->
+    <rule id='FURTO_ROUBO_IDENTIDADE' name="Usurpação de identidade">
+		<pattern>
+		    <marker>
+				<token inflected='yes' regexp='yes'>furtar|roubar</token>
+			</marker>
+			<token regexp='yes'>as?|das?|de</token>
+			<token min="0" max="1" postag='DP.*' postag_regexp='yes'/>
+			<token regexp='yes'>identidades?</token>
+		</pattern>		
+		<message>Substitua por <suggestion><match no='1' postag='V.+' postag_regexp='yes'>usurpar</match></suggestion>.</message>
+		<example correction="usurpou">Alguém <marker>roubou</marker> a identidade do dono da empresa.</example>  
+	</rule>
 
     <rule id='OPENING_INTERROGATION' name="Sinal de interrogação inicial" default="on">
     <!-- Localized from Catalan, by Tiago F. Santos, 2017-02-27 -->

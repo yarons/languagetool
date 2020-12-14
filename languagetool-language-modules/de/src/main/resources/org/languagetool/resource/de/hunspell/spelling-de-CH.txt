@@ -479,3 +479,5 @@ Näherbaurecht/S
 Denner #name
 Strasseninspektorate/N
 Strasseninspektorat/S
+Schweinsplätzli
+Parkierungsmöglichkeiten

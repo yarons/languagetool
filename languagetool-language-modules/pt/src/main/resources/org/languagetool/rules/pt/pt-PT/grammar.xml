@@ -514,6 +514,60 @@ title="Easy editing stylesheet" ?>
           <token regexp='yes'>saudades?</token>
           <token regexp='yes'>suas?|vossas</token>
       </antipattern>
+<!-- MARCOAGPINTO 2020-08-31 + 2020-09-03 + 2020-10-07 (2-JUL-2020+) *START* -->
+<!-- "Isso cheira a paixão assolapada, meu menino!" -->
+<!-- "Isso é muito feio no desporto, meus senhores!" -->
+      <antipattern>
+		  <token></token>
+<!--	      <token postag='AQ0[CFM][SP]0|NC[CFM][SP]000' postag_regexp='yes'/> -->
+		  <token>,</token>
+          <token postag='DP.+' postag_regexp='yes'/>
+		  <token postag='AQ0[CFM][SP]0|NC[CFM][SP]000' postag_regexp='yes'/>
+		  <and>
+			<token min="0" max="1" postag='AQ0[CFM][SP]0|NC[CFM][SP]000|RM' postag_regexp='yes'/>
+			<token negate="yes" postag='V.+' postag_regexp='yes'/>
+		  </and>
+		  <token regexp='yes'>[.]|,|!|[?]</token>
+      </antipattern>	  	  
+<!-- MARCOAGPINTO 2020-08-31 + 2020-09-03 + 2020-10-07 (2-JUL-2020+) *END* -->
+<!-- MARCOAGPINTO 2020-10-13 (2-JUL-2020+) *START* --> 
+<!-- "A Ana perguntou-me com aquele seu olhar lascivo." -->
+      <antipattern>	
+	      <token regexp="no">com</token>
+		  <token postag='DD.+|PD.+' postag_regexp='yes'/>
+		  <token postag='DP.+' postag_regexp='yes'/>
+	  </antipattern>
+<!-- MARCOAGPINTO 2020-10-13 (2-JUL-2020+) *END* -->
+<!-- MARCOAGPINTO 2020-10-21 (21-OCT-2020+) *START* --> 
+<!-- "Esta mania tão nossa de desdenhar de tudo e de todos." -->
+      <antipattern>
+		  <token postag='RG' postag_regexp='no'/>
+		  <token postag='DP.+' postag_regexp='yes'/>
+		  <token postag='SPS.+' postag_regexp='yes'/>		  
+	  </antipattern>
+<!-- MARCOAGPINTO 2020-10-21 (21-OCT-2020+) *END* -->
+<!-- MARCOAGPINTO 2020-10-22 + 2020-11-08 (21-OCT-2020+) *START* --> 
+<!-- "Há dias, minha paixão assolapada, mirei-te numa capa de livrinho." -->
+<!-- "Não obstante, gostares de andar descalça, minha gazela doce e paradoxalmente selvagem." -->
+<!-- "Não obstante, gostares de andar descalça, minha gazela doce e selvagem." -->
+<!-- "Portanto, meu querido amigo, cautelas e caldos de galinha." -->
+      <antipattern>
+		  <token></token>
+		  <token regexp='yes'>[,]</token>
+          <token regexp='yes'>minha|meu</token>
+		  <token min="1" max="2" postag='NC[CFM][SP]000|RM|AQ0[CFM][SP]0' postag_regexp='yes'>
+			<exception postag_regexp='yes' postag='V.+'/></token>
+		  <token regexp='yes'>[.,!?]|e|ou</token>
+      </antipattern>	  	  
+<!-- MARCOAGPINTO 2020-10-22 + 2020-11-08 (21-OCT-2020+) *END* -->
+<!-- MARCOAGPINTO 2020-12-04 (21-OCT-2020+) *START* -->
+      <antipattern>
+		<token postag='SENT_START'/>
+		<token postag='DP.+' postag_regexp='yes'/>
+		<token min="1" max="3" postag='AQ.+|NC.+|NP.+' postag_regexp='yes'/>
+		<token postag='SENT_END' regexp='yes'>[,]</token>
+      </antipattern>
+<!-- MARCOAGPINTO 2020-12-04 (21-OCT-2020+) *END* -->
       <pattern>
           <token>
             <exception regexp="yes">[ao]s?|es[st][ae]s?|uma?s?|uns|por|de|em|&contracoes_MS;|&contracoes_MP;|&contracoes_FS;|&contracoes_FP;</exception></token>
@@ -532,6 +586,17 @@ title="Easy editing stylesheet" ?>
     <!--        <example type='correct'>Hospital Nossa Senhora da Paz</example> -->
       <example>Isto é uma característica tipicamente sua.</example>
       <example>Sentimos muita saudade sua.</example>
+	  <example type='correct'>Isso cheira a paixão assolapada, <marker>meu</marker> menino!</example>
+	  <example type='correct'>Isso é muito feio no desporto, <marker>meus</marker> senhores!</example>
+	  <example type='correct'>Olhe, aqui, <marker>meu</marker> amigo.</example>
+	  <example type='correct'>A Ana perguntou-me <marker>com aquele seu</marker> olhar lascivo.</example>
+	  <example type='correct'>Esta mania <marker>tão nossa</marker> de desdenhar de tudo e de todos.</example>
+	  <example type='correct'>Há dias, <marker>minha</marker> paixão assolapada, mirei-te numa capa de livrinho.</example>
+	  <example type='correct'>Não obstante, gostares de andar descalça, <marker>minha</marker> gazela doce e selvagem.</example>
+      <example>Meus amigos,</example>
+      <example>Meu querido amigo,</example>
+      <example>Meus queridos amigos,</example>
+      <example>Meu querido amigo Luís,</example>
     </rule>
     <rule>
       <antipattern>
@@ -748,6 +813,14 @@ title="Easy editing stylesheet" ?>
       <example correction='duns'><marker>de uns</marker> rios.</example>
     </rule>
     <rule>
+<!-- MARCOAGPINTO 2020-10-06 (2-JUL-2020+) *START* --> 
+<!-- "Isto aconteceu em um ano apenas." -->
+      <antipattern>		  
+		  <token regexp="no">em</token>
+		  <token regexp="no">um</token>		  
+		  <token regexp="yes">segundo|minuto|dia|mês|ano</token>
+	  </antipattern>
+<!-- MARCOAGPINTO 2020-10-06 (2-JUL-2020+) *END* -->
       <pattern>
         <marker>
           <token>em</token>
@@ -761,6 +834,7 @@ title="Easy editing stylesheet" ?>
       <example correction='numa'><marker>em uma</marker> bonita manhã.</example>
       <example correction='numas'><marker>em umas</marker> laranjas verdes.</example>
       <example correction='nuns'><marker>em uns</marker> rios.</example>
+	  <example type='correct'>Isto aconteceu <marker>em um ano</marker> apenas.</example>
     </rule>
   </rulegroup>
 
@@ -1299,6 +1373,26 @@ title="Easy editing stylesheet" ?>
 		  <token postag="VMN0000|NC[CFM]S000" postag_regexp='yes'/>
       </antipattern>	  
 <!-- MARCOAGPINTO 2020-06-07 *END* -->
+<!-- MARCOAGPINTO 2020-10-23 (21-OCT-2020+) *START* --> 
+<!-- "E assim abri-me com ela." -->
+<!-- "E assim abri-lhe a porta." -->
+<!-- "E assim abri-lhes a porta." -->
+      <antipattern>
+		  <token postag='VMX0000|VMIP2P0|VMIS1S0|VMM02P0' postag_regexp='yes'/>
+		  <token regexp='yes' spacebefore='no'>&hifen;</token>
+		  <token regexp='yes' spacebefore='no'>me|lhes?</token>
+      </antipattern>	  	  
+<!-- MARCOAGPINTO 2020-10-23 (21-OCT-2020+) *END* -->
+<!-- MARCOAGPINTO 2020-11-11 (21-OCT-2020+) *START* -->
+<!-- "O Facebook pergunta-me o que vai na minha mente." -->
+      <antipattern>
+		  <token regexp='yes'>a|o</token>
+		  <token postag='NC.+|NP.+|AQ.+' postag_regexp='yes'/>
+		  <token postag='VMIP3S0|VMM02S0' postag_regexp='yes'/>
+		  <token regexp='yes' spacebefore='no'>&hifen;</token>
+		  <token regexp='no' spacebefore='no'>me</token>
+      </antipattern>	  	  
+<!-- MARCOAGPINTO 2020-11-11 (21-OCT-2020+) *END* -->
       <pattern>
           <token min='0' regexp='yes'>tu|vós</token>
           <token postag="V...2.+" postag_regexp='yes'>
@@ -1313,6 +1407,10 @@ title="Easy editing stylesheet" ?>
       <example correction="Diga-me"><marker>Diz-me</marker> que foi mesmo assim?</example>
       <example correction="Diga-me"><marker>Tu diz-me</marker> que foi mesmo assim?</example>
       <example correction="confira-me">Por favor, <marker>confere-me</marker> o valor do talão.</example>
+	  <example type='correct'>E assim <marker>abri-me</marker> com ela.</example>
+	  <example type='correct'>E assim <marker>abri-lhe</marker> a porta.</example>
+	  <example type='correct'>E assim <marker>abri-lhes</marker> a porta.</example>
+	  <example type='correct'><marker>O Facebook pergunta-me</marker> o que vai na minha mente.</example>
     </rule>
     <!--    <rule>
       <antipattern>

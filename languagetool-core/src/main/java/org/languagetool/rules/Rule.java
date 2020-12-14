@@ -18,6 +18,7 @@
  */
 package org.languagetool.rules;
 
+import com.google.common.base.Suppliers;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.languagetool.*;
@@ -27,6 +28,7 @@ import org.languagetool.tagging.disambiguation.rules.DisambiguationPatternRule;
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
+import java.util.function.Supplier;
 
 /**
  * Abstract rule class. A Rule describes a language error and can test whether a
@@ -52,7 +54,9 @@ public abstract class Rule {
 
   protected final ResourceBundle messages;
 
-  private List<Tag> tags = new ArrayList<>();
+  @Nullable
+  private List<Tag> tags;
+
   private List<CorrectExample> correctExamples;
   private List<IncorrectExample> incorrectExamples;
   private List<ErrorTriggeringExample> errorTriggeringExamples;
@@ -203,10 +207,11 @@ public abstract class Rule {
   }
 
   /**
-   * Helper for implementing {@link #getAntiPatterns()}.
+   * Helper for implementing {@link #getAntiPatterns()}. The result of this method should better be cached, please see
+   * {@link #cacheAntiPatterns} which does that.
    * @since 3.1
    */
-  protected List<DisambiguationPatternRule> makeAntiPatterns(List<List<PatternToken>> patternList, Language language) {
+  protected static List<DisambiguationPatternRule> makeAntiPatterns(List<List<PatternToken>> patternList, Language language) {
     List<DisambiguationPatternRule> rules = new ArrayList<>();
     for (List<PatternToken> patternTokens : patternList) {
       rules.add(new DisambiguationPatternRule("INTERNAL_ANTIPATTERN", "(no description)", language,
@@ -214,7 +219,16 @@ public abstract class Rule {
     }
     return rules;
   }
-  
+
+  /**
+   * @return a memoizing supplier that caches the result of {@link #makeAntiPatterns}. It makes sense
+   * to store the returned value, e.g. in a field.
+   * @since 5.2
+   */
+  protected static Supplier<List<DisambiguationPatternRule>> cacheAntiPatterns(Language language, List<List<PatternToken>> antiPatterns) {
+    return Suppliers.memoize(() -> makeAntiPatterns(antiPatterns, language));
+  }
+
   /**
    * Whether this rule can be used for text in the given language.
    * Since LanguageTool 2.6, this also works {@link org.languagetool.rules.patterns.PatternRule}s
@@ -305,7 +319,7 @@ public abstract class Rule {
   /**
    * @return a category (never null since LT 3.4)
    */
-  public final Category getCategory() {
+  public Category getCategory() {
     return category;
   }
 
@@ -474,10 +488,15 @@ public abstract class Rule {
    * @since 5.1
    */
   public void addTags(List<String> tags) {
-    //System.out.println(getFullId() + " =>" + tags);
+    if (tags.isEmpty()) return;
+
+    List<Tag> myTags = this.tags;
+    if (myTags == null) {
+      this.tags = myTags = new ArrayList<>();
+    }
     for (String tag : tags) {
-      if (!this.tags.contains(tag)) {
-        this.tags.add(Tag.valueOf(tag));
+      if (myTags.stream().noneMatch(k -> k.name().equals(tag))) {
+        myTags.add(Tag.valueOf(tag));
       }
     }
   }
@@ -486,18 +505,18 @@ public abstract class Rule {
    * @since 5.1
    */
   public void setTags(List<Tag> tags) {
-    this.tags = Objects.requireNonNull(tags);
+    this.tags = tags.isEmpty() ? null : Objects.requireNonNull(tags);
   }
 
   /** @since 5.1 */
   @NotNull
   public List<Tag> getTags() {
-    return this.tags;
+    return tags == null ? Collections.emptyList() : tags;
   }
 
   /** @since 5.1 */
   public boolean hasTag(Tag tag) {
-    return this.tags.contains(tag);
+    return tags != null && tags.contains(tag);
   }
 
 }

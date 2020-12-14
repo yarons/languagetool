@@ -37,9 +37,8 @@ import org.languagetool.tools.Tools;
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
+import java.util.function.Supplier;
 import java.util.regex.Pattern;
-
-import javax.annotation.RegEx;
 
 import static org.languagetool.rules.patterns.PatternRuleBuilderHelper.*;
 
@@ -63,11 +62,15 @@ public class CaseRule extends Rule {
   private static final String UPPERCASE_MESSAGE = "Außer am Satzanfang werden nur Nomen und Eigennamen großgeschrieben.";
   private static final String LOWERCASE_MESSAGE = "Falls es sich um ein substantiviertes Verb handelt, wird es großgeschrieben.";
   private static final String COLON_MESSAGE = "Folgt dem Doppelpunkt weder ein Substantiv noch eine wörtliche Rede oder ein vollständiger Hauptsatz, schreibt man klein weiter.";
+  private static final PatternToken SENT_START = new PatternTokenBuilder().posRegex(JLanguageTool.SENTENCE_START_TAGNAME).build();
 
-  public static final PatternToken SENT_START = new PatternTokenBuilder().posRegex(JLanguageTool.SENTENCE_START_TAGNAME).build();
-  
   // also see case_rule_exceptions.txt:
   private static final List<List<PatternToken>> ANTI_PATTERNS = Arrays.asList(
+    Arrays.asList(
+      token("Planten"),
+      token("un"),
+      regex("Blomens?")
+    ),
     Arrays.asList(
       // "Tom ist ein engagierter, gutaussehender Vierzigjähriger, der..."
       posRegex("(ADJ:|PA2).*"),
@@ -75,6 +78,11 @@ public class CaseRule extends Rule {
       posRegex("(ADJ:|PA2).*"),
       regex("[A-ZÖÄÜ].+jährige[mnr]?"),
       posRegex("(?!SUB).*")
+    ),
+    Arrays.asList(
+      // "Um das herauszubekommen..."
+      token("das"),
+      regex(".+zu.+")
     ),
     Arrays.asList(
       token("Rock"),
@@ -138,13 +146,13 @@ public class CaseRule extends Rule {
     Arrays.asList(
       // https://github.com/languagetool-org/languagetool/issues/1515
       SENT_START,
-      regex("▶︎|▶|▶️|→|\\*|•|-|★|⧪|⮞|✔︎|✓|✔️|✅|➡️|☛|%|◆|▪|☞|❤|/|_|✒︎"),
+      regex("▶︎|▶|▶️|→|\\*|•|-|★|⧪|⮞|✔︎|✓|✔️|✅|➡️|☛|%|◆|▪|☞|❤|/|_|✒︎|☑️"),
       regex(".*")
     ),
     Arrays.asList(
-      // ignore uppercase word at beginning after a character that is not a letter or number (needed to ignore emojies or bullet points at the beginning of sentence)
+      // ignore uppercase word at beginning after a character that is not a letter or number (needed to ignore emojies or bullet points at the beginning of a sentence)
       SENT_START,
-      regex("^[^A-Za-z0-9ÄÖÜäöüàÀß]$"),
+      regex("^[^A-Za-z0-9ÄÖÜäöüàÀß]{1,2}$"),
       csRegex("[A-ZÖÜÄ].*")
     ),
     Arrays.asList(
@@ -205,7 +213,7 @@ public class CaseRule extends Rule {
     ),
     // names with english adjectives
     Arrays.asList(
-      regex("Digital|Global|Smart|International|Trade|Private|Live|Urban|Man|Total|Native|Imperial|Modern|Responsive|Simple|Legend|Human|Light"),
+      regex("Digital|Global|Smart|International|Trade|Private|Live|Urban|Man|Total|Native|Imperial|Modern|Responsive|Simple|Legend|Human|Light|Ministerial"),
       pos("UNKNOWN")
     ),
     Arrays.asList(
@@ -220,15 +228,15 @@ public class CaseRule extends Rule {
       regex("[kK]nock"),
       regex("[oO]ut")
     ),
-    Arrays.asList( // "was sie über das denken"
-      token("über"),
-      token("das"),
-      token("denken")
+    Arrays.asList(
+      csToken("das"),
+      posRegex("VER:INF:.+"),
+      posRegex("KON:NEB|PKT")
     ),
     // names with english adjectives
     Arrays.asList(
       pos("UNKNOWN"),
-      regex("Digital|Global|Smart|International|Trade|Private|Live|Urban|Man|Total|Native|Imperial|Modern|Responsive|Simple|Legend|Human|Light")
+      regex("Digital|Global|Smart|International|Trade|Private|Live|Urban|Man|Total|Native|Imperial|Modern|Responsive|Simple|Legend|Human|Light|Ministerial")
     ),
     // names with english adjectives
     Arrays.asList(
@@ -292,8 +300,8 @@ public class CaseRule extends Rule {
     ),
     Arrays.asList(
       // Names: "Jeremy Schulte", "Alexa Jung", "Fiete Lang", ...
-      posRegex("UNKNOWN|EIG:.+"),
-      regex("Schulte|Junge?|Lange?|Braun|Groß|Gross|K(ü|ue)hne?|Schier|Becker|Sauer|Ernst|Fr(ö|oe)hlich|Kurz|Klein|Schick|Frisch|Weigert|D(ü|ue)rr|Nagele|Hoppe|D(ö|oe)rre|G(ö|oe)ttlich|Stark")
+      new PatternTokenBuilder().posRegex("EIG:.+|UNKNOWN").csTokenRegex("[A-Z].+").build(),
+      regex("Schulte|Junge?|Lange?|Braun|Groß|Gross|K(ü|ue)hne?|Schier|Becker|Sauer|Ernst|Fr(ö|oe)hlich|Kurz|Klein|Schick|Frisch|Weigert|D(ü|ue)rr|Nagele|Hoppe|D(ö|oe)rre|G(ö|oe)ttlich|Stark|Fahle")
     ),
     Arrays.asList(
       token(","),
@@ -627,7 +635,7 @@ public class CaseRule extends Rule {
       // § 1 Allgemeine Bedingungen
       SENT_START,
       token("§"),
-      regex("\\d"),
+      regex("\\d+"),
       regex("[A-ZÄÜÖ].*")
     ),
     Arrays.asList(
@@ -663,8 +671,40 @@ public class CaseRule extends Rule {
     ),
     Arrays.asList(
       csRegex("[A-ZÄÜÖ].+"),
-      new PatternTokenBuilder().token("*").setIsWhiteSpaceBefore(false).build(),
+      new PatternTokenBuilder().tokenRegex("\\*|:").setIsWhiteSpaceBefore(false).build(),
       csToken("innen")
+    ),
+    Arrays.asList( // Am So 14:00 (should be "So." but that's a different error)
+      csRegex("am|jeden"),
+      csToken("So")
+    ),
+    Arrays.asList( // "Sa. oder So."
+      csRegex("Mo|Di|Mi|Do|Fr|Sa"),
+      token("."),
+      csRegex("&|und|oder"),
+      csToken("So"),
+      token(".")
+    ),
+    Arrays.asList( // Es hatte 10,5 Ah
+      csRegex("\\d+"),
+      csToken("Ah")
+    ),
+    Arrays.asList( // Via Camparlungo (Straßennamen in der italienischen Schweiz)
+      csToken("Via"),
+      new PatternTokenBuilder().pos("UNKNOWN").csTokenRegex("[A-Z].+").build()
+    ),
+    Arrays.asList( // Geoghegan Hart
+      new PatternTokenBuilder().pos("UNKNOWN").csTokenRegex("[A-Z].+").build(),
+      csToken("Hart")
+    ),
+    Arrays.asList( // Namen mit "Matt" (e.g. Matt Gaetz)
+      csToken("Matt"),
+      new PatternTokenBuilder().pos("UNKNOWN").csTokenRegex("[A-Z].+").build()
+    ),
+    Arrays.asList( // Autohaus Dornig GmbH
+      new PatternTokenBuilder().posRegex("EIG:.+|SUB:.+").csTokenRegex("[A-Z].+").build(),
+      csRegex("[A-ZÄÜÖ].+"),
+      csRegex("Gmb[Hh]|AG|KG|UG")
     )
   );
 
@@ -695,6 +735,7 @@ public class CaseRule extends Rule {
    */
   private static final String[] exceptions = {
     "Out", // eng
+    "Packet", // misspelling of "Paket" (caught by spell checker)
     "Mo",
     "Di",
     "Mi",
@@ -712,6 +753,9 @@ public class CaseRule extends Rule {
     "Schutzheiliger",
     "Schutzheiligen",
     "Lila",
+    "Langzeitarbeitslose",
+    "Langzeitarbeitslosen",
+    "Langzeitarbeitsloser",
     "Linksintellektuelle",
     "Linksintellektueller",
     "Linksintellektuellen",
@@ -776,6 +820,9 @@ public class CaseRule extends Rule {
     "Rutsch",
     "Spar",
     "Merz",
+    "Minderjährige",
+    "Minderjähriger",
+    "Minderjährigen",
     "Scheinselbstständige",
     "Bundestagsabgeordneter",
     "Bundestagsabgeordneten",
@@ -912,9 +959,22 @@ public class CaseRule extends Rule {
     "Mitwirkende",
     "Mitwirkender",
     "Mitwirkenden",
+    "Tabellenletzte",
+    "Tabellenletzter",
+    "Familienangehörige",
+    "Familienangehöriger",
+    "Zeitreisende",
+    "Zeitreisender",
+    "Zeitreisenden",
+    "Erwerbstätige",
+    "Erwerbstätigen",
+    "Erwerbstätiger",
     "Selbstständige",
     "Selbstständigen",
     "Selbstständiger",
+    "Selbständige",
+    "Selbständigen",
+    "Selbständiger",
     "Genaueres",
     "Äußersten",
     "Dienstreisender",
@@ -922,6 +982,12 @@ public class CaseRule extends Rule {
     "Vermisste",
     "Äußeres",
     "Abseits",
+    "Unschuldige",
+    "Unschuldiger",
+    "Unschuldigen",
+    "Mitarbeitende",
+    "Mitarbeitender",
+    "Mitarbeitenden",
     "Beschäftigter",
     "Beschäftigte",
     "Beschäftigten",
@@ -1288,12 +1354,12 @@ public class CaseRule extends Rule {
   }
 
   private final GermanTagger tagger;
-  private final German german;
+  private final Supplier<List<DisambiguationPatternRule>> antiPatterns;
 
   public CaseRule(ResourceBundle messages, German german) {
-    this.german = german;
     super.setCategory(Categories.CASING.getCategory(messages));
-    this.tagger = (GermanTagger) german.getTagger();
+    tagger = (GermanTagger) german.getTagger();
+    antiPatterns = cacheAntiPatterns(german, ANTI_PATTERNS);
     addExamplePair(Example.wrong("<marker>Das laufen</marker> fällt mir schwer."),
                    Example.fixed("<marker>Das Laufen</marker> fällt mir schwer."));
   }
@@ -1451,7 +1517,7 @@ public class CaseRule extends Rule {
 
   @Override
   public List<DisambiguationPatternRule> getAntiPatterns() {
-    return makeAntiPatterns(ANTI_PATTERNS, german);
+    return antiPatterns.get();
   }
 
   // e.g. "Ein Kaninchen, das zaubern kann" - avoid false alarm here

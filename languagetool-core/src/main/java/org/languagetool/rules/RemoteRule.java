@@ -22,6 +22,7 @@
 package org.languagetool.rules;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
+import org.jetbrains.annotations.Nullable;
 import org.languagetool.AnalyzedSentence;
 import org.languagetool.markup.AnnotatedText;
 import org.slf4j.Logger;
@@ -55,33 +56,51 @@ public abstract class RemoteRule extends Rule {
   protected final boolean inputLogging;
   private AnnotatedText annotatedText;
 
-  public RemoteRule(ResourceBundle messages, RemoteRuleConfig config, boolean inputLogging) {
+  public RemoteRule(ResourceBundle messages, RemoteRuleConfig config, boolean inputLogging, @Nullable String ruleId) {
     super(messages);
     serviceConfiguration = config;
     this.inputLogging = inputLogging;
-    String ruleId = getId();
+    if (ruleId == null) { // allow both providing rule ID in constructor or overriding getId
+      ruleId = getId();
+    }
     lastFailure.putIfAbsent(ruleId, 0L);
     consecutiveFailures.putIfAbsent(ruleId, new AtomicInteger());
     // TODO maybe use fixed pool, take number of concurrent requests from configuration?
     executors.putIfAbsent(ruleId, Executors.newCachedThreadPool(threadFactory));
   }
 
+  public RemoteRule(ResourceBundle messages, RemoteRuleConfig config, boolean inputLogging) {
+    this(messages, config, inputLogging, null);
+  }
+
   public static void shutdown() {
     shutdownRoutines.forEach(Runnable::run);
   }
 
+  public FutureTask<RemoteRuleResult> run(List<AnalyzedSentence> sentences) {
+    return run(sentences, null);
+  }
+
   protected class RemoteRequest {}
 
-  protected abstract RemoteRequest prepareRequest(List<AnalyzedSentence> sentences, AnnotatedText annotatedText);
+  protected abstract RemoteRequest prepareRequest(List<AnalyzedSentence> sentences, AnnotatedText annotatedText, @Nullable Long textSessionId);
   protected abstract Callable<RemoteRuleResult> executeRequest(RemoteRequest request);
   protected abstract RemoteRuleResult fallbackResults(RemoteRequest request);
 
-  public FutureTask<RemoteRuleResult> run(List<AnalyzedSentence> sentences) {
+  /**
+   * @param sentences text to check
+   * @param textSessionId ID for texts, should stay constant for a user session; used for A/B tests of experimental rules
+   * @return Future with result
+   */
+  public FutureTask<RemoteRuleResult> run(List<AnalyzedSentence> sentences, @Nullable Long textSessionId) {
+    if (sentences.isEmpty()) {
+      return new FutureTask<>(() -> new RemoteRuleResult(false, true, Collections.emptyList()));
+    }
     return new FutureTask<>(() -> {
       long startTime = System.nanoTime();
       long characters = sentences.stream().mapToInt(sentence -> sentence.getText().length()).sum();
       String ruleId = getId();
-      RemoteRequest req = prepareRequest(sentences, annotatedText);
+      RemoteRequest req = prepareRequest(sentences, annotatedText, textSessionId);
       RemoteRuleResult result;
 
       if (consecutiveFailures.get(ruleId).get() >= serviceConfiguration.getFall()) {

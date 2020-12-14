@@ -95,6 +95,7 @@ public class GrammalecteRule extends Rule {
     "typo_espace_manquant_après2", // false alarm in urls (e.g. '&rk=...')
     "typo_espace_manquant_après3", // false alarm in file names (e.g. 'La teaser.zip')
     "typo_tiret_incise2",  // picky
+    "eepi_écriture_épicène_singulier",
     "g1__eleu_élisions_manquantes__b1_a1_1" // picky
   ));
 
@@ -161,6 +162,9 @@ public class GrammalecteRule extends Rule {
   private List<RuleMatch> parseJson(InputStream inputStream) throws IOException {
     Map map = mapper.readValue(inputStream, Map.class);
     List matches = (ArrayList) map.get("data");
+    if (matches == null) {
+      throw new RuntimeException("No 'data' found in grammalecte JSON: " + map);  // handled in match()
+    }
     List<RuleMatch> result = new ArrayList<>();
     for (Object match : matches) {
       List<RuleMatch> remoteMatches = getMatches((Map<String, Object>)match);
@@ -198,8 +202,8 @@ public class GrammalecteRule extends Rule {
   }
 
   static class GrammalecteInternalRule extends Rule {
-    private String id;
-    private String desc;
+    private final String id;
+    private final String desc;
 
     GrammalecteInternalRule(String id, String desc) {
       this.id = id;

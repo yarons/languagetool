@@ -48,6 +48,9 @@ public class AgreementRuleTest {
   public void testCompoundMatch() throws IOException {
     assertBad("Das ist die Original Mail", "die Originalmail", "die Original-Mail");
     assertBad("Das ist die neue Original Mail", "die neue Originalmail", "die neue Original-Mail");
+    assertBad("Das ist die ganz neue Original Mail", "die ganz neue Originalmail", "die ganz neue Original-Mail");
+    assertBad("Doch dieser kleine Magnesium Anteil ist entscheidend.", "dieser kleine Magnesiumanteil", "dieser kleine Magnesium-Anteil");
+    assertBad("Doch dieser sehr kleine Magnesium Anteil ist entscheidend.", "dieser sehr kleine Magnesiumanteil", "dieser sehr kleine Magnesium-Anteil");
     assertBad("Die Standard Priorität ist 5.", "Die Standardpriorität", "Die Standard-Priorität");
     assertBad("Die derzeitige Standard Priorität ist 5.", "Die derzeitige Standardpriorität", "Die derzeitige Standard-Priorität");
     assertBad("Ein neuer LanguageTool Account", "Ein neuer LanguageTool-Account");
@@ -55,6 +58,7 @@ public class AgreementRuleTest {
     assertBad("Mit seinem Konkurrent Alistair Müller", "sein Konkurrent", "seinem Konkurrenten");
     assertBad("Wir gehen ins Fitness Studio", "ins Fitnessstudio", "ins Fitness-Studio");
     assertBad("Wir gehen durchs Fitness Studio", "durchs Fitnessstudio", "durchs Fitness-Studio");
+    assertGood("Es gibt ein Sprichwort, dem zufolge der tägliche Genuss einer Mandel dem Gedächtnis förderlich sei.");
     //assertBad("Die Bad Taste Party von Susi", "Die Bad-Taste-Party");   // not supported yet
     //assertBad("Die Update Liste.", "Die Updateliste");  // not accepted by speller
     List<RuleMatch> matches = lt.check("Er folgt damit dem Tipp des Autoren Michael Müller.");
@@ -145,6 +149,29 @@ public class AgreementRuleTest {
     assertGood("Jainas ist sogar der Genuss jeglicher tierischer Nahrungsmittel strengstens untersagt.");
     assertGood("Es sind jegliche tierische Nahrungsmittel untersagt.");
     assertGood("Das reicht bis weit ins heutige Hessen.");
+    assertGood("Die Customer Journey.");
+    assertGood("Für dich gehört Radfahren zum perfekten Urlaub dazu?");
+    assertGood(":D:D Leute, bitte!");
+    assertGood("Es genügt, wenn ein Mann sein eigenes Geschäft versteht und sich nicht in das anderer Leute einmischt.");
+    assertGood("Ich habe das einige Male versucht.");
+    assertGood("Und keine Märchen erzählst, die dem anderen Hoffnungen machen können.");
+    assertGood("Um diese Körpergrößen zu erreichen, war das Wachstum der Vertreter der Gattung Dinornis offenbar gegenüber dem anderer Moa-Gattungen beschleunigt");
+    assertGood("Der Schädel entspricht in den Proportionen dem anderer Vulpes-Arten, besitzt aber sehr große Paukenhöhlen, ein typisches Merkmal von Wüstenbewohnern.");
+    assertGood("Deuterium lässt sich aufgrund des großen Massenunterschieds leichter anreichern als die Isotope der anderer Elemente wie z. B. Uran.");
+    assertGood("Unklar ist, ob er zwischen der Atemseele des Menschen und der anderer Lebewesen unterschied.");
+    assertGood("Die Liechtensteiner Grenze ist im Verhältnis zu der anderer Länder kurz, da Liechtenstein ein eher kleines Land ist.");
+    assertGood("Picassos Kunstwerke werden häufiger gestohlen als die anderer Künstler.");
+    assertGood("Schreibe einen Artikel über deine Erfahrungen im Ausland oder die anderer Leute in deinem Land.");
+    assertGood("Die Bevölkerungen Chinas und Indiens lassen die anderer Staaten als Zwerge erscheinen.");
+    assertGood("Der eine mag Obst, ein anderer Gemüse, wieder ein anderer mag Fisch; allen kann man es nicht recht machen.");
+    assertGood("Mittels eines Bootloaders und zugehöriger Software kann nach jedem Anstecken des Adapters eine andere Firmware-Varianten geladen werden");
+    assertGood("Wenn sie eine andere Größe benötigen, teilen uns ihre speziellen Wünsche mit und wir unterbreiten ihnen ein Angebot über Preis und Lieferung.");
+    assertGood("Dabei wird in einer Vakuumkammer eine einige Mikrometer dicke CVD-Diamantschicht auf den Substraten abgeschieden.");
+    assertGood("1916 versuchte Gilbert Newton Lewis, die chemische Bindung durch Wechselwirkung der Elektronen eines Atoms mit einem anderen Atomen zu erklären.");
+    assertGood("Vom einen Ende der Straße zum anderen.");
+    assertGood("Er war müde vom vielen Laufen.");
+    assertGood("Sind das echte Diamanten?");
+    assertGood("Es wurde eine Verordnung erlassen, der zufolge jeder Haushalt Energie einsparen muss.");
     //assertGood("... der zu dieser Zeit aber ohnehin schon allen Einfluss verloren hatte.");
 
     assertGood("Wir machen das Januar.");
@@ -359,6 +386,7 @@ public class AgreementRuleTest {
     assertBad("Ich gebe dir das kleinen Kaninchen.");
     assertBad("Ich gebe dir das kleinem Kaninchen.");
     assertBad("Ich gebe dir das kleiner Kaninchen.");
+    assertBadWithNoSuggestion("Geprägt ist der Platz durch einen 142 Meter hoher Obelisken");
     //assertBad("Ich gebe dir das kleines Kaninchen.");  // already detected by ART_ADJ_SOL
     //assertBad("Ich gebe dir das klein Kaninchen.");  // already detected by MEIN_KLEIN_HAUS
     assertGood("Ich gebe dir das kleine Kaninchen.");
@@ -389,7 +417,7 @@ public class AgreementRuleTest {
     assertBad("Er ging ans Luft.");
     assertBad("Eine Niereninsuffizienz führt zur Störungen des Wasserhaushalts.");
     assertBad("Er stieg durchs Fensters.");
-
+    assertBad("Ich habe heute ein Krankenwagen gesehen.");
     // TODO: not yet detected:
     //assertBad("Erst recht wir fleißiges Arbeiter.");
     //assertBad("Erst recht ich fleißiges Arbeiter.");
@@ -424,8 +452,8 @@ public class AgreementRuleTest {
     assertBadWithMessage("Das Fahrrads.", "des Kasus");
     assertBadWithMessage("Der Fahrrad.", "des Genus");
     assertBadWithMessage("Das Fahrräder.", "des Numerus");
-    assertBadWithMessage("Die Tischen sind ecking.", "des Kasus");
-    assertBadWithMessage("Die Tischen sind ecking.", "und Genus");
+    assertBadWithMessage("Die Tischen sind eckig.", "des Kasus");
+    assertBadWithMessage("Die Tischen sind eckig.", "und Genus");
     //TODO: input is actually correct
     assertBadWithMessage("Bei dem Papierabzüge von Digitalbildern bestellt werden.", "des Kasus, Genus oder Numerus.");
   }
@@ -486,6 +514,16 @@ public class AgreementRuleTest {
       RuleMatch match = matches[0];
       List<String> suggestions = match.getSuggestedReplacements();
       assertThat(suggestions, is(Arrays.asList(expectedSuggestions)));
+    }
+  }
+
+  private void assertBadWithNoSuggestion(String s) throws IOException {
+    RuleMatch[] matches = rule.match(lt.getAnalyzedSentence(s));
+    assertEquals("Did not find one match in sentence '" + s + "'", 1, matches.length);
+    RuleMatch match = matches[0];
+    List<String> suggestions = match.getSuggestedReplacements();
+    if (suggestions.size() != 0) {
+      fail("Expected 0 suggestions for: " + s + ", got: " + suggestions);
     }
   }
 

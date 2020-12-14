@@ -112,7 +112,7 @@ public class Spanish extends Language implements AutoCloseable{
             new MultipleWhitespaceRule(messages, this),
             new SpanishWikipediaRule(messages),
             new SpanishWrongWordInContextRule(messages),
-            new LongSentenceRule(messages, userConfig, 35, true, true),
+            new LongSentenceRule(messages, userConfig, 38, true, true),
             new LongParagraphRule(messages, this, userConfig),
             new SimpleReplaceRule(messages),
             new SimpleReplaceVerbsRule(messages, this)
@@ -183,6 +183,7 @@ public class Spanish extends Language implements AutoCloseable{
   protected int getPriorityForId(String id) {
     switch (id) {
       case "CONFUSIONS2": return 50; // greater than CONFUSIONS
+      case "LOS_MAPUCHE": return 50;
       case "TE_TILDE": return 50;
       case "PLURAL_SEPARADO": return 50;
       case "INCORRECT_EXPRESSIONS": return 40;
@@ -192,17 +193,22 @@ public class Spanish extends Language implements AutoCloseable{
       case "DIACRITICS": return 30;
       case "POR_CIERTO": return 30;
       case "LO_LOS": return 30;
+      case "AGREEMENT_ADJ_NOUN_AREA": return 30; // greater than AGREEMENT_DET_NOUN
       case "SE_CREO": return 25; // less than DIACRITICS_VERB_N_ADJ
       case "PRONOMBRE_SIN_VERBO": return 25; // inside CONFUSIONS, but less than other rules ?
       case "AGREEMENT_DET_ABREV": return 25; // greater than AGREEMENT_DET_NOUN
       case "MUCHO_NF": return 25; // greater than AGREEMENT_DET_NOUN
+      case "AGREEMENT_DET_NOUN_EXCEPTIONS": return 25; // greater than AGREEMENT_DET_NOUN 
       case "AGREEMENT_DET_NOUN": return 20;
       //case "PRONOMBRE_SIN_VERBO": return 20;
+      case "P_EJ": return 20;
+      case "ESPACIO_DESPUES_DE_PUNTO": return 15;
       case "AGREEMENT_DET_ADJ": return 10;
       case "TYPOGRAPHY": return 10;
       case "HALLA_HAYA": return 10;
       case "VALLA_VAYA": return 10;
       case "ES_SIMPLE_REPLACE": return 10;
+      case "SINGLE_CHARACTER": return 5;
       case "SEPARADO": return 1;
       case "E_EL": return -10;
       case "EL_TILDE": return -10;
@@ -214,8 +220,10 @@ public class Spanish extends Language implements AutoCloseable{
       case "AGREEMENT_ADJ_NOUN": return -30;
       case "AGREEMENT_PARTICIPLE_NOUN": return -30;
       case "AGREEMENT_POSTPONED_ADJ": return -30;
+      case "COMMA_SINO": return -40;
       case "VOSEO": return -40;
       case "MORFOLOGIK_RULE_ES": return -100;
+      case "PHRASE_REPETITION": return -150;
       case "UPPERCASE_SENTENCE_START": return -200;
     }
     //STYLE is -50

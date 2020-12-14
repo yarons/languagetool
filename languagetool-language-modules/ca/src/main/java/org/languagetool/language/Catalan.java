@@ -76,25 +76,23 @@ public class Catalan extends Language {
             		Example.wrong("Preus de venda al públic. <marker>han</marker> pujat molt."),
             		Example.fixed("Preus de venda al públic. <marker>Han</marker> pujat molt.")),
             new MultipleWhitespaceRule(messages, this),
-            new LongSentenceRule(messages, userConfig),
+            new LongSentenceRule(messages, userConfig, 45, true, true),
             // specific to Catalan:
             new CatalanWordRepeatRule(messages, this),
             new MorfologikCatalanSpellerRule(messages, this, userConfig, altLanguages),
             new CatalanUnpairedQuestionMarksRule(messages, this),
             new CatalanUnpairedExclamationMarksRule(messages, this),
             new AccentuationCheckRule(messages),
-            new PostponedAdjectiveConcordanceRule(messages),
             new CatalanWrongWordInContextRule(messages),
-            new CatalanWrongWordInContextDiacriticsRule(messages),
             new SimpleReplaceVerbsRule(messages, this),
             new SimpleReplaceBalearicRule(messages),
             new SimpleReplaceRule(messages),
             new ReplaceOperationNamesRule(messages, this),
             new SimpleReplaceDNVRule(messages, this), // can be removed here after updating dictionaries
             new SimpleReplaceDiacriticsIEC(messages),
-            new SimpleReplaceDiacriticsTraditional(messages),
             new SimpleReplaceAnglicism(messages), 
-            new PronomFebleDuplicateRule(messages)
+            new PronomFebleDuplicateRule(messages),
+            new CheckCaseRule(messages, this)
             //REMEMBER TO ADD RULES TO ValencianCatalan!!
     );
   }
@@ -184,24 +182,32 @@ public class Catalan extends Language {
       case "CONCORDANCES_CASOS_PARTICULARS": return 30;
       case "GERUNDI_PERD_T": return 30;
       case "CONFUSIONS": return 30;
+      case "CA_SIMPLE_REPLACE": return 30; // greater than CA_SIMPLE_REPLACE_VERBS
       case "INCORRECT_WORDS_IN_CONTEXT": return 30; // similar to CONFUSIONS
       case "CONFUSIONS_ACCENT": return 20;
       case "DIACRITICS": return 20;
+      case "MOTS_SENSE_GUIONETS": return 20; // greater than CONCORDANCES_NUMERALS
       case "PASSAT_PERIFRASTIC": return 20;
       case "PRONOMS_FEBLES_SOLTS2": return 20;  // greater than PRONOMS_FEBLES_SOLTS
       case "ORDINALS": return 20; // greater than SEPARAT
+      case "SUPER": return 20;
       case "ACCENTUATION_CHECK": return 10;
+      case "CONCORDANCES_NUMERALS": return 10;
       case "HAVER_SENSE_HAC": return 10;
+      case "CASING": return 10; // greater than CONCORDANCES_DET_NOM
       case "CONCORDANCES_DET_NOM": return 5;
+      case "DET_GN": return 5; // greater than DE_EL_S_APOSTROFEN
       case "VENIR_NO_REFLEXIU": return 5;
       case "REGIONAL_VERBS": return -10;
+      case "AGREEMENT_POSTPONED_ADJ": return -15;
       case "FALTA_COMA_FRASE_CONDICIONAL": return -20;
       case "MUNDAR": return -50;
+      case "NOMBRES_ROMANS": return -90;
       case "MORFOLOGIK_RULE_CA_ES": return -100;
       case "EXIGEIX_ACCENTUACIO_VALENCIANA": return -120;
+      case "PHRASE_REPETITION": return -150;
       case "SUBSTANTIUS_JUNTS": return -150;
       case "FALTA_ELEMENT_ENTRE_VERBS": return -200;
-      case "NOMBRES_ROMANS": return -400;
       case "UPPERCASE_SENTENCE_START": return -500;
     }
     return super.getPriorityForId(id);

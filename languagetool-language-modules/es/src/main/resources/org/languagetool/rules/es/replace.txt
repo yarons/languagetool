@@ -1,3 +1,14 @@
+ostentóreo=estentóreo|ostentoso
+ostentóreos=estentóreos|ostentosos
+ostentórea=estentórea|ostentosa
+ostentóreas=estentóreas|ostentosas
+osea=o sea|ósea|posea|óseas
+doberman|dóbermans|dóbermen|dobermen=dóberman
+mecenaje=mecenazgo
+micromecenaje=micromecenazgo
+atraves=a través
+fosfina=fosfano
+ESTAN=ESTÁN
 pej=p. ej.|pez
 poliomelitis=poliomielitis
 hos=os|los|dos|hoy|nos
@@ -74,3 +85,9 @@ areas=áreas
 zoom=zum|Zoom
 zairense=zaireño|zaireña
 zairenses=zaireños|zaireñas
+boicó|boycott=boicot|boicoteo
+boicós|boycotts=boicots|boicoteos
+#################################################
+# Errors in the dictionary 
+# (can be removed after updating the dictionary)
+#################################################

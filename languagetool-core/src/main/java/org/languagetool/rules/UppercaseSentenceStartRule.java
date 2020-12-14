@@ -71,7 +71,8 @@ public class UppercaseSentenceStartRule extends TextLevelRule {
           "iHeartRadio",
           "iMessage",
           "iFood",
-          "x86"
+          "x86",
+          "reCAPTCHA"
   ));
 
   private final Language language;
@@ -222,7 +223,7 @@ public class UppercaseSentenceStartRule extends TextLevelRule {
   }
 
   private boolean isQuoteStart(String word) {
-    return StringUtils.equalsAny(word, "\"", "'", "„", "»", "«", "“", "‘");
+    return StringUtils.equalsAny(word, "\"", "'", "„", "»", "«", "“", "‘", "¡", "¿");
   }
 
   @Override

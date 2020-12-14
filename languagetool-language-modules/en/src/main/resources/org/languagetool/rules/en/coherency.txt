@@ -171,6 +171,10 @@ attitudiniser;attitudinizer
 attogram;attogramme
 Australianise;Australianize
 Austro-Asiatic;Austroasiatic
+autarchic;autarkic
+autarchical;autarkical
+autarchies;autarkies
+autarchy;autarky
 authorisable;authorizable
 authorisation;authorization
 authorise;authorize
@@ -222,12 +226,16 @@ bowdlerise;bowdlerize
 bowdleriser;bowdlerizer
 Brahmana;Brāhmaṇa
 breadthways;breadthwise
+breakdance;break-dance
+breakdancer;break-dancer
 bromise;bromize
 brutalisation;brutalization
 brutalise;brutalize
 bureaucratisation;bureaucratization
 bureaucratise;bureaucratize
 burnettise;burnettize
+by-law;bylaw
+by-laws;bylaws
 caecilian;coecilian
 caleche;calèche
 calendarise;calendarize
@@ -338,6 +346,9 @@ coalise;coalize
 coauthor;co-author
 cocainisation;cocainization
 cocainise;cocainize
+co-create;cocreate
+co-creator;cocreator
+co-dependent;codependent
 co-found;cofound
 co-founder;cofounder
 cognisable;cognizable
@@ -346,6 +357,8 @@ cognisance;cognizance
 cognisant;cognizant
 cognise;cognize
 cohost;co-host
+co-discover;codiscover
+co-discoverer;codiscoverer
 co-evolve;coevolve
 co-evolution;coevolution
 co-evolutionary;coevolutionary
@@ -861,11 +874,14 @@ fractionalise;fractionalize
 fractionisation;fractionization
 fractionise;fractionize
 franchiser;franchisor
+frangipani;frangipanni
 fraternisation;fraternization
 fraternise;fraternize
 fraterniser;fraternizer
 frier;fryer
 full-fledged;fully-fledged
+functionalisation;functionalization
+functionalise;functionalize
 fustianise;fustianize
 gaelicise;gaelicize
 Gallicisation;Gallicization
@@ -918,6 +934,7 @@ gourmandise;gormandize
 gourmandise;gourmandize
 gourmandize;gormandize
 governmentalise;governmentalize
+Graeco-Roman;Greco-Roman
 grammaticalise;grammaticalize
 grammaticise;grammaticize
 grandad;granddad
@@ -945,6 +962,7 @@ gyrostabiliser;gyrostabilizer
 hagadic;haggadic
 hand-wash;handwash
 Hansardise;Hansardize
+hardworking;hard-working
 harmonisable;harmonizable
 harmonisation;harmonization
 harmonise;harmonize
@@ -963,6 +981,7 @@ herborise;herborize
 heroicise;heroicize
 heroise;heroize
 heterodimerise;heterodimerize
+heteroscedastic;heteroskedastic
 hexametrise;hexametrize
 hiccough;hiccup
 hierarchise;hierarchize
@@ -1072,6 +1091,7 @@ individualiser;individualizer
 industrialisation;industrialization
 industrialise;industrialize
 infantilise;infantilize
+inferable;inferrable
 inflection;inflexion
 inflexible;unflexible
 informatisation;informatization
@@ -1215,6 +1235,7 @@ macadamised;macadamized
 macarise;macarize
 maderisation;maderization
 maderise;maderize
+Maghreb;Maghrib
 magnetisability;magnetizability
 magnetisable;magnetizable
 magnetisation;magnetization
@@ -1276,6 +1297,8 @@ merceriser;mercerizer
 merchandise;merchandize
 mercurialisation;mercurialization
 mercurialise;mercurialize
+merengue;meringue
+merengues;meringues
 mesmerisation;mesmerization
 mesmerise;mesmerize
 mesmerised;mesmerized
@@ -1295,6 +1318,8 @@ methodise;methodize
 metricise;metricize
 metrisability;metrizability
 metrisable;metrizable
+metropolitanisation;metropolitanization
+metropolitanise;metropolitanize
 micellisation;micellization
 microgram;microgramme
 microminiaturisation;microminiaturization
@@ -1316,6 +1341,8 @@ minimalise;minimalize
 minimisation;minimization
 minimise;minimize
 minimiser;minimizer
+miniscule;minuscule
+miniscules;minuscules
 mischaracterise;mischaracterize
 misemphasise;misemphasize
 Mishnah;Mishna
@@ -1410,6 +1437,7 @@ nerve-racking;nerve-wracking
 neutralisation;neutralization
 neutralise;neutralize
 neutraliser;neutralizer
+newly-wed;newlywed
 nickelise;nickelize
 nitrogenisation;nitrogenization
 nitrogenise;nitrogenize
@@ -1451,7 +1479,10 @@ Occidentalise;Occidentalize
 odorise;odorize
 oestrogenisation;oestrogenization
 officialise;officialize
+ogam;ogham
+ogamic;oghamic
 oligomerise;oligomerize
+on-line;online
 on-screen;onscreen
 ontologise;ontologize
 oophorectomise;oophorectomize
@@ -1477,6 +1508,7 @@ organise;organize
 organiser;organizer
 Orientalisation;Orientalization
 orientalise;orientalize
+ouroboros;uroboros
 orthogonalise;orthogonalize
 orthonormalise;orthonormalize
 ostracisable;ostracizable
@@ -1661,6 +1693,7 @@ polygonise;polygonize
 polymerisable;polymerizable
 polymerisation;polymerization
 polymerise;polymerize
+polysulfide;polysulphide
 popularisation;popularization
 popularise;popularize
 populariser;popularizer
@@ -1742,6 +1775,7 @@ pre-recorded;prerecorded
 pre-release;prerelease
 pre-review;prereview
 pre-sale;presale
+pre-sell;presell
 pre-season;preseason
 pre-service;preservice
 pre-schedule;preschedule
@@ -1784,6 +1818,7 @@ privatise;privatize
 privatiser;privatizer
 problematise;problematize
 proceduralisation;proceduralization
+processer;processor
 proctorise;proctorize
 productionise;productionize
 productisation;productization
@@ -1829,6 +1864,8 @@ Quebecois;Québécois
 Quebecoise;Québécoise
 racemise;racemize
 racialise;racialize
+radiaesthesia;radiesthesia
+radiaesthetic;radiesthetic
 radialisation;radialization
 radialise;radialize
 radicalisation;radicalization
@@ -1916,6 +1953,8 @@ reorganisation;reorganization
 reorganise;reorganize
 reorganiser;reorganizer
 reoxidise;reoxidize
+repellance;repellence
+repellant;repellent
 repolarisation;repolarization
 repolarise;repolarize
 repopularise;repopularize
@@ -1954,6 +1993,7 @@ ridiculise;ridiculize
 rigidise;rigidize
 ritualise;ritualize
 rivalise;rivalize
+robo-adviser;robo-advisor
 robotisation;robotization
 robotise;robotize
 role-play;roleplay
@@ -2234,6 +2274,7 @@ therapise;therapize
 thermalisation;thermalization
 thermalise;thermalize
 thymectomise;thymectomize
+timeshift;time-shift
 tokamak;tokomak
 tokenisation;tokenization
 tokenise;tokenize
@@ -2242,6 +2283,7 @@ topicalise;topicalize
 totalisation;totalization
 totalisator;totalizator
 totalise;totalize
+toweling;towelling
 traditionalise;traditionalize
 tranquilize;tranquillize
 tranquillisation;tranquillization
@@ -2343,6 +2385,7 @@ vectorise;vectorize
 venesection;venisection
 Ventose;Ventôse
 ventriloquise;ventriloquize
+veranda;verandah
 verbalisable;verbalizable
 verbalisation;verbalization
 verbalise;verbalize
@@ -2398,6 +2441,7 @@ westernisation;westernization
 westernise;westernize
 westerniser;westernizer
 westward;westwards
+whistle-blowing;whistleblowing
 womanise;womanize
 womaniser;womanizer
 yoctogram;yoctogramme
@@ -2409,3 +2453,7 @@ zeptogram;zeptogramme
 zettagram;zettagramme
 Zuni;Zuñi
 Zurich;Zürich
+lo-fi;low-fi
+choosable;chooseable
+teepee;tepee
+nosey;nosy

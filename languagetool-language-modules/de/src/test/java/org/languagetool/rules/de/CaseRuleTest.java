@@ -147,6 +147,7 @@ public class CaseRuleTest {
     assertGood("Das schaffen moderne und effizientere E-Autos schneller.");
     assertGood("Das verwalten User.");
     assertGood("Man kann das generalisieren");
+    assertGood("Aber wie wir das machen und sicher gestalten, darauf konzentriert sich unsere Arbeit.");
     assertGood("Vielleicht kann man das erweitern");
     assertGood("Vielleicht soll er das generalisieren");
     assertGood("Wahrscheinlich müssten sie das überarbeiten");
@@ -174,6 +175,10 @@ public class CaseRuleTest {
     assertGood("Es gibt infizierte Ärzt*innen.");
     assertGood("WUrzeln");  // to be found by spell checker
     assertGood("🙂 Übrigens finde ich dein neues Ordnungssystem richtig genial!");
+    assertGood("Ein 10,4 Ah Lithium-Akku");
+    assertGood("14:15 Uhr SpVgg Westheim");
+    assertGood("Autohaus Dornig GmbH");
+    assertGood("Hans Pries GmbH");
 
     // https://github.com/languagetool-org/languagetool/issues/1515:
     assertGood("▶︎ Dies ist ein Test");
@@ -402,6 +407,7 @@ public class CaseRuleTest {
     assertGood("Das lesen sie doch sicher in einer Minute durch.");
     assertGood("Das lesen Sie doch sicher in einer Minute durch!");
     assertGood("Formationswasser, das oxidiert war.");
+    assertGood("Um das herauszubekommen diskutieren zwei Experten.");
 
     // Source of the following examples: https://dict.leo.org/grammatik/deutsch/Rechtschreibung/Amtlich/GrossKlein/pgf57-58.html
     assertGood("Das Lesen fällt mir schwer.");

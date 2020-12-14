@@ -302,7 +302,8 @@ public class SubjectVerbAgreementRuleTest {
         "Knapp acht Monate ist die Niederlage nun her.",
         "Vier Monate ist die Niederlage nun her.",
         "Sie liebt Kunst und Kunst war auch kein Problem, denn er würde das Geld zurückkriegen.",
-        "Bei komplexen und andauernden Störungen ist der Stress-Stoffwechsel des Hundes entgleist."
+        "Bei komplexen und andauernden Störungen ist der Stress-Stoffwechsel des Hundes entgleist.",
+        "Eltern ist der bisherige Kita-Öffnungsplan zu unkonkret"
     );
     for (String sentence : sentences) {
       assertGood(sentence);
@@ -418,7 +419,9 @@ public class SubjectVerbAgreementRuleTest {
         "Die internen Ermittler und auch die Staatsanwaltschaft sind nun am Zug.",
         "Sie sind so erfolgreich, weil sie eine Einheit sind.",
         "Auch Polizisten zu Fuß sind unterwegs.",
-        "Julia sagte, dass Vater und Mutter zu Hause sind."
+        "Julia sagte, dass Vater und Mutter zu Hause sind.",
+        "Damit müssen sie zurechtkommen, wenn Kinder zu Hause sind.",
+        "Die Züge vor Ort sind nicht klimatisiert."
     );
     for (String sentence : sentences) {
       assertGood(sentence);

@@ -38,9 +38,8 @@ import org.languagetool.rules.ca.CatalanUnpairedBracketsRule;
 import org.languagetool.rules.ca.CatalanUnpairedExclamationMarksRule;
 import org.languagetool.rules.ca.CatalanUnpairedQuestionMarksRule;
 import org.languagetool.rules.ca.CatalanWordRepeatRule;
-import org.languagetool.rules.ca.CatalanWrongWordInContextDiacriticsRule;
 import org.languagetool.rules.ca.CatalanWrongWordInContextRule;
-import org.languagetool.rules.ca.PostponedAdjectiveConcordanceRule;
+import org.languagetool.rules.ca.CheckCaseRule;
 import org.languagetool.rules.ca.MorfologikCatalanSpellerRule;
 import org.languagetool.rules.ca.PronomFebleDuplicateRule;
 import org.languagetool.rules.ca.ReplaceOperationNamesRule;
@@ -50,7 +49,6 @@ import org.languagetool.rules.ca.SimpleReplaceDNVColloquialRule;
 import org.languagetool.rules.ca.SimpleReplaceDNVRule;
 import org.languagetool.rules.ca.SimpleReplaceDNVSecondaryRule;
 import org.languagetool.rules.ca.SimpleReplaceDiacriticsIEC;
-import org.languagetool.rules.ca.SimpleReplaceDiacriticsTraditional;
 import org.languagetool.rules.ca.SimpleReplaceRule;
 import org.languagetool.rules.ca.SimpleReplaceVerbsRule;
 
@@ -83,26 +81,24 @@ public class ValencianCatalan extends Catalan {
                 Example.wrong("Preus de venda al públic. <marker>han</marker> pujat molt."),
                 Example.fixed("Preus de venda al públic. <marker>Han</marker> pujat molt.")),
             new MultipleWhitespaceRule(messages, this),
-            new LongSentenceRule(messages, userConfig),
+            new LongSentenceRule(messages, userConfig, 45, true, true),
             // specific to Catalan:
             new CatalanWordRepeatRule(messages, this),
             new MorfologikCatalanSpellerRule(messages, this, userConfig, altLanguages),
             new CatalanUnpairedQuestionMarksRule(messages, this),
             new CatalanUnpairedExclamationMarksRule(messages, this),
             new AccentuationCheckRule(messages),
-            new PostponedAdjectiveConcordanceRule(messages),
             new CatalanWrongWordInContextRule(messages),
-            new CatalanWrongWordInContextDiacriticsRule(messages),
             new SimpleReplaceVerbsRule(messages, this),
             new SimpleReplaceBalearicRule(messages),
             new SimpleReplaceRule(messages),
             new ReplaceOperationNamesRule(messages, this),
+            new CheckCaseRule(messages, this),
             // Valencian DNV
             new SimpleReplaceDNVRule(messages, this),
             new SimpleReplaceDNVColloquialRule(messages, this),
             new SimpleReplaceDNVSecondaryRule(messages, this),
             new SimpleReplaceDiacriticsIEC(messages),
-            new SimpleReplaceDiacriticsTraditional(messages),
             new SimpleReplaceAnglicism(messages),
             new PronomFebleDuplicateRule(messages)
     );

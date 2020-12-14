@@ -30,6 +30,7 @@ import java.util.ResourceBundle;
 
 import static org.languagetool.rules.patterns.PatternRuleBuilderHelper.posRegex;
 import static org.languagetool.rules.patterns.PatternRuleBuilderHelper.token;
+import static org.languagetool.rules.patterns.PatternRuleBuilderHelper.tokenRegex;
 
 /**
  * @since 2.7
@@ -91,6 +92,17 @@ public class EnglishConfusionProbabilityRule extends ConfusionProbabilityRule {
       "good cause",
       "big butt",
       "news debate",
+      "news debates",
+      "news leader", // vs new
+      "news leaders",
+      "news teller",
+      "news tellers",
+      "news outlet",
+      "news outlets",
+      "news event",
+      "news events",
+      "news station",
+      "news stations",
       "verify you own",
       "ensure you own",
       "happy us!",
@@ -110,7 +122,6 @@ public class EnglishConfusionProbabilityRule extends ConfusionProbabilityRule {
       "let me know",
       "this way the",
       "save you money",
-      "way better",
       "so your plan",
       "the news man",
       "created us equally",
@@ -127,18 +138,6 @@ public class EnglishConfusionProbabilityRule extends ConfusionProbabilityRule {
       "he proofs",
       "he needs",
       "1 thing",
-      "way easier",
-      "way faster",
-      "way harder",
-      "way quicker",
-      "way more",
-      "way less",
-      "way outside",
-      "way before",
-      "way smaller",
-      "way bigger",
-      "way longer",
-      "way shorter",
       "I now don't",
       "once your return is",
       "can we text",
@@ -161,7 +160,6 @@ public class EnglishConfusionProbabilityRule extends ConfusionProbabilityRule {
       "on twitter", // vs in
       "enjoy us being", // vs is
       "If your use of", // vs you
-      "way too", // vs was
       "then,", // vs than
       "then?", // vs than
       "no it doesn", // vs know
@@ -300,8 +298,6 @@ public class EnglishConfusionProbabilityRule extends ConfusionProbabilityRule {
       "[t]he", // vs the
       "the role at", // vs add
       "same false alarm", // vs some
-      "why is he relevant", // vs the
-      "why is he famous", // vs the
       "then that would", // vs than
       "was he part of", // vs the
       "is he right now", // vs the
@@ -372,6 +368,7 @@ public class EnglishConfusionProbabilityRule extends ConfusionProbabilityRule {
       "ad free",
       "ad rates",
       "your call is", // vs you
+      "you want do", // vs your ("want do" is caught by MISSING_TO_BEFORE_A_VERB)
       "on his butt",
       "message us today",
       "sent you the invite",
@@ -389,15 +386,13 @@ public class EnglishConfusionProbabilityRule extends ConfusionProbabilityRule {
       "know what type", // vs now
       "your pulled pork", // vs you
       "dear management", // vs deer
-      "way worse", // vs was
-      "way fewer", // vs was
-      "way closer", // vs was
       "way in advance", // vs was
-      "way back when", // vs was
-      "way back at", // vs was
       "that way", // vs was
+      "way back when", // vs was
       "way back then", // vs was
-      "way to much", // different error
+      "way much more", // vs was
+      "the other way",
+      "way to much", // different error (already caught)
       "your to do", // vs you
       "when your zoom", // vs you
       "once your zoom", // vs you
@@ -406,15 +401,150 @@ public class EnglishConfusionProbabilityRule extends ConfusionProbabilityRule {
       "your hunt for", // vs you
       "if your bolt fits", // vs you
       "the go to", // vs to (caught by GO_TO_HYPHEN)
-      "text my number" // vs by
+      "text my number", // vs by
+      "why was he", // vs the
+      "what was he", // vs the
+      "was he sick", // vs the
+      "why is he", // vs the
+      "what is he", // vs the
+      "is he happy", // vs the
+      "he kind of", // vs the
+      "logged out", // vs our
+      "signed out", // vs our
+      "same seems to", // vs some
+      "am I cold", // vs could
+      "is he cold", // vs could
+      "was he cold", // vs could
+      "is she cold", // vs could
+      "was she cold", // vs could
+      "is it cold", // vs could
+      "was it cold", // vs could
+      "are you cold", // vs could
+      "were you cold", // vs could
+      "are they cold", // vs could
+      "were they cold", // vs could
+      "are we cold", // vs could
+      "were we cold", // vs could
+      "us three", // vs is
+      "way to go", // vs was
+      "way won't", // was
+      "and now him", // vs know
+      "and now us,", // vs is
+      "to control us", // vs is
+      "are way not", // vs was
+      "the invite", // vs to invite
+      "is there way to", // vs was
+      "a way doing", // vs was
+      "way different", // vs was
+      "I for one think" // vs thing
     );
 
   private static final List<List<PatternToken>> ANTI_PATTERNS = Arrays.asList(
     Arrays.asList(
-      // "Meltzer taught Crim for Section 5 last year." (taught/thought)
+      // "Those wee changes made a big difference"
+      tokenRegex("the|these|those"),
+      token("wee"),
+      posRegex("NNS")
+    ),
+    Arrays.asList(
+      // way vs was: This way a person could learn ....
+      token("this"),
+      token("way"),
+      posRegex("DT|PRP\\$"),
+      posRegex("NN.*")
+    ),
+    Arrays.asList(
+      // way vs was: This way a person could learn ....
+      token("way"),
+      token("too"),
+      posRegex("JJ")
+    ),
+    Arrays.asList(
+      // "from ... to ..." (to/the)
       posRegex("NNP|UNKNOWN"),
-      token("taught"),
+      tokenRegex("to"),
       posRegex("NNP|UNKNOWN")
+    ),
+    Arrays.asList(
+      // "Meltzer taught Crim for Section 5 last year." (taught/thought)
+      // "Sami threw Layla down and started to beat her.""	(threw/through)
+      posRegex("NNP|UNKNOWN"),
+      tokenRegex("taught|threw"),
+      posRegex("NNP|UNKNOWN")
+    ),
+    Arrays.asList(
+      // "Were you never taught to say your prayers?" (taught/thought)
+      token("taught"),
+      token("to"),
+      tokenRegex("say|do|make|be|become|treat")
+    ),
+    Arrays.asList(
+      // "way easier" (was/way)
+      token("way"),
+      posRegex("JJR|RBR")
+    ),
+    Arrays.asList(
+      // "He acts way different" (was/way)
+      posRegex("VB.*"),
+      token("way"),
+      token("different")
+    ),
+    Arrays.asList(
+      // "way much easier" (was/way)
+      token("way"),
+      token("much"),
+      posRegex("JJR")
+    ),
+    Arrays.asList(
+      // "way out of" (was/way)
+      token("way"),
+      token("out"),
+      tokenRegex("of|in|on")
+    ),
+    Arrays.asList(
+      // "way to long" (was/way)
+      token("way"),
+      token("to"),
+      posRegex("JJ")
+    ),
+    Arrays.asList(
+      // "He was there way before" (was/way)
+      token("way"),
+      tokenRegex("before|after|outside|inside|back")
+    ),
+    Arrays.asList(
+      // "In a logic way" (was/way)
+      token("in"),
+      tokenRegex("an?"),
+      posRegex("JJ"),
+      token("way")
+    ),
+    Arrays.asList(
+      // They "awarded" us a contract ...
+      posRegex("VB.*"),
+      tokenRegex("[\"”“]"),
+      token("us") // vs "is"
+    ),
+    Arrays.asList(
+      // Text us at (410) 4535
+      tokenRegex("message(s|d)?|text(s|ed)?|DM"),
+      token("us"), // vs "is"
+      posRegex("PCT|IN|TO|CC|DT")
+    ),
+    Arrays.asList(
+      // Clinton will pay us based on actuals.
+      posRegex("VB.*"),
+      token("us"), // vs "is"
+      tokenRegex("based|depending"),
+      token("on")
+    ),
+    Arrays.asList(
+      // How Apple and FB do events:
+      token("how"),
+      posRegex("NNP"),
+      tokenRegex("and|&"),
+      posRegex("NNP"),
+      token("do") // vs 'to'
     )
   );
 

@@ -119,6 +119,21 @@ public class GermanCompoundTokenizer implements Tokenizer {
       words.add("genetischen");
       words.add("genetisches");
       words.add("premium");
+      words.add("kontrolleurin");
+      words.add("konstrukteurin");
+      words.add("importeurin");
+      words.add("requisiteurin");
+      words.add("akteurin");
+      words.add("masseurin");
+      words.add("profiteurin");
+      words.add("charmeurin");
+      words.add("medailleurin");
+      words.add("exporteurin");
+      words.add("rechercheurin");
+      words.add("poseurin");
+      words.add("auskommentieren");
+      words.add("impfung");
+      words.add("impfungen");
       return words;
     }
   }
@@ -155,6 +170,26 @@ public class GermanCompoundTokenizer implements Tokenizer {
     wordSplitter.addException("Schneiderarbeiten", asList("Schneider", "arbeiten"));
     wordSplitter.addException("Wanderarbeiten", asList("Wander", "arbeiten"));
     wordSplitter.addException("Taucherarbeiten", asList("Taucher", "arbeiten"));
+    wordSplitter.addException("Hauptakteurin", asList("Haupt", "akteurin"));
+    wordSplitter.addException("Kleiderecke", asList("Kleider", "ecke"));
+    wordSplitter.addException("Kleiderecken", asList("Kleider", "ecken"));
+    wordSplitter.addException("Abwehrecke", asList("Abwehr", "ecke"));
+    wordSplitter.addException("Abwehrecken", asList("Abwehr", "ecken"));
+    wordSplitter.addException("Dichterecke", asList("Dichter", "ecke"));
+    wordSplitter.addException("Dichterecken", asList("Dichter", "ecken"));
+    wordSplitter.addException("Kellerecke", asList("Keller", "ecke"));
+    wordSplitter.addException("Kellerecken", asList("Keller", "ecken"));
+    wordSplitter.addException("Kinderecke", asList("Kinder", "ecke"));
+    wordSplitter.addException("Kinderecken", asList("Kinder", "ecken"));
+    wordSplitter.addException("Silberecke", asList("Silber", "ecke"));
+    wordSplitter.addException("Silberecken", asList("Silber", "ecken"));
+    wordSplitter.addException("Schreibart", asList("Schreib", "art"));
+    wordSplitter.addException("Prüfungsorte", asList("Prüfungs", "orte"));
+    wordSplitter.addException("Prüfungsorten", asList("Prüfungs", "orten"));
+    wordSplitter.addException("Ölsorte", asList("Öl", "sorte"));
+    wordSplitter.addException("Ölsorten", asList("Öl", "sorten"));
+    wordSplitter.addException("Pflanzenölsorte", asList("Pflanzenöl", "sorte"));
+    wordSplitter.addException("Pflanzenölsorten", asList("Pflanzenöl", "sorten"));
     wordSplitter.setStrictMode(strictMode);
     wordSplitter.setMinimumWordLength(3);
   }

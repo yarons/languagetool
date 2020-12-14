@@ -141,6 +141,7 @@ Rio de Janeiro
 Barclays
 GoPro
 WebEx
+Webex
 Waldridge
 Squarespace
 Nextcloud
@@ -633,7 +634,6 @@ iPad Mini
 Mac Mini
 Surface Pro
 Depeche Mode
-Zac Efron
 CSS
 SCSS
 HTML
@@ -704,6 +704,7 @@ Nintendo Wii
 Disney+
 Kate Middleton
 Joe Biden
+Biden
 Bernie Sanders
 Bruce Wayne
 Peter Parker
@@ -1189,6 +1190,7 @@ CricleCI
 Jenkins
 Overleaf
 LaTeX
+BibTeX
 Nesquik
 Maggi
 ⚠️
@@ -1197,6 +1199,7 @@ Yuval
 Harari
 Philip Morris
 WinRAR
+WinZip
 Postmates
 Reckitt Benckiser
 Tata Motors
@@ -1419,3 +1422,346 @@ Unity
 Bioderma
 TransferWise
 Transferwise
+StepStone
+AppGallery
+Neuralink
+BookBeat
+EXIF
+Java SE
+Mercedes-AMG
+OnlyFans
+GoFundMe
+Ban Ki-moon
+Powerade
+Audi TT
+IG
+Deezer
+♂️
+♀
+APNG
+WebP
+WebM
+FFmpeg
+Broadcom
+ClickBank
+Oculus VR
+Oculus Rift
+Oculus Quest
+Oculus Rift S
+Skoda
+Škoda
+UiPath
+MotoGP
+Baillie Gifford
+Alka-Seltzer
+Activision
+ResearchGate
+Gaia-X
+GAIA-X
+PGP
+Heckler & Koch
+SimilarWeb
+YubiKey
+Winamp
+Apple Watch
+Apple Watch Series
+Apple One
+Apple One Premier
+Apple One Individual
+Apple One Family
+Apple Arcade
+Apple TV
+Hurricane Sally
+4chan
+Mashable
+Sketch Engine
+Tidal
+eHarmony
+ProSiebenSat.1
+Euronext
+Ivy League
+MythBusters
+Ghostbusters
+Borsa Italiana
+TeXstudio
+Blinkist
+CSRF
+XSRF
+Citibank
+Xbox Series X
+Xbox Series S
+Hyperloop
+Amnesty International
+Jürgen Klopp
+Lionel Messi
+Costa Del Mar
+Essilor
+Luxottica
+Eintracht Frankfurt
+Calendly
+UNESCO
+Forge of Empires
+Clash of Clans
+Farmville
+SimCity
+Balenciaga
+Kering
+Petronas
+DoorDash
+Disneyland
+Euler Hermes
+Bristol Myers
+Bristol Myers Squibb
+Biggie Smalls
+Tupac
+2Pac
+Europol
+Interpol
+Nickelodeon
+LOTR
+TSMC
+Doodle
+🤦🏻‍♂️
+Winn-Dixie
+Ronaldinho
+Shopee
+Tokopedia
+OpenStax
+Rocket League
+Canva
+Daredevil
+Mbappé
+HomePod
+Sony Pictures
+Sony Pictures Television
+Columbia Pictures
+Jason Bourne
+OxygenOS
+The Rock
+Dungeons & Dragons
+Dungeons and Dragons
+Dexter
+Transformers
+CollegeHumor
+Elon Musk
+Jules Verne
+Battle Creek
+Rotten Tomatoes
+Meghan Markle
+Hulk Hogan
+Peter Thiel
+Larry Ellison
+Michael Dell
+Ma Huateng
+Julian Assange
+Fraunhofer
+Wimbledon
+OpenTable
+Auto Europe
+Cisco Systems
+BioNTech
+CureVac
+Ernest Hemingway
+MagSafe
+Borat
+Trustpilot
+NBCUniversal
+General Motors
+General Electric
+Bacardi
+Lewis Hamilton
+ActiveMQ
+reCAPTCHA
+Black Eyed Peas
+DeLorean
+WebAssembly
+Halo Infinite
+Oxford Dictionary
+Genshin Impact
+Charlie Chaplin
+GoToMeeting
+Fidel Castro
+Nikola Tesla
+Thomas Edison
+Alexander Graham Bell
+Tim Berners-Lee
+Benjamin Franklin
+Henry Ford
+Times New Roman
+ATP
+Nike Air
+NIKE Air
+GMC
+Softbank
+SoftBank
+Mount Rushmore
+Schitt's Creek
+Schitt’s Creek
+NumPy
+Stieg Larsson
+Brokeback Mountain
+Zac Efron
+Ted Cruz
+Lindsey Graham
+Mike Pompeo
+Mike Pence
+Nancy Pelosi
+Mitch McConnell
+Chuck Schumer
+Tomcat
+Ron Klain
+Ronald Klain
+Al Gore
+Bill Clinton
+George Bush
+Ronald Reagan
+George Washington
+Jimmy Carter
+Gerald Ford
+Richard Nixon
+Adam Sandler
+Denzel Washington
+Charlie Sheen
+Meryl Streep
+Kim Basinger
+Claude Monet
+Han Solo
+Luke Skywalker
+Kylo Ren
+OpenVAS
+Godfall
+Nikki Haley
+Frédéric Chopin
+eToro
+Google Workspace
+Chainsmokers
+LT
+Clark Kent
+Lois Lane
+MSCI World
+MSCI World Index
+ASOS
+John Lennon
+Tom Hardy
+Tom Brady
+CaixaBank
+Gangnam Style
+Bitbucket
+Selenium
+Phil Collins
+WebXR
+Roger Moore
+Sean Connery
+Sean Penn
+Pierce Brosnan
+Daniel Craig
+Turkcell
+Liam Neeson
+Wonder Woman
+Jude Law
+Jack Nicholson
+Marlon Brando
+Open-Xchange
+Bob Geldof
+Richard Gere
+Julia Roberts
+Green New Deal
+Kim Basinger
+Cindy Crawford
+Tim Allen
+Aerosmith
+Avril Lavigne
+Land Rover Freelander
+Uma Thurman
+Maye Musk
+Kimbal Musk
+Rita Ora
+Regeneron
+Sophie Scholl
+Wear OS
+Android Wear
+Baskerville
+RuneScape
+Mark Twain
+Herman Melville
+Frank Zappa
+Mariah Carey
+Whitney Houston
+Celine Dion
+Mike Tyson
+Dan Brown
+Charles Dickens
+Marie Curie
+Johannes Gutenberg
+Gutenberg
+Diego Maradona
+Adobe XD
+Afterpay
+Alcomotive
+Ferris Bueller
+Equinix
+Icelandair
+Interjet
+Interjet Airlines
+Mercadona
+Montblanc
+Capital One
+Christian Bale
+Woody Harrelson
+Jennifer Lawrence
+Eurostat
+Frontex
+Hillary Clinton
+John Kerry
+Jira
+DEFCON
+Cate Blanchett
+Mark Wahlberg
+Infineon
+♻️
+Moby Dick
+Myers-Briggs
+Universal Pictures
+Janet Yellen
+Jerome Powell
+Christine Lagarde
+Keira Knightley
+Chris Cuomo
+Andrew Cuomo
+Sylvester Stallone
+Tom Cruise
+Carl Schenck
+Lewis Carroll
+iShares
+Interdiscount
+Cameron Diaz
+Reese Witherspoon
+Gwyneth Paltrow
+Kurt Russell
+Blair Witch
+Blair Witch Project
+Jungkook
+Jeon Jungkook
+J-Hope
+BTS Universe
+AppSource
+Bob's Burgers
+Bob’s Burgers
+Google Search Console
+Nicolás Maduro
+Benito Mussolini
+Mussolini
+DeepMind
+Nagios
+WarnerMedia
+AbCellera
+Cyberpunk
+Schlumberger
+Justin Timberlake
+GA4
+Alyssa Milano
+Mila Kunis
+Harrison Ford
+Seth Rogen
+Jonah Hill
+Stevie Wonder

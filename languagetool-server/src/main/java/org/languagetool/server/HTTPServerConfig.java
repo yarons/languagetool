@@ -110,6 +110,7 @@ public class HTTPServerConfig {
   protected String abTest = null;
   protected Pattern abTestClients = null;
   protected int abTestRollout = 100; // percentage [0,100]
+  protected File ngramLangIdentData;
 
   private static final List<String> KNOWN_OPTION_KEYS = Arrays.asList("abTest", "abTestClients", "abTestRollout",
     "beolingusFile", "blockedReferrers", "cacheSize", "cacheTTLSeconds",
@@ -122,6 +123,7 @@ public class HTTPServerConfig {
     "requestLimit", "requestLimitInBytes", "requestLimitPeriodInSeconds", "rulesFile", "secretTokenKey", "serverURL",
     "skipLoggingChecks", "skipLoggingRuleMatches", "timeoutRequestLimit", "trustXForwardForHeader", "warmUp", "word2vecModel",
     "keystore", "password", "maxTextLengthPremium", "maxTextLengthAnonymous", "maxTextLengthLoggedIn", "gracefulDatabaseFailure",
+    "ngramLangIdentData",
     "redisPassword", "redisHost", "dbLogging", "premiumOnly");
 
   /**
@@ -333,6 +335,14 @@ public class HTTPServerConfig {
         setAbTest(getOptionalProperty(props, "abTest", null));
         setAbTestClients(getOptionalProperty(props, "abTestClients", null));
         setAbTestRollout(Integer.parseInt(getOptionalProperty(props, "abTestRollout", "100")));
+        String ngramLangIdentData = getOptionalProperty(props, "ngramLangIdentData", null);
+        if (ngramLangIdentData != null) {
+          File dir = new File(ngramLangIdentData);
+          if (!dir.exists() || dir.isDirectory()) {
+            throw new IllegalArgumentException("ngramLangIdentData does not exist or is a directory (needs to be a ZIP file): " + ngramLangIdentData);
+          }
+          setNgramLangIdentData(dir);
+        }
       }
     } catch (IOException e) {
       throw new RuntimeException("Could not load properties from '" + file + "'", e);
@@ -1033,6 +1043,17 @@ public class HTTPServerConfig {
   @Experimental
   public int getAbTestRollout() {
     return abTestRollout;
+  }
+
+  /** @since 5.2 */
+  public void setNgramLangIdentData(File ngramLangIdentData) {
+    this.ngramLangIdentData = ngramLangIdentData;
+  }
+
+  /** @since 5.2 */
+  @Nullable
+  public File getNgramLangIdentData() {
+    return ngramLangIdentData;
   }
 
   /**

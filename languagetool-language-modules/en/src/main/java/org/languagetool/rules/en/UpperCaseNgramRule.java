@@ -34,6 +34,7 @@ import org.languagetool.tools.StringTools;
 
 import java.io.IOException;
 import java.util.*;
+import java.util.function.Supplier;
 
 import static org.languagetool.rules.patterns.PatternRuleBuilderHelper.token;
 import static org.languagetool.rules.patterns.PatternRuleBuilderHelper.pos;
@@ -191,6 +192,10 @@ public class UpperCaseNgramRule extends Rule {
       token("BBC"),
       token("Culture")
     ),
+    Arrays.asList(
+      token("Time"),
+      tokenRegex("magazines?")
+    ),
     Arrays.asList( // name of TV series
       token("Dublin"),
       token("Murders")
@@ -202,6 +207,10 @@ public class UpperCaseNgramRule extends Rule {
     Arrays.asList( // Company name
       token("Volvo"),
       token("Buses")
+    ),
+    Arrays.asList( // video game
+      token("Heavy"),
+      token("Rain")
     ),
     Arrays.asList(
       csRegex("[A-Z].+"),
@@ -216,7 +225,7 @@ public class UpperCaseNgramRule extends Rule {
     Arrays.asList( // "He plays games at Games.co.uk."
       csRegex("[A-Z].+"),
       token("."),
-      tokenRegex("com?|de|us|gov|net|info|org|es|mx|ca|uk|at|ch|it|pl|ru|nl|ie|be|fr")
+      tokenRegex("com?|de|us|gov|net|info|org|es|mx|ca|uk|at|ch|it|pl|ru|nl|ie|be|fr|ai|dev|io|pt|mil|club|jp|es|se|dk|no")
     ),
     Arrays.asList(
       tokenRegex("[A-Z].+"),  // He's Ben (Been)
@@ -328,6 +337,11 @@ public class UpperCaseNgramRule extends Rule {
       token("it|him|her|them|me|us|that|this"),
       tokenRegex("[A-Z].+")
     ),
+    Arrays.asList( // ... to something called Faded
+      tokenRegex("some(thing|body|one)"),
+      tokenRegex("called|named"),
+      csRegex("[A-Z].+")
+    ),
     Arrays.asList( // It is called Ranked mode
       csRegex("is|was|been|were|are"),
       csRegex("calls?|called|calling|name[ds]?|naming"),
@@ -379,11 +393,41 @@ public class UpperCaseNgramRule extends Rule {
       csRegex("click(ed|s)?"),
       tokenRegex("on|at"),
       tokenRegex("[A-Z].*")
+    ),
+    Arrays.asList( // Chronicle of a Death Foretold
+      csRegex("Chronicle"),
+      token("of"),
+      tokenRegex("the|an?"),
+      tokenRegex("[A-Z].*")
+    ),
+    Arrays.asList( // Please see Question 2, 
+      csRegex("[A-Z].*"),
+      tokenRegex("\\d+")
+    ),
+    Arrays.asList( // Please see Question #2, 
+      csRegex("[A-Z].*"),
+      token("#"),
+      tokenRegex("\\d+")
+    ),
+    Arrays.asList( // company departments used like proper nouns
+      csRegex("Finance|Marketing|Engineering|Controlling|Support|Accounting")
+    ),
+    Arrays.asList( // They used Draft.js to solve it.
+      csRegex("[A-Z].*"),
+      token("."),
+      tokenRegex("js")
+    ),
+    Arrays.asList( // And mine is Wed.
+      csRegex("Wed")
+    ),
+    Arrays.asList( // Keys
+      csRegex("Enter|Return|Escape|Shift")
     )
   );
 
   private final Language lang;
   private final LanguageModel lm;
+  private final Supplier<List<DisambiguationPatternRule>> antiPatterns;
 
   public UpperCaseNgramRule(ResourceBundle messages, LanguageModel lm, Language lang, UserConfig userConfig) {
     super(messages);
@@ -393,6 +437,8 @@ public class UpperCaseNgramRule extends Rule {
     setLocQualityIssueType(ITSIssueType.Misspelling);
     addExamplePair(Example.wrong("This <marker>Prototype</marker> was developed by Miller et al."),
                    Example.fixed("This <marker>prototype</marker> was developed by Miller et al."));
+    antiPatterns = cacheAntiPatterns(lang, ANTI_PATTERNS);
+
     if (userConfig != null && linguServices == null) {
       linguServices = userConfig.getLinguServices();
       initTrie();
@@ -423,7 +469,7 @@ public class UpperCaseNgramRule extends Rule {
 
   @Override
   public List<DisambiguationPatternRule> getAntiPatterns() {
-    return makeAntiPatterns(ANTI_PATTERNS, lang);
+    return antiPatterns.get();
   }
 
   @Override
@@ -466,9 +512,9 @@ public class UpperCaseNgramRule extends Rule {
           && !nextIsOneOfThenUppercase(tokens, i, Arrays.asList("of"))
           && !tokenStr.matches("I")
           && !exceptions.contains(tokenStr)
-          && !isMisspelled(StringTools.lowercaseFirstChar(tokenStr))    // e.g. "German" is correct, "german" isn't
           && !trieMatches(sentence.getText(), token)
           && !maybeTitle(tokens, i)
+          && !isMisspelled(StringTools.lowercaseFirstChar(tokenStr))    // e.g. "German" is correct, "german" isn't
       ) {
         if (i + 1 < tokens.length) {
           List<String> ucList = Arrays.asList(tokens[i - 1].getToken(), tokenStr, tokens[i + 1].getToken());
@@ -493,7 +539,9 @@ public class UpperCaseNgramRule extends Rule {
   }
   
   boolean isMisspelled(String word) throws IOException {
-    return (linguServices == null ? spellerRule.isMisspelled(word) : !linguServices.isCorrectSpell(word, lang));
+    synchronized (spellerRule) {
+      return linguServices == null ? spellerRule.isMisspelled(word) : !linguServices.isCorrectSpell(word, lang);
+    }
   }
 
   // a very rough guess whether the word at the given position might be part of a title

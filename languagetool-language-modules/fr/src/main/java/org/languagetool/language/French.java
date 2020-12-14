@@ -225,7 +225,7 @@ public class French extends Language implements AutoCloseable {
 
   @Override
   protected int getPriorityForId(String id) {
-    switch (id) {
+    switch (id) { 
       case "DU_DU": return 10; // greater than DU_LE
       case "ACCORD_CHAQUE": return 10; // greater than ACCORD_NOMBRE
       case "CEST_A_DIRE": return 10; // greater than A_A_ACCENT
@@ -237,9 +237,9 @@ public class French extends Language implements AutoCloseable {
       case "FRENCH_WHITESPACE": return 0;
       case "JE_SUI": return 1;  // needs higher priority than spell checker
       case "TOO_LONG_PARAGRAPH": return -15;
+      case "VERB_PRONOUN": return -50; // greater than FR_SPELLING_RULE; less than ACCORD_V_QUESTION
       case "FR_SPELLING_RULE": return -100;
       case "ELISION": return -200; // should be lower in priority than spell checker
-      case "NONVERB_PRON": return -200; // show the suggestion by the spell checker if exists
       case "UPPERCASE_SENTENCE_START": return -300;
     }
     if (id.startsWith("grammalecte_")) {
